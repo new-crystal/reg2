@@ -581,7 +581,7 @@ $day_3_users = count($day_3) + count($day_3_e);
 
 ?>
 <div class="text-center flex flex-col items-center justify-center">
-    <h1 class="text-6xl font-semibold text-orange-600 my-10">ISCP 2023</h1>
+    <h1 class="text-6xl font-semibold text-orange-600 my-10">제59차 대한비만학회 춘계학술대회</h1>
     <h6 class="text-3xl font-semibold mb-20 ">현장 참석자 데이터</h6>
     <h6 class="text-3xl font-semibold mb-20 ">현장 QR 출결 :
         <?php echo count($item) ?> 명 / 미출결:
@@ -598,12 +598,12 @@ $day_3_users = count($day_3) + count($day_3_e);
             </th>
             <td class="total_table bg-sky-200">11월 23일(목)</td>
             <td class="total_table bg-amber-200">11월 24일(금)</td>
-            <td class="total_table bg-green-200">11월 25일(토)</td>
+            <td style="display: none;" class="total_table bg-green-200">11월 25일(토)</td>
         </tr>
         <tr>
             <td class="count_9"> <?php echo $day_1_users ?></td>
             <td class="count_10"> <?php echo $day_2_users ?></td>
-            <td class="count_11"> <?php echo $day_3_users ?></td>
+            <td style="display: none;" class="count_11"> <?php echo $day_3_users ?></td>
         </tr>
     </table>
 
@@ -612,7 +612,7 @@ $day_3_users = count($day_3) + count($day_3_e);
             <th colspan="2" rowspan="2" class="bg-sky-950 text-white">등록구분</th>
             <th colspan="2" class="bg-sky-200">11월 23일(목)</th>
             <th colspan="2" class="bg-amber-200">11월 24일(금)</th>
-            <th colspan="2" class="bg-green-200">11월 25일(토)</th>
+            <th style="display: none;" colspan="2" class="bg-green-200">11월 25일(토)</th>
             <th rowspan="2" class=" bg-slate-300">Total</th>
         </tr>
         <tr class="text-black">
@@ -639,10 +639,10 @@ $day_3_users = count($day_3) + count($day_3_e);
             <td>
                 <?php echo isset($speaker_2) ?  $speaker_2 : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($speaker_3_e) ? $speaker_3_e : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($speaker_3) ? $speaker_3 : 0; ?>
             </td>
             <td>
@@ -656,9 +656,9 @@ $day_3_users = count($day_3) + count($day_3_e);
                     echo  $speaker_1_e + $speaker_1 + $speaker_2_e + $speaker_2;
                 }
                 /**day 3 */
-                else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
-                    echo  $speaker_1_e + $speaker_1 + $speaker_2_e + $speaker_2 + $speaker_3_e + $speaker_3;
-                }
+                // else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
+                //     echo  $speaker_1_e + $speaker_1 + $speaker_2_e + $speaker_2 + $speaker_3_e + $speaker_3;
+                // }
                 ?>
             </td>
 
@@ -677,10 +677,10 @@ $day_3_users = count($day_3) + count($day_3_e);
             <td>
                 <?php echo isset($chairperson_2) ?  $chairperson_2 : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($chairperson_3_e) ? $chairperson_3_e : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($chairperson_3) ? $chairperson_3 : 0; ?>
             </td>
             <td>
@@ -694,9 +694,9 @@ $day_3_users = count($day_3) + count($day_3_e);
                     echo  $chairperson_1_e + $chairperson_1 + $chairperson_2_e + $chairperson_2;
                 }
                 /**day3 */
-                else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
-                    echo  $chairperson_1_e + $chairperson_1 + $chairperson_2_e + $chairperson_2 + $chairperson_3_e + $chairperson_3;
-                }
+                // else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
+                //     echo  $chairperson_1_e + $chairperson_1 + $chairperson_2_e + $chairperson_2 + $chairperson_3_e + $chairperson_3;
+                // }
                 ?>
             </td>
 
@@ -715,10 +715,10 @@ $day_3_users = count($day_3) + count($day_3_e);
             <td>
                 <?php echo isset($panel_2) ?  $panel_2 : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($panel_3_e) ? $panel_3_e : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($panel_3) ? $panel_3 : 0; ?>
             </td>
             <td>
@@ -732,9 +732,9 @@ $day_3_users = count($day_3) + count($day_3_e);
                     echo  $panel_1_e + $panel_1 + $panel_2_e + $panel_2;
                 }
                 /**day 3 */
-                else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
-                    echo  $panel_1_e + $panel_1 + $panel_2_e + $panel_2 + $panel_3_e + $panel_3;
-                }
+                // else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
+                //     echo  $panel_1_e + $panel_1 + $panel_2_e + $panel_2 + $panel_3_e + $panel_3;
+                // }
                 ?>
             </td>
         </tr>
@@ -752,10 +752,10 @@ $day_3_users = count($day_3) + count($day_3_e);
             <td>
                 <?php echo isset($faculty_2) ?  $faculty_2 : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($faculty_3_e) ? $faculty_3_e : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($faculty_3) ? $faculty_3 : 0; ?>
             </td>
             <td>
@@ -769,9 +769,9 @@ $day_3_users = count($day_3) + count($day_3_e);
                     echo $faculty_1_e + $faculty_1 + $faculty_2_e + $faculty_2;
                 }
                 /**day 3 */
-                else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
-                    echo  $faculty_1_e + $faculty_1 + $faculty_2_e + $faculty_2 + $faculty_3_e + $faculty_3;
-                }
+                // else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
+                //     echo  $faculty_1_e + $faculty_1 + $faculty_2_e + $faculty_2 + $faculty_3_e + $faculty_3;
+                // }
                 ?>
             </td>
         </tr>
@@ -790,10 +790,10 @@ $day_3_users = count($day_3) + count($day_3_e);
             <td>
                 <?php echo isset($participant_2) ?  $participant_2 : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($participant_3_e) ? $participant_3_e : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($participant_3) ? $participant_3 : 0; ?>
             </td>
             <td>
@@ -807,9 +807,9 @@ $day_3_users = count($day_3) + count($day_3_e);
                     echo   $participant_1_e + $participant_1 + $participant_2_e + $participant_2;
                 }
                 /**day 3 */
-                else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
-                    echo  $participant_1_e + $participant_1 + $participant_2_e + $participant_2 + $participant_3_e + $participant_3;
-                }
+                // else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
+                //     echo  $participant_1_e + $participant_1 + $participant_2_e + $participant_2 + $participant_3_e + $participant_3;
+                // }
                 ?>
             </td>
         </tr>
@@ -827,10 +827,10 @@ $day_3_users = count($day_3) + count($day_3_e);
             <td>
                 <?php echo isset($others_2) ?  $others_2 : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($others_3_e) ? $others_3_e : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($others_3) ? $others_3 : 0; ?>
             </td>
             <td>
@@ -844,9 +844,9 @@ $day_3_users = count($day_3) + count($day_3_e);
                     echo    $others_1_e + $others_1 + $others_2_e + $others_2;
                 }
                 /**day 3 */
-                else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
-                    echo   $others_1_e + $others_1 + $others_2_e + $others_2 + $others_3_e + $others_3;
-                }
+                // else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
+                //     echo   $others_1_e + $others_1 + $others_2_e + $others_2 + $others_3_e + $others_3;
+                // }
                 ?>
             </td>
         </tr>
@@ -865,10 +865,10 @@ $day_3_users = count($day_3) + count($day_3_e);
             <td class="day_2">
                 <?php echo  $speaker_2 + $chairperson_2 + $panel_2 + $faculty_2 + $organizer_2 + $preceptor_2 + $press_2 + $participant_2 + $others_2   ?>
             </td>
-            <td class="day_3_e">
+            <td class="day_3_e"  style="display: none;">
                 <?php echo  $speaker_3_e + $chairperson_3_e + $panel_3_e + $faculty_3_e + $organizer_3_e + $preceptor_3_e + $press_3_e + $participant_3_e + $others_3_e   ?>
             </td>
-            <td class="day_3">
+            <td class="day_3"  style="display: none;">
                 <?php echo  $speaker_3 + $chairperson_3 + $panel_3 + $faculty_3 + $organizer_3 + $preceptor_3 + $press_3 + $participant_3 + $others_3   ?>
             </td>
             <td rowspan="2" class="count_7"></td>
@@ -877,7 +877,7 @@ $day_3_users = count($day_3) + count($day_3_e);
             <th class="bg-red-100" colspan="2">합계</th>
             <td colspan="2" class="count_1"></td>
             <td colspan="2" class="count_2"></td>
-            <td colspan="2" class="count_3"></td>
+            <td colspan="2" class="count_3" style="display: none;"></td>
         </tr>
 
         <tr>
@@ -895,10 +895,10 @@ $day_3_users = count($day_3) + count($day_3_e);
             <td>
                 <?php echo isset($on_speaker_2) ?  $on_speaker_2 : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($on_speaker_3_e) ? $on_speaker_3_e : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($on_speaker_3) ? $on_speaker_3 : 0; ?>
             </td>
             <td>
@@ -912,9 +912,9 @@ $day_3_users = count($day_3) + count($day_3_e);
                     echo   $on_speaker_1_e + $on_speaker_1 + $on_speaker_2_e + $on_speaker_2;
                 }
                 /**day 3 */
-                else if (isset($on_participant_1_e) && isset($on_participant_2_e) && isset($on_participant_3_e)) {
-                    echo   $on_speaker_1_e + $on_speaker_1 + $on_speaker_2_e + $on_speaker_2 + $on_speaker_3_e + $on_speaker_3;
-                }
+                // else if (isset($on_participant_1_e) && isset($on_participant_2_e) && isset($on_participant_3_e)) {
+                //     echo   $on_speaker_1_e + $on_speaker_1 + $on_speaker_2_e + $on_speaker_2 + $on_speaker_3_e + $on_speaker_3;
+                // }
                 ?>
 
             </td>
@@ -933,10 +933,10 @@ $day_3_users = count($day_3) + count($day_3_e);
             <td>
                 <?php echo isset($on_chairperson_2) ?  $on_chairperson_2 : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($on_chairperson_3_e) ? $on_chairperson_3_e : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($on_chairperson_3) ? $on_chairperson_3 : 0; ?>
             </td>
             <td>
@@ -950,9 +950,9 @@ $day_3_users = count($day_3) + count($day_3_e);
                     echo  $on_chairperson_1_e + $on_chairperson_1 + $on_chairperson_2_e + $on_chairperson_2;
                 }
                 /**day 3 */
-                else if (isset($on_participant_1_e) && isset($on_participant_2_e) && isset($on_participant_3_e)) {
-                    echo  $on_chairperson_1_e + $on_chairperson_1 + $on_chairperson_2_e + $on_chairperson_2 + $on_chairperson_3_e + $on_chairperson_3;
-                }
+                // else if (isset($on_participant_1_e) && isset($on_participant_2_e) && isset($on_participant_3_e)) {
+                //     echo  $on_chairperson_1_e + $on_chairperson_1 + $on_chairperson_2_e + $on_chairperson_2 + $on_chairperson_3_e + $on_chairperson_3;
+                // }
                 ?>
             </td>
 
@@ -971,10 +971,10 @@ $day_3_users = count($day_3) + count($day_3_e);
             <td>
                 <?php echo isset($on_panel_2) ?  $on_panel_2 : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($on_panel_3_e) ? $on_panel_3_e : 0; ?>
             </td>
-            <td>
+            <td style="display: none;">
                 <?php echo isset($on_panel_3) ? $on_panel_3 : 0; ?>
             </td>
             <td>
@@ -988,9 +988,9 @@ $day_3_users = count($day_3) + count($day_3_e);
                     echo  $on_panel_1_e + $on_panel_1 + $on_panel_2_e + $on_panel_2;
                 }
                 /**day 3 */
-                else if (isset($on_participant_1_e) && isset($on_participant_2_e) && isset($on_participant_3_e)) {
-                    echo  $on_panel_1_e + $on_panel_1 + $on_panel_2_e + $on_panel_2 + $on_panel_3_e + $on_panel_3;
-                }
+                // else if (isset($on_participant_1_e) && isset($on_participant_2_e) && isset($on_participant_3_e)) {
+                //     echo  $on_panel_1_e + $on_panel_1 + $on_panel_2_e + $on_panel_2 + $on_panel_3_e + $on_panel_3;
+                // }
                 ?>
             </td>
         </tr>

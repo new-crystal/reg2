@@ -1340,8 +1340,9 @@ class Admin extends CI_Controller
         else {
             $userId = $_GET['n'];
             $where = array(
-                'registration_no' => $userId,
-                'nation' => 'Republic of Korea'
+                'registration_no' => $userId
+                // [240308] sujeong / msm 주석 
+                // 'nation' => 'Republic of Korea'
             );
             $info = array(
                 'QR_SMS_SEND_YN' =>  'Y'
@@ -1361,7 +1362,8 @@ class Admin extends CI_Controller
             // $data['users'] = array(); // 배열로 초기화
             foreach ($userId as $value) {
                 $wheres = array(
-                    'nation' => 'Republic of Korea',
+                    // [240308] sujeong / msm 주석 
+                    // 'nation' => 'Republic of Korea'
                     'qr_generated' =>  'Y',
                     'registration_no' => $value
                 );

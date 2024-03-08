@@ -974,6 +974,10 @@ class Access extends CI_Controller
 
     function sheet()
     {
-        $this->load->view('sheet');
+        $where = array(
+            'registration_no' => 'ISCP-649'
+        );
+        $data['users'] = $this->users->get_user($where);
+        $this->load->view('sheet', $data);
     }
 }

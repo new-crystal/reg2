@@ -11,13 +11,17 @@ table {
     border-collapse: collapse;
 }
 </style>
-
+<?php
+//print_r($users);
+$jsonData = json_encode($users);
+?>
 <body>
     <p>Sheets API Quickstart</p>
 
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
     <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
+    <button onclick="append()">append</button>
 
     <pre style="white-space: pre-wrap;">
         <table id="content">
@@ -157,10 +161,10 @@ table {
         const output = range.values.map((value) => {
             return (`
                 <tr>
-                    <td>${value[0]}</td>
+                    <td class="reg_num" id=${value[0]}>${value[0]}</td>
                     <td>${value[1]}</td>
                     <td>${value[2]}</td>
-                    <td><input class="table_input" value="${value[3]}"/></td>
+                    <td class="table_num" id=${value[3]}>${value[3]}</td>
                 </tr>
                 `)
 
@@ -168,7 +172,7 @@ table {
 
         document.getElementById('content').innerHTML = output;
     }
-    // let getInterval = setInterval(listMajors, 1000)
+    //let getInterval = setInterval(listMajors, 1000)
 
     // const tableInput = document.querySelector(".table_input");
 
@@ -176,13 +180,45 @@ table {
     //     clearInterval(getInterval)
     // })
 
-    // tableInput.addEventListener("blur", () => {
+    // tableInput.addEventListener("blur", (e) => {
     //     getInterval = setInterval(listMajors, 1000)
+    //     getTableNum(e)
     // })
 
-    // window.addEventListener("beforeunload", () => {
-    //     clearInterval(getInterval)
-    // })
+    window.addEventListener("beforeunload", () => {
+        clearInterval(getInterval)
+    })
+
+    function getTableNum(e){
+        const regList = document.querySelectorAll(".reg_num");
+        const tableList = document.querySelectorAll(".table_num");
+        console.log(e)
+    }
+    const userData = <?php echo $jsonData; ?>;
+    
+    async function append(){
+         console.log(userData)
+        const url = "https://sheets.googleapis.com/v4/spreadsheets/1BHZclVGu5E5LhMss0D8D0KaimCiUiLSRvkQVYYtCH9A/values/Sheet1:append"
+        try{
+            // const res = await fetch(url,{
+            //     method: "POST", 
+            //     headers: {
+            //         "Content-Type": "application/json",
+            //     },
+            //     body: JSON.stringify(userData),
+            //     })
+
+            const res = await gapi.client.sheets.spreadsheets.values.append({
+                spreadsheetId: '1BHZclVGu5E5LhMss0D8D0KaimCiUiLSRvkQVYYtCH9A',
+                range: 'Sheet1!A1:AM508',
+                valueInputOption: 'USER_ENTERED',
+                values:userData
+            });
+            console.log(res)
+        }catch(e){
+            console.log(e)
+        }
+    }
     </script>
     <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
     <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
