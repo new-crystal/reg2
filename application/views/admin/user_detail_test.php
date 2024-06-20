@@ -225,12 +225,12 @@ $remark3 = "";
 
                                 <tr>
                                     <th>Affiliation</th>
-                                    <td> <input class="form-control" type="text" value="<?php echo $item['affiliation']; ?>" name="affiliation" id="org">
+                                    <td style="background-color:#fafafa;"> <input class="form-control" type="text" value="<?php echo $item['affiliation']; ?>" name="affiliation" id="org" disabled>
 
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Name Badge_affiliation</th>
+                                    <th>네임택용 소속</th>
                                     <td> <input class="form-control" type="text" value="<?php echo $item['org_nametag']; ?>" name="org_nametag" id="org_nametag">
                                     </td>
                                 </tr>
@@ -248,7 +248,7 @@ $remark3 = "";
                                 </tr>
 
                                 <tr>
-                                    <th>면허번호</th>
+                                    <th>의사면허번호</th>
                                     <td>
                                         <div style="display:flex;  align-items: center;">
                                             <input class="form-control" type="text" value="<?php echo $item['licence_number']; ?>" name="licence_number" id="phone">
@@ -263,7 +263,22 @@ $remark3 = "";
                                         </div>
                                     </td>
                                 </tr>
-
+                                <tr>
+                                    <th>영양사번호</th>
+                                    <td>
+                                        <div style="display:flex;  align-items: center;">
+                                            <input class="form-control" type="text" value="<?php echo $item['nutritionist_number']; ?>" name="nutritionist_number" id="phone">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>임상영양사 자격번호</th>
+                                    <td>
+                                        <div style="display:flex;  align-items: center;">
+                                            <input class="form-control" type="text" value="<?php echo $item['dietitian_number']; ?>" name="dietitian_number" id="phone">
+                                        </div>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <th>연락처</th>
                                     <td>
@@ -299,26 +314,24 @@ $remark3 = "";
                                 </tr>
                                 <tr>
                                     <th>Where did you get the information about the conference?</th>
-                                    <td><input class="form-control" type="text" value="<?php echo $item['conference_info']; ?>" name="conference_info" id="phone"></td>
+                                    <td>
+                                        <input class="form-control" type="text" value="<?php echo $item['conference_info']; ?>" name="conference_info" id="phone">
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>결제수단</th>
-                                    <td> <input type="text" class="form-control" value="<?php echo $item['deposit_method']; ?>" name="deposit_method" id="etc4"></td>
+                                    <td> 
+                                        <input type="text" class="form-control" value="<?php echo $item['deposit_method']; ?>" name="deposit_method" id="etc4">
+                                    </td>
                                 </tr>
-
-                                <tr>
-                                    <th>결제수단<br>(은행/계좌번호)</th>
-                                    <td> <input type="text" class="form-control" value="<?php echo $item['etc4']; ?>" name="etc4" id="etc4"></td>
-                                </tr>
-
                                 <tr>
                                     <th>결제상태</th>
                                     <td> <input type="text" class="form-control" value="<?php echo $item['deposit']; ?>" name="deposit" id="ln"></td>
                                 </tr>
                                 <tr>
                                     <th>결제일</th>
-                                    <td> <input id="dp1" type="text" value="<?php echo $item['deposit_date']; ?>" size="16" class="form-control" name="deposit_date">
-
+                                    <td> 
+                                        <input id="dp1" type="text" value="<?php echo $item['deposit_date']; ?>" size="16" class="form-control" name="deposit_date">
                                     </td>
                                 </tr>
                             </table>

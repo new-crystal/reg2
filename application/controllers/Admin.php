@@ -483,8 +483,8 @@ class Admin extends CI_Controller
                 $attendance_type = $this->input->post('attendance_type');
                 $member_type = $this->input->post('member_type');
                 $member_status = $this->input->post('member_status');
-                $license = $this->input->post('licence_number');
-                $specialty_number = $this->input->post('specialty_number');
+                // $license = $this->input->post('licence_number');
+                // $specialty_number = $this->input->post('specialty_number');
                 $first_name = $this->input->post('first_name');
                 $last_name = $this->input->post('last_name');
                 $name_kor = $this->input->post('name_kor');
@@ -494,19 +494,19 @@ class Admin extends CI_Controller
                 $affiliation = $this->input->post('affiliation');
                 $affiliation_kor = $this->input->post('affiliation_kor');
                 $org_nametag = $this->input->post('org_nametag');
-                $department = $this->input->post('department');
-                $deposit = '미결제';
+                // $department = $this->input->post('department');
+                $deposit = '결제대기';
                 $memo = $this->input->post('memo');
-                $remark1 = $this->input->post('remark1');
-                $remark2 = $this->input->post('remark2');
-                $remark3 = $this->input->post('remark3');
-                $remark4 = $this->input->post('remark4');
+                // $remark1 = $this->input->post('remark1');
+                // $remark2 = $this->input->post('remark2');
+                // $remark3 = $this->input->post('remark3');
+                // $remark4 = $this->input->post('remark4');
                 
-                $deposit_method = $this->input->post('deposit_method');
+                // $deposit_method = $this->input->post('deposit_method');
                 $fee = $this->input->post('fee');
-                $etc4 = $this->input->post('etc4');
+                // $etc4 = $this->input->post('etc4');
                 // $remark5 = $this->input->post('remark5');
-                $special_request_food = $this->input->post('special_request_food');
+                // $special_request_food = $this->input->post('special_request_food');
                 // $fee = 0;
                 $onsite_reg = "1";
 
@@ -517,10 +517,10 @@ class Admin extends CI_Controller
                 $info = array(
                     'name_kor' => preg_replace("/\s+/", "", $name_kor),
                     'member_status' => preg_replace("/\s+/", "", $member_status),
-                    'licence_number' => preg_replace("/\s+/", "", $license),
+                    // 'licence_number' => preg_replace("/\s+/", "", $license),
                     'affiliation' => trim($affiliation),
                     'affiliation_kor' => trim($affiliation_kor),
-                    'department' => trim($department),
+                    // 'department' => trim($department),
                     'org_nametag' => trim($org_nametag),
                     'phone' => preg_replace("/\s+/", "", $phone),
                     'email' => preg_replace("/\s+/", "", $email),
@@ -531,21 +531,22 @@ class Admin extends CI_Controller
                     'deposit' => $deposit,
                     'memo' => $memo,
                     'attendance_type' => $attendance_type,
-                    'specialty_number' => $specialty_number,
+                    // 'specialty_number' => $specialty_number,
                     'first_name' => $first_name,
                     'last_name' => $last_name,
                     'nation' => $nation,
-                    'remark1' => $remark1,
-                    'remark2' => $remark2,
-                    'remark3' => $remark3,
-                    'remark4' => $remark4,
-                    'special_request_food' => $special_request_food,
-                    'deposit_method' => $deposit_method,
+                    // 'remark1' => $remark1,
+                    // 'remark2' => $remark2,
+                    // 'remark3' => $remark3,
+                    // 'remark4' => $remark4,
+                    // 'special_request_food' => $special_request_food,
+                    // 'deposit_method' => $deposit_method,
                     'onsite_reg' => $onsite_reg,
-                    'etc4' => $etc4
+                    // 'etc4' => $etc4
                 );
                 //                var_dump($info);
                 $this->users->add_onsite_user($info);
+                $this->load->view('admin/add_success');
             }
         }
         $this->load->view('footer');
@@ -1332,7 +1333,7 @@ class Admin extends CI_Controller
         }
         $this->load->view('footer');
     }
-
+    // !!! 개별 문자 발송
     public function send_msm()
     {
         if (!isset($this->session->admin_data['logged_in']))
@@ -1352,7 +1353,7 @@ class Admin extends CI_Controller
             $this->load->view('admin/send_msm', $data);
         }
     }
-
+    // !!! 전체 문자 발송
     public function send_all_msm()
     {
         if (!isset($this->session->admin_data['logged_in']))
@@ -1383,7 +1384,7 @@ class Admin extends CI_Controller
             }
         }
     }
-
+    // !!! 전체 메일 발송
     public function send_all_mail()
     {
         if (!isset($this->session->admin_data['logged_in']))
@@ -1410,14 +1411,14 @@ class Admin extends CI_Controller
                             'CATEGORY_D_1'      => 'QrSystem',
                             'CATEGORY_D_2'      => 'iscp',
                             'CATEGORY_D_3'      => '231123',
-                            'SEND_ADDRESS'      => 'iscp@into-on.com',
-                            'SEND_NAME'         => 'ISCP 2023',
+                            'SEND_ADDRESS'      => 'icomes@into-on.com',
+                            'SEND_NAME'         => 'ICOMES 2024',
                             'RECV_ADDRESS'      =>  $users['email'],
                             'RECV_NAME'         =>  $users['first_name'] . ' ' . $users['last_name'],
-                            'REPLY_ADDRESS'     => 'iscp@into-on.com',
-                            'REPLY_NAME'        => 'ISCP 2023',
-                            'EMAIL_SUBJECT'     => '[ISCP 2023] Registration QR and On-Site Attendance Details(Nov. 23rd – 25th, Conrad Seoul, Republic of Korea)',
-                            'EMAIL_ALTBODY'     => 'ISCP 2023',
+                            'REPLY_ADDRESS'     => 'icomes@into-on.com',
+                            'REPLY_NAME'        => 'ICOMES 2024',
+                            'EMAIL_SUBJECT'     => '[ICOMES 2024] ',
+                            'EMAIL_ALTBODY'     => 'ICOMES 2024',
                             'EMAIL_TEMPLETE_ID' => 'Qr_iscp_231123',
                             'EMBED_IMAGE_GRID'  => 'null',
                             'INSERT_TEXT_GRID'    => "{" .
@@ -1574,6 +1575,7 @@ class Admin extends CI_Controller
         $this->load->view('admin/loading');
     }
 
+    // !!! 개별 메일 발송
     public function sendMail()
     {
         $userId = $_GET['n'];
@@ -1591,15 +1593,15 @@ class Admin extends CI_Controller
                 'CATEGORY_D_1'      => 'QrSystem',
                 'CATEGORY_D_2'      => 'iscp',
                 'CATEGORY_D_3'      => '231123',
-                'SEND_ADDRESS'      => 'iscp@into-on.com',
-                'SEND_NAME'         => 'ISCP 2023',
+                'SEND_ADDRESS'      => 'icomes@into-on.com',
+                'SEND_NAME'         => 'ICOMES 2024',
                 'RECV_ADDRESS'      => $data['users']['email'],
                 'RECV_NAME'         => $data['users']['first_name'] . ' ' . $data['users']['last_name'],
-                'REPLY_ADDRESS'     => 'iscp@into-on.com',
-                'REPLY_NAME'        => 'ISCP 2023',
-                'EMAIL_SUBJECT'     => 'ISCP 2023',
-                'EMAIL_ALTBODY'     => 'ISCP 2023',
-                'EMAIL_SUBJECT'     => '[ISCP 2023] Registration QR and On-Site Attendance Details(Nov. 23rd – 25th, Conrad Seoul, Republic of Korea)',
+                'REPLY_ADDRESS'     => 'icomes@into-on.com',
+                'REPLY_NAME'        => 'ICOMES 2024',
+                'EMAIL_SUBJECT'     => 'ICOMES 2024',
+                'EMAIL_ALTBODY'     => 'ICOMES 2024',
+                'EMAIL_SUBJECT'     => '[ICOMES 2024] ',
                 'EMAIL_TEMPLETE_ID' => 'Qr_iscp_231123',
                 'EMBED_IMAGE_GRID'  => 'null',
                 'INSERT_TEXT_GRID'    => "{" .
@@ -1622,6 +1624,8 @@ class Admin extends CI_Controller
         $context = stream_context_create($opts);
         $result = file_get_contents('http://www.into-webinar.com/MailSenderApi', false, $context);
     }
+    
+    // !!! 개별 메일 발송
     public function sendEMail()
     {
         $userId = $_GET['n'];
@@ -1640,14 +1644,14 @@ class Admin extends CI_Controller
                 'CATEGORY_D_1'      => 'QrSystem',
                 'CATEGORY_D_2'      => 'iscp',
                 'CATEGORY_D_3'      => '231123',
-                'SEND_ADDRESS'      => 'iscp@into-on.com',
-                'SEND_NAME'         => 'ISCP 2023',
+                'SEND_ADDRESS'      => 'icomes@into-on.com',
+                'SEND_NAME'         => 'ICOMES 2024',
                 'RECV_ADDRESS'      => $email,
                 'RECV_NAME'         => $data['users']['first_name'] . ' ' . $data['users']['last_name'],
-                'REPLY_ADDRESS'     => 'iscp@into-on.comr',
-                'REPLY_NAME'        => 'ISCP 2023',
-                'EMAIL_SUBJECT'     => '[ISCP 2023] Registration QR and On-Site Attendance Details(Nov. 23rd – 25th, Conrad Seoul, Republic of Korea)',
-                'EMAIL_ALTBODY'     => 'ISCP 2023',
+                'REPLY_ADDRESS'     => 'icomes@into-on.com',
+                'REPLY_NAME'        => 'ICOMES 2024',
+                'EMAIL_SUBJECT'     => '[ICOMES 2024] ',
+                'EMAIL_ALTBODY'     => 'ICOMES 2024',
                 'EMAIL_TEMPLETE_ID' => 'Qr_iscp_231123',
                 'EMBED_IMAGE_GRID'  => 'null',
                 'INSERT_TEXT_GRID'    => "{" .
