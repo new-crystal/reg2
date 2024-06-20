@@ -15,18 +15,17 @@
                                 <div class="col-sm-10">
                                     <select class="form-control input-lg m-bot15" name="attendance_type" id="type1">
                                         <option value="" selected="selected">선택사항</option>
-                                        <option value="Participant">Participant</option>
+                                        <option value="Participants">Participants</option>
+                                        <option value="Committee">Committee</option>
                                         <option value="Speaker">Speaker</option>
                                         <option value="Chairperson">Chairperson</option>
-                                        <option value="Moderator">Moderator</option>
                                         <option value="Panel">Panel</option>
-                                        <option value="Preceptor">Preceptor</option>
+                                        <option value="Sponsor">Sponsor</option>
+<!-- 
                                         <option value="Organizer">Organizer</option>
-                                        <!-- <option value="Oral Presenter">Oral Presenter</option> -->
-                                        <!-- <option value="Poster Oral Presenter">Poster Oral Presenter</option> -->
                                         <option value="Satellite Attendee">Satellite Attendee</option>
                                         <option value="Press">Press</option>
-                                        <option value="Exhibitior">Exhibitior</option>
+                                        <option value="Exhibitior">Exhibitior</option> -->
                                     </select>
                                 </div>
                             </div>
@@ -34,17 +33,32 @@
                                 <label class="col-sm-2 control-label">구분 2</label>
                                 <div class="col-sm-10">
                                     <select class="form-control input-lg m-bot15" name="member_type" id="type2">
-                                        <option value="Specialist">Specialist</option>
+                                        <option value="Medical">Medical</option>
+                                        <option value="Food & Nutrition">Food & Nutrition</option>
+                                        <option value="Exercise">Exercise</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group form-inline">
+                                <label class="col-sm-2 control-label">구분 3</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control input-lg m-bot15" name="member_type" id="type2">
+                                        <option value="Certified M.D.">Certified M.D.</option>
                                         <option value="Professor">Professor</option>
                                         <option value="Fellow">Fellow</option>
-                                        <option value="Researcher">Researcher</option>
-                                        <option value="Nurse">Nurse</option>
-                                        <option value="Nutritionist">Nutritionist</option>
-                                        <option value="Pharmacists">Pharmacists</option>
-                                        <option value="Corporate member">Corporate member</option>
-                                        <option value="Military medical officer">Military medical officer</option>
-                                        <option value="Student">Student</option>
                                         <option value="Resident">Resident</option>
+                                        <option value="Researcher">Researcher</option>
+                                        <option value="Nutritionist">Nutritionist</option>
+                                        <option value="Exercise Specialist">Exercise Specialist</option>
+                                        <option value="Nurse">Nurse</option>
+                                        <option value="Pharmacist">Pharmacist</option>
+                                        <option value="Military Surgeon(군의관)">Military Surgeon(군의관)</option>
+                                        <option value="Public Health Doctor">Public Health Doctor</option>
+                                        <option value="Sponsor">Sponsor</option>
+                                        <option value="Student">Student</option>
+                                        <option value="Press">Press</option>
+                                        <option value="Others">Others</option>
                                     </select>
                                 </div>
                             </div>
@@ -54,12 +68,11 @@
                                 <div class="col-sm-10">
                                     <select class="form-control input-lg m-bot15" name="member_status" id="type3">
                                         <option value="0">비회원</option>
-                                        <option value="1">KSCVP</option>
-                                        <option value="2">KSCP</option>
+                                        <option value="1">정회원</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label class="col-sm-2 control-label">면허번호</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="licence_number" id="sn">
@@ -70,7 +83,7 @@
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" name="specialty_number" id="sn">
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">이름 *</label>
@@ -95,7 +108,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">국가</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" type="text" name="nation" id="email">
+                                    <input class="form-control" type="text" name="nation" id="nation">
                                 </div>
                             </div>
 
@@ -107,12 +120,12 @@
                                     <input class="form-control" type="text" name="org_nametag" id="org" placeholder="*필수(네임택)">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label class="col-sm-2 control-label">부서</label>
                                 <div class="col-sm-10">
                                     <input class="form-control" type="text" name="department" id="org" placeholder="*필수(영어)">
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
@@ -122,20 +135,20 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label class="col-sm-2 control-label">결제 방법</label>
                                 <div class="col-sm-10">
                                     <input type="text" size="16" class="form-control" name="deposit_method">
                                 </div>
-                            </div>
-                            <div class="form-group">
+                            </div> -->
+                            <!-- <div class="form-group">
                                 <label class="col-sm-2 control-label">결제수단- 은행 / 계좌번호</label>
                                 <div class="col-sm-10">
                                     <input type="text" size="16" class="form-control" name="etc4">
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label class="col-sm-2 control-label">remark1</label>
                                 <div class="col-sm-10">
                                     <input type="text" size="16" class="form-control" name="remark1">
@@ -164,12 +177,12 @@
                                 <div class="col-sm-10">
                                     <input class="form-control" type="text" name="special_request_food" id="special_request_food">
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">메모</label>
                                 <div class="col-sm-10">
-                                    <input id="dp1" type="text" size="16" class="form-control" name="memo">
+                                    <input  type="text" size="16" class="form-control" name="memo">
                                 </div>
                             </div>
 

@@ -15,6 +15,7 @@ class Entrance extends CI_Model
             return false;
     }
 
+    //!!! 날짜 변경 필요
     public function history_all()
     {
         //
@@ -38,7 +39,7 @@ class Entrance extends CI_Model
                 MIN(time) as mintime_day1,
                 TIMEDIFF(MAX(time), MIN(time)) as duration_day1
             FROM access
-            WHERE DATE(TIME) = '2023-11-23'
+            WHERE DATE(TIME) = '2024-09-05'
             GROUP BY registration_no
         ) b1 ON a.registration_no = b1.qr_registration_no
         LEFT JOIN (
@@ -47,7 +48,7 @@ class Entrance extends CI_Model
                 MIN(time) as mintime_day2,
                 TIMEDIFF(MAX(time), MIN(time)) as duration_day2
             FROM access
-            WHERE DATE(TIME) = '2023-11-24'
+            WHERE DATE(TIME) = '2024-09-06'
             GROUP BY registration_no
         ) b2 ON a.registration_no = b2.qr_registration_no
         LEFT JOIN (
@@ -56,7 +57,7 @@ class Entrance extends CI_Model
                 MIN(time) as mintime_day3,
                 TIMEDIFF(MAX(time), MIN(time)) as duration_day3
             FROM access
-            WHERE DATE(TIME) = '2023-11-25'
+            WHERE DATE(TIME) = '2024-09-07'
             GROUP BY registration_no
         ) b3 ON a.registration_no = b3.qr_registration_no
         ORDER BY a.name_kor ASC;
