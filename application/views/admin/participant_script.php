@@ -24,6 +24,8 @@
 <?php
 
 /**
+ * 참석자 인원 스크립트로 세기
+ * 
  * $on_attendancd_type_1 => day 1 국내 현장등록
  * $on_attendancd_type_1_e => day 1 국외 현장등록
  * $attendancd_type_1 => day 1 국내 사전등록

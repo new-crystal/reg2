@@ -52,15 +52,11 @@ if ($err) {
                 'callback' => '01065492506',
                 'message' =>  '
 안녕하십니까,
-제59차 대한비만학회 춘계학술대회 운영사무국 입니다. 
 
-금일 고객사 점심 식사는 11시 30분부터 아트홀(4층)에서 준비해 드릴 예정이오니, 등록하신 명찰 지참 하시어 식사장소로 이동해 주시면 감사하겠습니다.
-
-감사합니다.
 운영사무국 드림. 
                 
 ', 'refkey' => 'RESTAPITEST1548722798', 'subject' => '[ICOMES 2024]'
-// , 'image_cnt' =>'1', 'images0' => new CURLFILE('assets/images/QR/qrcode_' . $item['registration_no'] . '.jpg')
+, 'image_cnt' =>'1', 'images0' => new CURLFILE('assets/images/QR/qrcode_' . $item['registration_no'] . '.jpg')
             ),
             CURLOPT_HTTPHEADER => array(
                 "Authorization: Basic " . base64_encode("intowebinar:" . $accessToken)

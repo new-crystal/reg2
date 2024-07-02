@@ -61,21 +61,17 @@ if ($err) {
         CURLOPT_POSTFIELDS => array(
             'phone' =>  $phone, 'callback' => '01065492506',
             'message' =>  '
-안녕하세요. 운영사무국 입니다. 청룡의 에너지 가득한 2024년 대만으로 떠나는 Kick off meeting 다가오고 있습니다. 원활한 운영을 위하여 다음과 같은 안내 드리오니, 많은 관심 부탁 드립니다.
+안녕하십니까,
 
-가이드북: https://image.webeon.net/takeda/e-guide_book_240321.pdf
-인천공항 미팅킷 수령장소: https://image.webeon.net/takeda/meeting_point.pdf
-
-D-3! 모두 설레이는 마음으로 잘 준비하시고 대만에서 만나요.
+운영사무국 드림. 
+     
 ', 'refkey' => 'RESTAPITEST1548722798', 'subject' => '[ICOMES 2024]'
-, 'image_cnt' =>
-            '1', '
-             images0' => new CURLFILE('assets/images/555.jpg')
-        ),
-        CURLOPT_HTTPHEADER => array(
-            "Authorization: Basic " . base64_encode("intowebinar:" . $accessToken)
-        ),
-    ));
+, 'image_cnt' =>'1', 'images0' => new CURLFILE('assets/images/QR/qrcode_' . $item['registration_no'] . '.jpg')
+            ),
+            CURLOPT_HTTPHEADER => array(
+                "Authorization: Basic " . base64_encode("intowebinar:" . $accessToken)
+            ),
+        ));
 
     $response = curl_exec($curl);
     $err = curl_error($curl);

@@ -78,9 +78,7 @@ body {
                 echo '<div class="reg_2">' .  $users['registration_no'] . '</div>';
                 echo '</div>';
                 echo '<div class="reg" id="reg">' .  $users['registration_no'] . '</div>';
-                if ($users['nt_info'] != '') {
-                    echo '<div class="org" id="nt_info">' . $users['nt_info'] . '</div>';
-                }
+          
                 /**닉네임 조건식 17글자이상 24글자 미만 */
                 if ($nicknameLength >= 17 && $nicknameLength < 24) {
                     echo '<div class="nick_name lang_en small_nickname" id="first_name">' .  $users['first_name'] . '</div>';

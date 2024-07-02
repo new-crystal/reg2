@@ -84,8 +84,8 @@ table th {
                         echo '<td class="reg_num pointer">' . $item['registration_no'] . '</td>';
                         echo '<td>' . $item['attendance_type'] . '</td>';
                         echo '<td>' . $item['member_type'] . '</td>';
-                        echo '<td class="user_d"> <a href="/admin/user_detail?n=' . $item['registration_no'] . '"target="_top">' . $item['nick_name'] . '</a> </td>';
-                        echo '<td>' . $item['org'] . '</td>';
+                        echo '<td class="user_d"> <a href="/admin/user_detail?n=' . $item['registration_no'] . '"target="_top">' .$item['last_name']. ' ' .$item['first_name'] . '</a> </td>';
+                        echo '<td>' . $item['affiliation'] . '</td>';
                         echo '<td>' . $item['phone'] . '</td>';
                         echo '<td style="text-align: center;">' . $item['mintime_day_1'] . '</td>';
                         echo '<td style="text-align: center;">' . $item['mintime_day_2'] . '</td>';
