@@ -86,7 +86,7 @@
                                     </a>
                                 </li>
                                 <li style="margin-bottom: 2rem;" >
-                                    <a href="/admin/sicem_qr_excel_download" target="_blank">
+                                    <a href="/admin/qr_recode_excel_download" target="_blank">
                                         <i class="icon-download4"></i>
                                         <span>QR 기록 다운로드
                                         </span>

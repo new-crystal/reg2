@@ -260,10 +260,10 @@ class Users extends CI_Model
 	public function get_access_statistics_k_1()
 	{
 		$query = $this->db->query("
-	SELECT *
-	FROM users a
-	WHERE a.qr_chk_day_1 = 'Y' AND a.nation = 'Republic of Korea'
-	ORDER BY a.id ASC
+			SELECT *
+			FROM users a
+			WHERE a.qr_chk_day_1 = 'Y' AND a.nation = 'Republic of Korea'
+			ORDER BY a.id ASC
 	");
 		return $query->result_array();
 	}
@@ -340,7 +340,7 @@ class Users extends CI_Model
 				MIN(time) as mintime_day_1,
 				TIMEDIFF(MAX(time), MIN(time)) as duration
 			FROM access
-			 WHERE DATE(TIME) = '2024-09-05'
+			 WHERE DATE(TIME) = '2024-06-24'
 			GROUP BY registration_no
 		) b ON a.registration_no = b.qr_registration_no
 		LEFT JOIN (

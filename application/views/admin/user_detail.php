@@ -66,26 +66,7 @@ $remark3 = "";
                                     <td colspan="2"><button type="button" class="btn btn-primary" onclick="print('<?php echo $item['registration_no']; ?>')">QR Print</button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th style="background-color: #fb8500">하단 띠지</th>
-                                    <td> <input class="form-control attendance" type="text" value="<?php echo $item['attendance_type']; ?>" name="attendance_type" id="attendance_type">
-                                        <select class="form-control input-lg m-bot15" id="attendance_select">
-                                            <option value="" selected="selected">직접입력</option>
-                                            <option value="Participants">Participants</option>
-                                            <option value="Speaker">Speaker</option>
-                                            <option value="Chairperson">Chairperson</option>
-                                            <option value="Moderator">Moderator</option>
-                                            <option value="Panel">Panel</option>
-                                            <option value="Preceptor">Preceptor</option>
-                                            <option value="Organizer">Organizer</option>
-                                            <option value="Oral Presenter">Oral Presenter</option>
-                                            <option value="Poster Oral Presenter">Poster Oral Presenter</option>
-                                            <option value="Satellite Attendee">Satellite Attendee</option>
-                                            <option value="Press">Press</option>
-                                            <option value="Exhibitior">Exhibitior</option>
-                                        </select>
-                                    </td>
-                                </tr>
+                               
                                 <tr>
                                     <th style="background-color: #fb8500">Remarks 1</th>
                                     <td><input class="form-control" type="text" name="remark1" id="remark1" value="<?php echo $item['remark1']; ?>">
@@ -107,11 +88,11 @@ $remark3 = "";
                                     <td><input class="form-control" type="text" value="<?php echo $item['remark4']; ?>" name="remark4" id="remark4">
                                     </td>
                                 </tr>
-                                <tr>
+                                <!-- <tr>
                                     <th style="background-color: #fb8500">Remarks 5(갈라)</th>
                                     <td><input class="form-control" type="text" value="<?php echo $item['remark5']; ?>" name="remark5" id="remark5">
                                     </td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <th style="background-color: #fb8500">special_request_food</th>
                                     <td>
@@ -165,7 +146,28 @@ $remark3 = "";
 
                                     </td>
                                 </tr>
-
+                                <tr>
+                                    <th>참가자 구분</th>
+                                    <td> <input class="form-control attendance" type="text" value="<?php echo $item['attendance_type']; ?>" name="attendance_type" id="attendance_type">
+                                        <select class="form-control input-lg m-bot15" id="attendance_select">
+                                            <option value="" selected="selected">직접입력</option>
+                                            <option value="Participants">Participants</option>
+                                            <option value="Committee">Committee</option>
+                                            <option value="Speaker">Speaker</option>
+                                            <option value="Panel">Panel</option>
+                                            <option value="Chairperson">Chairperson</option>
+                                            <option value="Sponsor">Sponsor</option>
+                                            <option value="Press">Press</option>
+                                            <!-- <option value="Moderator">Moderator</option> -->
+                                            <!-- <option value="Preceptor">Preceptor</option>
+                                            <option value="Organizer">Organizer</option>
+                                            <option value="Oral Presenter">Oral Presenter</option>
+                                            <option value="Poster Oral Presenter">Poster Oral Presenter</option>
+                                            <option value="Satellite Attendee">Satellite Attendee</option> -->
+                                            <!-- <option value="Exhibitior">Exhibitior</option> -->
+                                        </select>
+                                    </td>
+                                </tr>
 
                                 <tr>
                                     <th>참석자구분</th>
@@ -174,17 +176,20 @@ $remark3 = "";
                                         <select class="form-control input-lg m-bot15" id="member_type_select">
                                             <option value="" selected="selected">직접입력</option>
 
-                                            <option value="Specialist">Specialist</option>
+                                            <option value="Certified M.D.">Certified M.D.</option>
                                             <option value="Professor">Professor</option>
                                             <option value="Fellow">Fellow</option>
-                                            <option value="Researcher">Researcher</option>
-                                            <option value="Nurse">Nurse</option>
-                                            <option value="Nutritionist">Nutritionist</option>
-                                            <option value="Pharmacists">Pharmacists</option>
-                                            <option value="Corporate member">Corporate member</option>
-                                            <option value="Military medical officer">Military medical officer</option>
-                                            <option value="Student">Student</option>
                                             <option value="Resident">Resident</option>
+                                            <option value="Researcher">Researcher</option>
+                                            <option value="Nutritionist">Nutritionist</option>
+                                            <option value="Exercise Specialist">Exercise Specialist</option>
+                                            <option value="Nurse">Nurse</option>
+                                            <option value="Pharmacist">Pharmacist</option>
+                                            <option value="Military Surgeon(군의관)">Military Surgeon(군의관)</option>
+                                            <option value="Public Health Doctor">Public Health Doctor</option>
+                                            <option value="Sponsor">Sponsor</option>
+                                            <option value="Student">Student</option>
+                                            <option value="Press">Press</option>
                                         </select>
                                     </td>
                                 </tr>

@@ -477,23 +477,23 @@ class Access extends CI_Controller
                 );
 
 
-                /** day1 ~ day3 access 기록*/
+                /** !!! day1 ~ day3 access 기록*/
                 $qr_time = date("Y-m-d");
-                if ($qr_time == '2023-11-23') {
+                if ($qr_time == '2024-09-05') {
                     $infoqr = array(
                         'qr_chk_day_1' => 'Y',
                         'qr_chk' => 'Y'
                     );
                     $this->users->update_qr_status($infoqr, $where);
                 }
-                if ($qr_time == '2023-11-24') {
+                if ($qr_time == '2024-09-06') {
                     $infoqr = array(
                         'qr_chk_day_2' =>  'Y',
                         'qr_chk' => 'Y'
                     );
                     $this->users->update_qr_status($infoqr, $where);
                 }
-                if ($qr_time == '2023-11-25') {
+                if ($qr_time == '2024-09-07') {
                     $infoqr = array(
                         'qr_chk_day_3' =>  'Y',
                         'qr_chk' => 'Y'
@@ -724,23 +724,23 @@ class Access extends CI_Controller
                     'registration_no' => $qrcode
                 );
 
-                /** day1 ~ day3 access 기록*/
+                /** day1 ~ day3 access 기록 !!! */
                 $qr_time = date("Y-m-d");
-                if ($qr_time == '2023-11-23') {
+                if ($qr_time == '2024-09-05') {
                     $infoqr = array(
                         'qr_chk_day_1' => 'Y',
                         'qr_chk' => 'Y'
                     );
                     $this->users->update_qr_status($infoqr, $where);
                 }
-                if ($qr_time == '2023-11-24') {
+                if ($qr_time == '2024-09-06') {
                     $infoqr = array(
                         'qr_chk_day_2' =>  'Y',
                         'qr_chk' => 'Y'
                     );
                     $this->users->update_qr_status($infoqr, $where);
                 }
-                if ($qr_time == '2023-11-25') {
+                if ($qr_time == '2024-09-07') {
                     $infoqr = array(
                         'qr_chk_day_3' =>  'Y',
                         'qr_chk' => 'Y'

@@ -139,8 +139,8 @@ $en_name = $firstName . " " . $lastName
                             </tr>
                             <tr>
                                 <th>참가자 유형</th>
-                                <td id="member_type" class="qr_text">
-                                    <?php if (isset($user['member_type'])) echo $user['member_type']; ?>
+                                <td id="attendance_type" class="qr_text">
+                                    <?php if (isset($user['attendance_type'])) echo $user['attendance_type']; ?>
                                 </td>
                             </tr>
                             <tr>
@@ -154,11 +154,6 @@ $en_name = $firstName . " " . $lastName
                                 <col width="30%" />
                                 <col />
                             </colgroup>
-                            <tr>
-                                <th class="memoHeader">하단택</th>
-                                <td id="attendance_type" class="qr_text">
-                                    <?php if (isset($user['attendance_type'])) echo $user['attendance_type'] ?></td>
-                            </tr>
                             <tr>
                                 <th class="memoHeader">Special meal request</th>
                                 <td id="special_request_food" class="qr_text">
@@ -188,13 +183,6 @@ $en_name = $firstName . " " . $lastName
                                 <th class="memoHeader">remark4</th>
                                 <td id="remark4" class="qr_text">
                                     <?php if (isset($user['remark4'])) echo $user['remark4'] ?>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <th class="memoHeader">remark5(갈라)</th>
-                                <td id="remark5" class="qr_text">
-                                    <?php if (isset($user['remark5'])) echo $user['remark5'] ?>
                                 </td>
                             </tr>
                             <tr>
@@ -248,11 +236,8 @@ $en_name = $firstName . " " . $lastName
     const remark2 = document.querySelector("#remark2")
     const remark3 = document.querySelector("#remark3")
     const remark4 = document.querySelector("#remark4")
-    const remark5 = document.querySelector("#remark5")
+    // const remark5 = document.querySelector("#remark5")
     const special_request_food = document.querySelector("#special_request_food")
-    // const remark6 = document.querySelector("#remark6")
-    // const remark7 = document.querySelector("#remark7")
-    // const remark8 = document.querySelector("#remark8")
     const memoBtn = document.querySelector("#memo_btn")
     const content = document.querySelector(".content")
     const notice = document.querySelector("#notice")
@@ -346,9 +331,9 @@ $en_name = $firstName . " " . $lastName
                     attendance_type.innerText = htmlDocument.querySelector("#attendance_type").innerText.replace(
                             /<br\s*\/?>/gi, "")
                         .trim();
-                    category.innerText = htmlDocument.querySelector("#member_type").innerText.replace(
-                            /<br\s*\/?>/gi, "")
-                        .trim();
+                    // category.innerText = htmlDocument.querySelector("#member_type").innerText.replace(
+                    //         /<br\s*\/?>/gi, "")
+                    //     .trim();
                     fee.innerText = htmlDocument.querySelector("#fee").innerText.replace(/<br\s*\/?>/gi, "")
                         .trim();
                     special_request_food.innerText = htmlDocument.querySelector("#special_request_food").innerText
@@ -366,8 +351,8 @@ $en_name = $firstName . " " . $lastName
                         .trim();
                     remark4.innerText = htmlDocument.querySelector("#remark4").innerText.replace(/<br\s*\/?>/gi, "")
                         .trim();
-                    remark5.innerText = htmlDocument.querySelector("#remark5").innerText.replace(/<br\s*\/?>/gi, "")
-                        .trim();
+                    // remark5.innerText = htmlDocument.querySelector("#remark5").innerText.replace(/<br\s*\/?>/gi, "")
+                    //     .trim();
                     notice.innerHTML = htmlDocument.querySelector("#notice").innerHTML
                 } else {
                     number.innerText = qrvalue
@@ -389,7 +374,7 @@ $en_name = $firstName . " " . $lastName
                 changeBackgroundColorIfNotEmpty(remark3);
                 changeBackgroundColorIfNotEmpty(remark4);
                 changeBackgroundColorIfNotEmpty(special_request_food);
-                changeBackgroundColorIfNotEmpty(remark5);
+                // changeBackgroundColorIfNotEmpty(remark5);
 
             })
             .catch(error => {
