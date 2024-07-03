@@ -56,6 +56,13 @@
                                         </span>
                                     </a>
                                 </li>
+                                <li style="margin-bottom: 2rem;" >
+                                    <a href="/event/excel_download_event" target="_blank">
+                                        <i class="icon-download4"></i>
+                                        <span>QR 기록 다운로드
+                                        </span>
+                                    </a>
+                                </li>
                                 </li>
                                 <!-- /main -->
                             </ul>

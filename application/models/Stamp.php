@@ -5,7 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Stamp extends CI_Model
 {
     private $stamp = "stamp";
-
+    private $users = "users";
   
 
 	public function get_stamp_counts()
@@ -50,4 +50,11 @@ class Stamp extends CI_Model
                     ");
                     return $query -> row_array();
     }
+
+    public function update_event($info, $where)
+	{
+		$this->db->where($where);
+		$ret = $this->db->update($this->users, $info);
+		return $ret;
+	}
 }

@@ -60,19 +60,9 @@
 
 <div class="page-container">
     <div class="page-content">
-        <!-- <div class="page-header">
-            <div class="page-header-content">
-                <div class="page-title flex items-center justify-between">
-                    <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">QR code 등록</span>
-                    </h4>
-                </div>
-            </div>
-        </div> -->
+
         <div class="content">
             <div class="panel panel-flat">
-                <div>
-                    <button class="w-[150px] h-[40px] bg-slate-300 mt-20 hover:bg-slate-400 active:bg-slate-500" type="button" id="open">새창</button>
-                </div>
                 <form action="/event/access" id="qr_form" name="qr_form" class="w-full h-[88vh] flex flex-col items-center justify-center bg-slate-50">
 
                     <div class="w-2/5 flex flex-col items-center justify-center">
@@ -85,77 +75,98 @@
                     </div>
 
                     <!-- <div class="w-3/5 h-[1px] bg-slate-400 translate-y-24"></div> -->
-                    <div class="w-full bg-white flex items-left justify-around">
-                        <table class="qr-info-table mb-80 w-2/5" id="qrTable">
-                            <colgroup>
-                                <col width="30%" />
-                                <col />
-                            </colgroup>
-                            <tr>
-                                <th>등록번호</th>
-                                <td id="number" class="qr_text">
-                                    <?php if (isset($user['registration_no'])) echo $user['registration_no'] ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>성함</th>
-                                <td id="en_name" class="qr_text">
-                                    <?php echo isset($user['nickname']) ? $user['nickname'] : ''; ?>
-                                </td>
-                            </tr>
-        
-                            <tr>
-                                <th>email</th>
-                                <td id="attendance_type" class="qr_text">
-                                    <?php if (isset($user['email'])) echo $user['email']; ?>
-                                </td>
-                            </tr>
+                    <div class="w-full bg-white flex flex-col items-left justify-around">
+                        <div class="flex items-center justify-around">
+                            <table class="qr-info-table mb-80 w-2/5" id="qrTable">
+                                <colgroup>
+                                    <col width="30%" />
+                                    <col />
+                                </colgroup>
+                                <tr>
+                                    <th>event 1 수령 유무</th>
+                                    <td id="event_1" class="qr_text">
+                                        <?php echo isset($event['event_1']) ? $event['event_1'] : ''; ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>event 2 수령 유무</th>
+                                    <td id="event_2" class="qr_text">
+                                        <?php echo isset($event['event_2']) ? $event['event_2'] : ''; ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>성함</th>
+                                    <td id="en_name" class="qr_text">
+                                        <?php echo isset($user['nickname']) ? $user['nickname'] : ''; ?>
+                                    </td>
+                                </tr>
+            
+                                <tr>
+                                    <th>email</th>
+                                    <td id="email" class="qr_text">
+                                        <?php if (isset($user['email'])) echo $user['email']; ?>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Event Memo</th>
+                                    <td id="event_memo" class="qr_text">
+                                        <?php if (isset($event['event_memo'])) echo $event['event_memo']; ?>
+                                    </td>
+                                </tr>
 
-                        </table>
-                        <table class="qr-info-table mb-80 w-2/5" id="qrTable">
-                            <colgroup>
-                                <col width="30%" />
-                                <col />
-                            </colgroup>
-                            <tr>
-                                <th class="memoHeader">Total Count</th>
-                                <td id="total_count" class="qr_text">
-                                    <?php if (isset($user['total_count'])) echo $user['total_count'] ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="memoHeader">Diamond</th>
-                                <td id="diamond_count" class="qr_text">
-                                    <?php if (isset($user['diamond_count'])) echo $user['diamond_count'] ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="memoHeader">Platinum</th>
-                                <td id="platinum_count" class="qr_text">
-                                    <?php if (isset($user['platinum_count'])) echo $user['platinum_count'] ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="memoHeader">Gold</th>
-                                <td id="gold_count" class="qr_text">
-                                    <?php if (isset($user['gold_count'])) echo $user['gold_count'] ?>
-                                </td>
-                            </tr>
 
-                            <tr>
-                                <th class="memoHeader">Silver</th>
-                                <td id="silver_count" class="qr_text">
-                                    <?php if (isset($user['silver_count'])) echo $user['silver_count'] ?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="memoHeader">Bronze</th>
-                                <td id="bronze_count" class="qr_text">
-                                    <?php if (isset($user['bronze_count'])) echo $user['bronze_count'] ?>
-                                </td>
-                            </tr>
-                            
-                        </table>
+                            </table>
+                            <table class="qr-info-table mb-80 w-2/5" id="qrTable">
+                                <colgroup>
+                                    <col width="30%" />
+                                    <col />
+                                </colgroup>
+                                <tr>
+                                    <th class="memoHeader">Total Count</th>
+                                    <td id="total_count" class="qr_text">
+                                        <?php if (isset($user['total_count'])) echo $user['total_count'] ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="memoHeader">Diamond</th>
+                                    <td id="diamond_count" class="qr_text">
+                                        <?php if (isset($user['diamond_count'])) echo $user['diamond_count'] ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="memoHeader">Platinum</th>
+                                    <td id="platinum_count" class="qr_text">
+                                        <?php if (isset($user['platinum_count'])) echo $user['platinum_count'] ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="memoHeader">Gold</th>
+                                    <td id="gold_count" class="qr_text">
+                                        <?php if (isset($user['gold_count'])) echo $user['gold_count'] ?>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th class="memoHeader">Silver</th>
+                                    <td id="silver_count" class="qr_text">
+                                        <?php if (isset($user['silver_count'])) echo $user['silver_count'] ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="memoHeader">Bronze</th>
+                                    <td id="bronze_count" class="qr_text">
+                                        <?php if (isset($user['bronze_count'])) echo $user['bronze_count'] ?>
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </div>
+                       
+                        <div class="flex items-center justify-around *:w-[250px] *:h-[50px] *:border">
+                            <button class="hover:bg-gray-200 event_btn" type="button" data-id="1">Event 1 상품 수령 완료</button>
+                            <button class="hover:bg-gray-200 event_btn" type="button" data-id="2">Event 2 상품 수령 완료</button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -170,3 +181,40 @@
 <!-- /page content -->
 
 </div>
+
+<script>
+    const eventBtnList = document.querySelectorAll('.event_btn');
+    const memo_btn = document.querySelector('#memo_btn');
+
+    eventBtnList.forEach((btn)=>{
+        btn.addEventListener("click", (e)=>{
+            if(window.location.search !== ""){
+                if(window.confirm(`event ${e.target.dataset.id} 상품 수령을 완료로 변경하시겠습니까`)){
+                    window.location.href = `/event/update_gift?num=${e.target.dataset.id}&qrcode=${window.location.search.split("=")[1]}`;
+                }
+            }else{
+                alert('QR 코드를 입력해주세요!')
+            }
+        })
+    })
+
+    memo_btn.addEventListener('click', (e)=>{
+        if(window.location.search !== ""){
+            const registerNum = window.location.search?.split("=")[1];
+            const url = `/event/add_memo?n=${registerNum}`;
+            if (registerNum) {
+                const memoWindow = window.open(url, "Certificate", "width=500, height=300, top=30, left=30");
+
+                window.addEventListener("message", (event) => {
+                    if (event.source === memoWindow) {
+                        const childInputValue = event.data;
+                        memo.innerText = childInputValue;
+                    }
+                });
+            }
+        }else{
+            alert('QR 코드를 입력해주세요!')
+        }
+       
+    })
+</script>
