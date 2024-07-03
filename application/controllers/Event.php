@@ -10,6 +10,7 @@ class Event extends CI_Controller{
         date_default_timezone_set('Asia/Seoul');
         $this->load->model('stamp');
         $this->load->model('users');
+        $this->load->library("excel");
         ini_set('memory_limit', '-1');
     }
 
@@ -37,15 +38,64 @@ class Event extends CI_Controller{
         if (!isset($this->session->admin_data['logged_in']))
             $this->load->view('admin/login');
         else {
-            // 
+            $qrcode = isset($_GET['n']) ? $_GET['n'] : null;
+            $where = array(
+                'registration_no' => $qrcode 
+            );
             $data['primary_menu'] = 'users';
-            $data['users'] = $this->users->get_stamp_count();
+            $data['item'] = $this->users->get_user($where);
 
             $this->load->view('stamp/left_side.php', $data);
             $this->load->view('stamp/user_detail', $data);
         }
         $this->load->view('footer');
     }
+
+    public function update_user()
+    {
+
+        $this->load->view('admin/header');
+
+        if (!isset($this->session->admin_data['logged_in']))
+            $this->load->view('admin/login');
+        else {
+            $data['primary_menu'] = 'users';
+            $userId = $_GET['registration_no'];
+            $where = array(
+                'registration_no' => $userId
+            );
+            $this->load->view('stamp/left_side.php', $data);
+                // $event_1 = $this->input->post('event_1');
+                // $event_2 = $this->input->post('event_2');
+                $event_1 =  $_GET['event_1'];
+                $event_2 =  $_GET['event_2'];
+
+                if($event_1 == 'Y'){
+                    $event_1_time = date("Y-m-d H:i:s");
+                }else{
+                    $event_1_time = NULL;
+                }
+                if($event_2 == 'Y'){
+                    $event_2_time = date("Y-m-d H:i:s");
+                }else{
+                    $event_2_time = NULL;
+                }
+
+                $info = array(
+                    'event_1' => $event_1,
+                    'event_2' => $event_2,
+                    'event_1_time' => $event_1_time,
+                    'event_2_time' => $event_2_time
+                );
+
+                $this->users->update_user($info, $where);
+
+                $this->load->view('stamp/user_update_success');
+            
+        }
+        $this->load->view('footer');
+    }
+
 
     public function access()
     {
@@ -58,26 +108,125 @@ class Event extends CI_Controller{
             $this->load->view('stamp/left_side.php', $data);
 
             if ($qrcode) {
-
-                //[sujeong] stamp tour 시간 적어야 할 듯 ?
-                $time = date("Y-m-d H:i:s");
-                $where = array(
-                    'registration_no' => $qrcode
-                );
-
-                $zero_number = str_replace('ICOMES2024-','', $qrcode);
-                $number = str_replace(0,'',$zero_number);
-                //입장시간, 퇴장시간 기록
-                // $this->entrance->record($info);
-
-                $data['user'] = $this->stamp->get_access($number);
-                $this->load->view('stamp/access', $data);
+                //qrcode 유효성 확인
+                $substring = 'ICOMES2024-';
+                $pos = stripos($qrcode, $substring);
+                echo $pos;
+                if ($pos !== false){
+                    $zero_number = str_replace('ICOMES2024-','', $qrcode);
+                    $number = str_replace(0,'',$zero_number);
+                    //입장시간, 퇴장시간 기록
+                    // $this->entrance->record($info);
+                    $where = array(
+                        'registration_no' => $qrcode
+                    );
+    
+                    $data['user'] = $this->stamp->get_access($number);
+                    $data['event'] = $this->users-> get_user($where);
+    
+                    $this->load->view('stamp/access', $data);
+                }else{
+                    $this->load->view('stamp/fail', $data);
+                }
             } else {
                 $this->load->view('stamp/access');
             }
         }
         $this->load->view('footer');
     }
+
+    public function add_memo()
+    {
+        
+        $userId = $_GET['n'];
+        $where = array(
+            'registration_no' => $userId
+        );
+
+        $data['item'] = $this->users->get_user($where);
+        $this->load->view('stamp/memo', $data);
+        
+        $memo = $this->input->post('memo');
+        if ($memo === "") {
+            $info = array("event_memo" => null); // 메모 필드를 null로 설정하여 삭제
+        } else {
+            $info = array("event_memo" => $memo);
+        }
+        $this->stamp->update_event($info, $where);
+    }
+
+    public function update_gift()
+    {
+        $qrcode = isset($_GET['qrcode']) ? $_GET['qrcode'] : null;
+        $number = isset($_GET['num']) ? $_GET['num'] : null;
+        $time = date("Y-m-d H:i:s");
+        $where = array(
+            'registration_no' => $qrcode
+        );
+
+        if($number == 1){
+            $info = array(
+                'event_1' => 'Y',
+                'event_1_time' => $time
+            );
+        }else if($number == 2){
+            $info = array(
+                'event_2' => 'Y',
+                'event_2_time' => $time
+            );
+        }
+
+        $data['qr_code'] =  $qrcode;
+        $this->stamp->update_event($info, $where);
+        $this->load->view('stamp/success', $data);
+    }
+
+    public function excel_download_event()
+    {
+        $object = new PHPExcel();
+        $object->setActiveSheetIndex(0);
+    
+        $table_columns = array("등록번호", "이름", "이메일", "전화번호", "Event 1 수령 유무", "Event 1 수령 시간", "Event 2 수령 유무", "Event 2 수령 시간", "Event 메모");
+    
+        $column = 0;
+    
+        foreach ($table_columns as $field) {
+            $object->getActiveSheet()->setCellValueByColumnAndRow($column, 1, $field);
+            $column++;
+        }
+    
+        $excel_row = 2;
+    
+        $list = $this->users->get_users();
+    
+        foreach ($list as $row) {
+            $object->getActiveSheet()->setCellValueByColumnAndRow(0, $excel_row, $row['registration_no']);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(1, $excel_row, $row['last_name']." " .$row['first_name']);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row['email']);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, $row['phone']);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, $row['event_1']);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, $row['event_1_time']);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(6, $excel_row, $row['event_2']);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(7, $excel_row, $row['event_2_time']);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(8, $excel_row, $row['event_memo']);
+    
+            $excel_row++;
+        }
+    
+        // 출력 버퍼 정리
+        ob_end_clean();
+    
+        // HTTP 헤더 설정
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="Event.xlsx"');
+        header('Cache-Control: max-age=0');
+    
+        // 파일 작성 및 출력
+        $object_writer = PHPExcel_IOFactory::createWriter($object, 'Excel2007');
+        $object_writer->save('php://output');
+    }
+
+    
   
 }
 
