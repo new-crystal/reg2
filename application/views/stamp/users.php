@@ -29,6 +29,9 @@
         left: 52%;
         transform: translate(-50%, -50%);
     }
+    .reg_num{
+        cursor: pointer;
+    }
 </style>
 <!-- Main content -->
 <div class="content-wrapper">
@@ -75,7 +78,6 @@
             <table class="table datatable-basic">
                 <thead>
                     <tr>
-                        <th style="width: 30px;"></th>
                         <th>Registration No.</th>
                         <th>참가유형</th>
                         <th>Full Name</th>
@@ -83,6 +85,8 @@
                         <th>소속</th>
                         <th>Phone Number</th>
                         <th>ID(E-mail)</th>
+                        <th>Event 1 수령 유무</th>
+                        <th>Event 2 수령 유무</th>
                         <th>메모</th>
                     </tr>
                 </thead>
@@ -96,14 +100,15 @@
                         } else {
                             echo '<tr>';
                         }
-                        echo '<td style="text-align: center;"><input type="checkbox" name="depositChk" class="depositChk" value="' .  $item['registration_no'] . '"></td>';
-                        echo '<td>' . $item['registration_no'] . '</td>';
+                        echo '<td class="reg_num pointer">' . $item['registration_no'] . '</td>';
                         echo '<td>' . $item['attendance_type'] . '</td>';
                         echo '<td>' . $item['first_name']  . " " . $item['last_name'] .  '</td>';
                         echo '<td>' . $item['name_kor'] . '</td>';
                         echo '<td>' . $item['org_nametag'] . '</td>';
                         echo '<td>' . $item['phone'] . '</td>';
                         echo '<td class="user_d"><a href="/event/user_detail?n=' . $item['registration_no'] . '" target="_self">' . $item['email'] . '</a></td>';
+                        echo '<td>' . $item['event_1'] . '</td>';
+                        echo '<td>' . $item['event_2'] . '</td>';
                         if ($item['memo'] != "" && $item['memo'] != 'null') {
                             echo '<td>';
                             echo '<button class="btn qr_btn memo bg-indigo-800" onclick="onClickMemo(\'' . $item['registration_no'] . '\')" data-id="' . $item['registration_no'] . '" style="padding:8px;">메모</button>';
@@ -112,6 +117,7 @@
                             echo '<button class="btn qr_btn memo border-indigo-800 text-indigo-800 bg-white" onclick="onClickMemo(\'' . $item['registration_no'] . '\')" data-id="' . $item['registration_no'] . '"style="padding:8px;">메모</button>';
                         }
                         echo '</td>';
+
                         echo '</tr>';
                     }
                     ?>
@@ -143,6 +149,14 @@
     //            }
     //        })
 
+    const regNumList = document.querySelectorAll(".reg_num");
+
+    regNumList.forEach((num)=>{
+        num.addEventListener("click", ()=>{
+            copy(num.innerText)
+        })
+    })
+
     function copy(text) {
         if (navigator.clipboard) {
             navigator.clipboard
@@ -157,7 +171,7 @@
     }
 
     function onClickMemo(id) {
-        const url = `/admin/memo?n=${id}`;
+        const url = `/event/add_memo?n=${id}`;
         window.open(url, "Certificate", "width=500, height=300, top=30, left=30");
     }
 

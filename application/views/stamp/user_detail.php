@@ -63,7 +63,7 @@
                                 </tr>
                                 <tr>
                                     <th>Event 1 수령 시간</th>
-                                    <td> <input id="dp1" type="text" value="<?php echo $item['event_1_time']; ?>" size="16" class="form-control yn" name="event_1_time">
+                                    <td> <input id="dp1" type="text" value="<?php echo $item['event_1_time']; ?>" size="16" class="form-control yn" name="event_1_time" readonly>
 
                                     </td>
                                 </tr>
@@ -80,7 +80,13 @@
                                 </tr>
                                 <tr>
                                     <th>Event 2 수령 시간</th>
-                                    <td> <input id="dp1" type="text" value="<?php echo $item['event_2_time']; ?>" size="16" class="form-control yn" name="event_2_time">
+                                    <td> <input id="dp1" type="text" value="<?php echo $item['event_2_time']; ?>" size="16" class="form-control yn" name="event_2_time" readonly>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Event 메모</th>
+                                    <td> <input id="dp1" type="text" value="<?php echo $item['event_memo']; ?>" size="16" class="form-control yn" name="event_memo">
 
                                     </td>
                                 </tr>
@@ -121,16 +127,10 @@
 
                                 <tr>
                                     <th>Affiliation</th>
-                                    <td style="background-color:#fafafa;"> <input class="form-control" type="text" value="<?php echo $item['affiliation']; ?>" name="affiliation" id="org" disabled>
+                                    <td style="background-color:#fafafa;"> <input class="form-control" type="text" value="<?php echo $item['org_nametag']; ?>" name="affiliation" id="org" disabled>
 
                                     </td>
-                                </tr>
-                                <tr>
-                                    <th>네임택용 소속</th>
-                                    <td> <input class="form-control" type="text" value="<?php echo $item['org_nametag']; ?>" name="org_nametag" id="org_nametag">
-                                    </td>
-                                </tr>
-                                
+                                </tr> 
                                 <tr>
                                     <th>연락처</th>
                                     <td>

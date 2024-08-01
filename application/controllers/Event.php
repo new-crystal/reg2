@@ -65,28 +65,27 @@ class Event extends CI_Controller{
                 'registration_no' => $userId
             );
             $this->load->view('stamp/left_side.php', $data);
-                // $event_1 = $this->input->post('event_1');
-                // $event_2 = $this->input->post('event_2');
+                
                 $event_1 =  $_GET['event_1'];
                 $event_2 =  $_GET['event_2'];
-
-                if($event_1 == 'Y'){
-                    $event_1_time = date("Y-m-d H:i:s");
-                }else{
-                    $event_1_time = NULL;
-                }
-                if($event_2 == 'Y'){
-                    $event_2_time = date("Y-m-d H:i:s");
-                }else{
-                    $event_2_time = NULL;
-                }
+                $event_memo =  $_GET['event_memo'];
 
                 $info = array(
                     'event_1' => $event_1,
                     'event_2' => $event_2,
-                    'event_1_time' => $event_1_time,
-                    'event_2_time' => $event_2_time
+                    'event_memo' => $event_memo
                 );
+
+                if($event_1 == 'Y'){
+                    $event_1_time = date("Y-m-d H:i:s");
+                    
+                    $info['event_1_time'] = $event_1_time;
+                }
+                if($event_2 == 'Y'){
+                    $event_2_time = date("Y-m-d H:i:s");
+
+                    $info['event_2_time'] = $event_2_time;
+                }
 
                 $this->users->update_user($info, $where);
 
@@ -111,7 +110,7 @@ class Event extends CI_Controller{
                 //qrcode 유효성 확인
                 $substring = 'ICOMES2024-';
                 $pos = stripos($qrcode, $substring);
-                echo $pos;
+                
                 if ($pos !== false){
                     $zero_number = str_replace('ICOMES2024-','', $qrcode);
                     $number = str_replace(0,'',$zero_number);
@@ -120,10 +119,11 @@ class Event extends CI_Controller{
                     $where = array(
                         'registration_no' => $qrcode
                     );
-    
+                    echo $zero_number;
+                    echo $number;
                     $data['user'] = $this->stamp->get_access($number);
                     $data['event'] = $this->users-> get_user($where);
-    
+                    
                     $this->load->view('stamp/access', $data);
                 }else{
                     $this->load->view('stamp/fail', $data);

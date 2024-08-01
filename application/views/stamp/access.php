@@ -77,7 +77,7 @@
                     <!-- <div class="w-3/5 h-[1px] bg-slate-400 translate-y-24"></div> -->
                     <div class="w-full bg-white flex flex-col items-left justify-around">
                         <div class="flex items-center justify-around">
-                            <table class="qr-info-table mb-80 w-2/5" id="qrTable">
+                            <table class="qr-info-table w-2/5" id="qrTable">
                                 <colgroup>
                                     <col width="30%" />
                                     <col />
@@ -114,55 +114,75 @@
                                         <?php if (isset($event['event_memo'])) echo $event['event_memo']; ?>
                                     </td>
                                 </tr>
-
-
                             </table>
-                            <table class="qr-info-table mb-80 w-2/5" id="qrTable">
+
+                          
+
+                            <table class="qr-info-table w-2/5" id="qrTable">
                                 <colgroup>
                                     <col width="30%" />
                                     <col />
                                 </colgroup>
                                 <tr>
-                                    <th class="memoHeader">Total Count</th>
+                                    <th class="memoHeader">Total Count(25)</th>
                                     <td id="total_count" class="qr_text">
                                         <?php if (isset($user['total_count'])) echo $user['total_count'] ?>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th class="memoHeader">Diamond</th>
+                                    <th class="memoHeader">Jomes(1)</th>
+                                    <td id="jomes_count" class="qr_text">
+                                        <?php if (isset($user['jomes_count'])) echo $user['jomes_count'] ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="memoHeader">Diamond(1)</th>
                                     <td id="diamond_count" class="qr_text">
                                         <?php if (isset($user['diamond_count'])) echo $user['diamond_count'] ?>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th class="memoHeader">Platinum</th>
+                                    <th class="memoHeader">Platinum(3)</th>
                                     <td id="platinum_count" class="qr_text">
                                         <?php if (isset($user['platinum_count'])) echo $user['platinum_count'] ?>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th class="memoHeader">Gold</th>
+                                    <th class="memoHeader">Gold(6)</th>
                                     <td id="gold_count" class="qr_text">
                                         <?php if (isset($user['gold_count'])) echo $user['gold_count'] ?>
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <th class="memoHeader">Silver</th>
+                                    <th class="memoHeader">Silver(6) + Bronze(9)</th>
                                     <td id="silver_count" class="qr_text">
-                                        <?php if (isset($user['silver_count'])) echo $user['silver_count'] ?>
+                                        <?php if (isset($user['silver_count']) ||isset($user['bronze_count']) ) echo $user['silver_count'] + $user['bronze_count']; ?>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th class="memoHeader">Bronze</th>
+                                <!-- <tr>
+                                    <th class="memoHeader"></th>
                                     <td id="bronze_count" class="qr_text">
                                         <?php if (isset($user['bronze_count'])) echo $user['bronze_count'] ?>
                                     </td>
-                                </tr>
+                                </tr> -->
                                 
                             </table>
                         </div>
-                       
+                        <table class="qr-info-table mb-80 w-2/5 mx-auto" >
+                                 <colgroup>
+                                    <col width="30%" />
+                                    <col />
+                                </colgroup>
+                                <tr>
+                                    <th class="memoHeader">
+                                        댓글 이벤트 당첨 유무
+                                    </th>
+                                    <td id="is_prize">
+                                    <?php if (isset($user['is_prize']) ||isset($user['is_prize']) ) echo $user['is_prize']; ?>
+                                    </td>
+                                </tr>
+                            </table>
                         <div class="flex items-center justify-around *:w-[250px] *:h-[50px] *:border">
                             <button class="hover:bg-gray-200 event_btn" type="button" data-id="1">Event 1 상품 수령 완료</button>
                             <button class="hover:bg-gray-200 event_btn" type="button" data-id="2">Event 2 상품 수령 완료</button>
@@ -183,8 +203,23 @@
 </div>
 
 <script>
+
     const eventBtnList = document.querySelectorAll('.event_btn');
     const memo_btn = document.querySelector('#memo_btn');
+
+    const event_1 = document.querySelector('#event_1');
+    const event_2 = document.querySelector('#event_2');
+
+    const total = document.querySelector('#total_count');
+    const diamond = document.querySelector('#diamond_count');
+    const platinum = document.querySelector('#platinum_count');
+    const jomes = document.querySelector('#jomes_count');
+    const silver = document.querySelector('#silver_count');
+    const prize = document.querySelector('#is_prize');
+
+    function yellowBackground(target){
+        target.style.background = 'yellow';
+    }
 
     eventBtnList.forEach((btn)=>{
         btn.addEventListener("click", (e)=>{
@@ -215,6 +250,41 @@
         }else{
             alert('QR 코드를 입력해주세요!')
         }
-       
     })
+
+    window.onload = ()=>{
+        const eventsList = [event_1, event_2];
+        const gradeList = [
+            {
+                name:total,
+                count:25
+            },
+            {
+                name:jomes,
+                count:1
+            },
+            {
+                name:diamond,
+                count:1
+            },
+            {
+                name:platinum,
+                count:3
+            },
+            {
+                name:silver,
+                count:5
+            }
+            ]
+
+        eventsList.map((events)=>{
+            events.innerText == "Y" && yellowBackground(events);
+        })
+
+        gradeList.map((grade)=>{
+            grade.name.innerText == grade.count && yellowBackground(grade.name)
+        })
+        
+        prize.innerText == "Y" && yellowBackground(prize);
+    }
 </script>
