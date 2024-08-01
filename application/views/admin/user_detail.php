@@ -241,7 +241,7 @@ $remark3 = "";
                                 </tr>
                                 <tr>
                                     <th>회원유무</th>
-                                    <td> <input class="form-control" type="text" value="<?php echo $item['member_status']; ?>" name="member_status" id="member_status">
+                                    <td> <input class="form-control" type="text" value="<?php echo $item['member']; ?>" name="member_status" id="member_status">
                                     </td>
                                 </tr>
 

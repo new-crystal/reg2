@@ -516,7 +516,7 @@ class Admin extends CI_Controller
                 //            error_log(print_r($name, TRUE), 3, '/tmp/errors.log');
                 $info = array(
                     'name_kor' => preg_replace("/\s+/", "", $name_kor),
-                    'member_status' => preg_replace("/\s+/", "", $member_status),
+                    'member' => preg_replace("/\s+/", "", $member_status),
                     // 'licence_number' => preg_replace("/\s+/", "", $license),
                     'affiliation' => trim($affiliation),
                     'affiliation_kor' => trim($affiliation_kor),
@@ -698,7 +698,7 @@ class Admin extends CI_Controller
                     // 'type' => trim($type),
                     'member_type' => trim($member_type),
                     'fee' => $fee,
-                    'member_status' => $member_status,
+                    'member' => $member_status,
                     // 'time' => $time,
                     // 'uagent' => $uagent,
                     'department' => $department,
@@ -870,7 +870,7 @@ class Admin extends CI_Controller
             $object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row['email']);
             $object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, $contry);
             $object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, $row['nation']);
-            $object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, $row['member_status']);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, $row['member']);
             $object->getActiveSheet()->setCellValueByColumnAndRow(6, $excel_row, $row['last_name'] . ' ' . $row['first_name']);
             $object->getActiveSheet()->setCellValueByColumnAndRow(7, $excel_row, $row['affiliation']);
             $object->getActiveSheet()->setCellValueByColumnAndRow(8, $excel_row, $row['department']);
@@ -1051,7 +1051,7 @@ class Admin extends CI_Controller
             $object->getActiveSheet()->setCellValueByColumnAndRow(2, $excel_row, $row['email']);
             $object->getActiveSheet()->setCellValueByColumnAndRow(3, $excel_row, $contry);
             $object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, $row['nation']);
-            $object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, $row['member_status']);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, $row['member']);
             $object->getActiveSheet()->setCellValueByColumnAndRow(6, $excel_row, $row['last_name'] . ' ' . $row['first_name']);
             $object->getActiveSheet()->setCellValueByColumnAndRow(7, $excel_row, $row['affiliation']);
             $object->getActiveSheet()->setCellValueByColumnAndRow(8, $excel_row, $row['department']);
@@ -1207,7 +1207,7 @@ class Admin extends CI_Controller
             $object->getActiveSheet()->setCellValueByColumnAndRow(4, $excel_row, $row['email']);
             $object->getActiveSheet()->setCellValueByColumnAndRow(5, $excel_row, $row['onsite_reg']);
             $object->getActiveSheet()->setCellValueByColumnAndRow(6, $excel_row, $date);
-            $object->getActiveSheet()->setCellValueByColumnAndRow(7, $excel_row, $row['kes_member_status']);
+            $object->getActiveSheet()->setCellValueByColumnAndRow(7, $excel_row, $row['member']);
             $object->getActiveSheet()->setCellValueByColumnAndRow(8, $excel_row, $row['nation']);
             $object->getActiveSheet()->setCellValueByColumnAndRow(9, $excel_row, $row['first_name'] . ' ' . $row['last_name']);
             $object->getActiveSheet()->setCellValueByColumnAndRow(10, $excel_row, $row['first_name']);
