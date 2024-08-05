@@ -57,6 +57,11 @@
         background-color: #fb8500 !important;
     }
 </style>
+<?php
+
+$qrcode = $_GET["qrcode"] ?? "";
+
+?>
 
 <div class="page-container">
     <div class="page-content">
@@ -82,6 +87,12 @@
                                     <col width="30%" />
                                     <col />
                                 </colgroup>
+                                <tr>
+                                    <th>QR CODE</th>
+                                    <td id="" class="qr_text">
+                                        <?php echo isset($qrcode) ? $qrcode : ''; ?>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <th>event 1 수령 유무</th>
                                     <td id="event_1" class="qr_text">
@@ -179,7 +190,7 @@
                                         댓글 이벤트 당첨 유무
                                     </th>
                                     <td id="is_prize">
-                                    <?php if (isset($user['is_prize']) ||isset($user['is_prize']) ) echo $user['is_prize']; ?>
+                                    <?php if (isset($comment_user['is_prize']) ) echo $comment_user['is_prize']; ?>
                                     </td>
                                 </tr>
                             </table>
@@ -214,6 +225,7 @@
     const diamond = document.querySelector('#diamond_count');
     const platinum = document.querySelector('#platinum_count');
     const jomes = document.querySelector('#jomes_count');
+    const gold = document.querySelector('#gold_count')
     const silver = document.querySelector('#silver_count');
     const prize = document.querySelector('#is_prize');
 
@@ -272,6 +284,10 @@
                 count:3
             },
             {
+                name:gold,
+                count:6
+            },
+            {
                 name:silver,
                 count:5
             }
@@ -282,7 +298,9 @@
         })
 
         gradeList.map((grade)=>{
-            grade.name.innerText == grade.count && yellowBackground(grade.name)
+            if( grade.name.innerText == grade.count || grade.name.innerText >= grade.count){
+                yellowBackground(grade.name)
+            }
         })
         
         prize.innerText == "Y" && yellowBackground(prize);

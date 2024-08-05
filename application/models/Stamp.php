@@ -31,12 +31,11 @@ class Stamp extends CI_Model
 		return $query->result_array();
 	}
 
-    public function get_access($number){
+    public function get_stamp_access($number){
         $query = $this->db->query("
                     SELECT 
                         rr.email, 
                         rr.idx AS member_idx, 
-                        co.is_prize,
                         CONCAT(rr.last_name, ' ', rr.first_name) AS nickname,
                         COUNT(*) AS total_count,
                         SUM(CASE WHEN eb.grade = 0 THEN 1 ELSE 0 END) AS jomes_count,
@@ -47,11 +46,29 @@ class Stamp extends CI_Model
                         SUM(CASE WHEN eb.grade = 5 THEN 1 ELSE 0 END) AS bronze_count
                     FROM icomes2024.e_booth_log AS ebl
                     LEFT JOIN icomes2024.e_booth AS eb ON ebl.booth_idx = eb.idx
-                    LEFT JOIN icomes2024.comments AS co ON co.member_idx = ebl.member_idx
                     LEFT JOIN icomes2024.request_registration AS rr ON rr.register = ebl.member_idx
                     WHERE rr.status IN (2, 5) AND rr.is_deleted = 'N' AND rr.idx = {$number}
-                    GROUP BY rr.email, rr.idx, co.is_prize, CONCAT(rr.last_name, ' ', rr.first_name);
+                    GROUP BY rr.email, rr.idx, CONCAT(rr.last_name, ' ', rr.first_name);
 
+                    ");
+      return $query -> row_array();
+    }
+
+    public function get_comment_access($number){
+        $query = $this->db->query("
+                  	SELECT 
+                        rr.idx, 
+                        co.is_prize
+                    FROM 
+                        icomes2024.request_registration AS rr
+                    LEFT JOIN 
+                        icomes2024.comments co ON rr.register = co.member_idx
+                    WHERE 
+                        rr.status IN (2, 5) 
+                        AND rr.is_deleted = 'N' 
+                        AND rr.idx = {$number}
+                    GROUP BY 
+                        rr.idx, co.is_prize;
                     ");
       return $query -> row_array();
     }

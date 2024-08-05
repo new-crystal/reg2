@@ -340,7 +340,7 @@ class Users extends CI_Model
 				MIN(time) as mintime_day_1,
 				TIMEDIFF(MAX(time), MIN(time)) as duration
 			FROM access
-			 WHERE DATE(TIME) = '2024-06-24'
+			 WHERE DATE(TIME) = '2024-09-05'
 			GROUP BY registration_no
 		) b ON a.registration_no = b.qr_registration_no
 		LEFT JOIN (
