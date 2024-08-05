@@ -113,15 +113,16 @@ class Event extends CI_Controller{
                 
                 if ($pos !== false){
                     $zero_number = str_replace('ICOMES2024-','', $qrcode);
-                    $number = str_replace(0,'',$zero_number);
+                    $number = ltrim($zero_number, 0);
                     //입장시간, 퇴장시간 기록
                     // $this->entrance->record($info);
                     $where = array(
                         'registration_no' => $qrcode
                     );
-                    echo $zero_number;
-                    echo $number;
-                    $data['user'] = $this->stamp->get_access($number);
+
+                    //echo $number;
+                    $data['user'] = $this->stamp->get_stamp_access($number);
+                    $data['comment_user'] = $this->stamp->get_comment_access($number);
                     $data['event'] = $this->users-> get_user($where);
                     
                     $this->load->view('stamp/access', $data);

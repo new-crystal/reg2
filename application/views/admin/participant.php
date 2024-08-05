@@ -44,136 +44,148 @@
 $on_speaker_1 = 0;
 $on_chairperson_1 = 0;
 $on_panel_1 = 0;
-$on_faculty_1 = 0;
+$on_committee_1 = 0;
 $on_organizer_1 = 0;
 $on_preceptor_1 = 0;
 $on_press_1 = 0;
 $on_participant_1 = 0;
-$on_faculty_1 = 0;
+$on_committee_1 = 0;
 $on_others_1 = 0;
+$on_sponsor_1 = 0;
 
 /**day1 korean pre-registration */
 $speaker_1 = 0;
 $chairperson_1 = 0;
 $panel_1 = 0;
-$faculty_1 = 0;
+$committee_1 = 0;
 $organizer_1 = 0;
 $preceptor_1 = 0;
 $press_1 = 0;
 $participant_1 = 0;
 $others_1 = 0;
+$sponsor_1 = 0;
 
 /**day1 eng onsite*/
 $on_speaker_1_e = 0;
 $on_chairperson_1_e = 0;
 $on_panel_1_e = 0;
-$on_faculty_1_e = 0;
+$on_committee_1_e = 0;
 $on_organizer_1_e = 0;
 $on_preceptor_1_e = 0;
 $on_press_1_e = 0;
 $on_participant_1_e = 0;
 $on_others_1_e = 0;
+$on_sponsor_1_e = 0;
 
 /**day1 eng pre-regi*/
 $speaker_1_e = 0;
 $chairperson_1_e = 0;
 $panel_1_e = 0;
-$faculty_1_e = 0;
+$committee_1_e = 0;
 $organizer_1_e = 0;
 $preceptor_1_e = 0;
 $press_1_e = 0;
 $participant_1_e = 0;
 $others_1_e = 0;
+$sponsor_1_e = 0;
 
 /**day 2 korean onsite */
 $on_speaker_2 = 0;
 $on_chairperson_2 = 0;
 $on_panel_2 = 0;
-$on_faculty_2 = 0;
+$on_committee_2 = 0;
 $on_organizer_2 = 0;
 $on_preceptor_2 = 0;
 $on_press_2 = 0;
 $on_participant_2 = 0;
 $on_others_2 = 0;
+$on_sponsor_2 = 0;
 
 /**day2 korean pre-registration */
 $speaker_2 = 0;
 $chairperson_2 = 0;
 $panel_2 = 0;
-$faculty_2 = 0;
+$committee_2 = 0;
 $organizer_2 = 0;
 $preceptor_2 = 0;
 $press_2 = 0;
 $participant_2 = 0;
 $others_2 = 0;
+$sponsor_2 = 0;
 
 /**day2 eng onsite*/
 $on_speaker_2_e = 0;
 $on_chairperson_2_e = 0;
 $on_panel_2_e = 0;
-$on_faculty_2_e = 0;
+$on_committee_2_e = 0;
 $on_organizer_2_e = 0;
 $on_preceptor_2_e = 0;
 $on_press_2_e = 0;
 $on_participant_2_e = 0;
 $on_others_2_e = 0;
+$on_sponsor_2_e = 0;
 
 
 /**day2 eng pre-regi*/
 $speaker_2_e = 0;
 $chairperson_2_e = 0;
 $panel_2_e = 0;
-$faculty_2_e = 0;
+$committee_2_e = 0;
 $organizer_2_e = 0;
 $preceptor_2_e = 0;
 $press_2_e = 0;
 $participant_2_e = 0;
 $others_2_e = 0;
+$sponsor_2_e = 0;
 
 
 /**day 3 korean onsite */
 $on_speaker_3 = 0;
 $on_chairperson_3 = 0;
 $on_panel_3 = 0;
-$on_faculty_3 = 0;
+$on_committee_3 = 0;
 $on_organizer_3 = 0;
 $on_preceptor_3 = 0;
 $on_press_3 = 0;
 $on_participant_3 = 0;
 $on_others_3 = 0;
+$on_sponsor_3 = 0;
 
 /**day3 korean pre-registration */
 $speaker_3 = 0;
 $chairperson_3 = 0;
 $panel_3 = 0;
-$faculty_3 = 0;
+$committee_3 = 0;
 $organizer_3 = 0;
 $preceptor_3 = 0;
 $press_3 = 0;
 $participant_3 = 0;
 $others_3 = 0;
+$sponsor_3 = 0;
 
 /**day3 eng onsite*/
 $on_speaker_3_e = 0;
 $on_chairperson_3_e = 0;
 $on_panel_3_e = 0;
-$on_faculty_3_e = 0;
+$on_committee_3_e = 0;
 $on_organizer_3_e = 0;
 $on_preceptor_3_e = 0;
 $on_press_3_e = 0;
 $on_participant_3_e = 0;
 $on_others_3_e = 0;
+$on_sponsor_3_e = 0;
 
 /**day3 eng pre-regi*/
 $speaker_3_e = 0;
 $chairperson_3_e = 0;
 $panel_3_e = 0;
-$faculty_3_e = 0;
+$committee_3_e = 0;
 $organizer_3_e = 0;
 $preceptor_3_e = 0;
 $press_3_e = 0;
 $participant_3_e = 0;
 $others_3_e = 0;
+$sponsor_3_e = 0;
 
 
 foreach ($day_1 as $item_1) {
@@ -191,8 +203,8 @@ foreach ($day_1 as $item_1) {
         if ($item_1['attendance_type'] == "Panel") {
             $on_panel_1 = $on_panel_1 + 1;
         }
-        if ($item_1['attendance_type'] == "Faculty") {
-            $on_faculty_1 = $on_faculty_1 + 1;
+        if ($item_1['attendance_type'] == "Committee") {
+            $on_committee_1 = $on_committee_1 + 1;
         }
         if ($item_1['attendance_type'] == "Organizer") {
             $on_organizer_1 = $on_organizer_1 + 1;
@@ -203,11 +215,14 @@ foreach ($day_1 as $item_1) {
         if ($item_1['attendance_type'] == "Press") {
             $on_press_1 = $on_press_1 + 1;
         }
-        if ($item_1['attendance_type'] == "Participants" || $item_1['attendance_type'] == "Participants(ISCP full member)") {
+        if ($item_1['attendance_type'] == "Participants") {
             $on_participant_1 = $on_participant_1 + 1;
         }
+        if ($item_1['attendance_type'] == "Sponsor") {
+            $on_sponsor_1 = $on_sponsor_1 + 1;
+        }
         if ($item_1['attendance_type'] == "Other" || $item_1['attendance_type'] == "Exhibitor") {
-            $on_others_1 = $on_others_1 + 1;
+            $others_1 = $others_1 + 1;
         }
     } else {
         // print_r($item['attendance_type']);
@@ -221,8 +236,8 @@ foreach ($day_1 as $item_1) {
         if ($item_1['attendance_type'] == "Panel") {
             $panel_1 = $panel_1 + 1;
         }
-        if ($item_1['attendance_type'] == "Faculty") {
-            $faculty_1 = $faculty_1 + 1;
+        if ($item_1['attendance_type'] == "Committee") {
+            $committee_1 = $committee_1 + 1;
         }
         if ($item_1['attendance_type'] == "Organizer") {
             $organizer_1 = $organizer_1 + 1;
@@ -233,10 +248,13 @@ foreach ($day_1 as $item_1) {
         if ($item_1['attendance_type'] == "Press") {
             $press_1 = $press_1 + 1;
         }
-        if ($item_1['attendance_type'] == "Paritipants" || $item_1['attendance_type'] == "Paritipants(ISCP full member)") {
+        if ($item_1['attendance_type'] == "Paritipants") {
             $participant_1 = $participant_1 + 1;
         }
-        if ($item_1['attendance_type'] == "Other" || $item_1['attendance_type'] == "Exhibitor") {
+        if ($item_1['attendance_type'] == "Sponsor") {
+            $sponsor_1 = $sponsor_1 + 1;
+        }
+        if ($item_1['attendance_type'] == "Other") {
             $others_1 = $others_1 + 1;
         }
     }
@@ -255,8 +273,8 @@ foreach ($day_1_e as $item_1_e) {
         if ($item_1_e['attendance_type'] == "Panel") {
             $on_panel_1_e = $on_panel_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Faculty") {
-            $on_faculty_1_e = $on_faculty_1_e + 1;
+        if ($item_1_e['attendance_type'] == "committee") {
+            $on_committee_1_e = $on_committee_1_e + 1;
         }
         if ($item_1_e['attendance_type'] == "Organizer") {
             $on_organizer_1_e = $on_organizer_1_e + 1;
@@ -267,8 +285,11 @@ foreach ($day_1_e as $item_1_e) {
         if ($item_1_e['attendance_type'] == "Press") {
             $on_press_1_e = $on_press_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Participants" || $item_1_e['attendance_type'] == "Participants(ISCP full member)") {
+        if ($item_1_e['attendance_type'] == "Participants") {
             $on_participant_1_e = $on_participant_1_e + 1;
+        }
+        if ($item_1_e['attendance_type'] == "Sponsor") {
+            $on_sponsor_1_e = $on_sponsor_1_e + 1;
         }
         if ($item_1_e['attendance_type'] == "Other" || $item_1_e['attendance_type'] == "Exhibitor") {
             $on_others_1_e = $on_others_1_e + 1;
@@ -285,8 +306,8 @@ foreach ($day_1_e as $item_1_e) {
         if ($item_1_e['attendance_type'] == "Panel") {
             $panel_1_e = $panel_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Faculty") {
-            $faculty_1_e = $faculty_1_e + 1;
+        if ($item_1_e['attendance_type'] == "committee") {
+            $committee_1_e = $committee_1_e + 1;
         }
         if ($item_1_e['attendance_type'] == "Organizer") {
             $organizer_1_e = $organizer_1_e + 1;
@@ -297,8 +318,11 @@ foreach ($day_1_e as $item_1_e) {
         if ($item_1_e['attendance_type'] == "Press") {
             $press_1_e = $press_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Paritipants" || $item_1_e['attendance_type'] == "Paritipants(ISCP full member)") {
+        if ($item_1_e['attendance_type'] == "Paritipants") {
             $participant_1_e = $participant_1_e + 1;
+        }
+        if ($item_1_e['attendance_type'] == "Sponsor") {
+            $sponsor_1_e = $sponsor_1_e + 1;
         }
         if ($item_1_e['attendance_type'] == "Other" || $item_1_e['attendance_type'] == "Exhibitor") {
             $others_1_e = $others_1_e + 1;
@@ -319,8 +343,8 @@ foreach ($day_2 as $item_2) {
         if ($item_2['attendance_type'] == "Panel") {
             $on_panel_2 = $on_panel_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Faculty") {
-            $on_faculty_2 = $on_faculty_2 + 1;
+        if ($item_2['attendance_type'] == "committee") {
+            $on_committee_2 = $on_committee_2 + 1;
         }
         if ($item_2['attendance_type'] == "Organizer") {
             $on_organizer_2 = $on_organizer_2 + 1;
@@ -331,8 +355,11 @@ foreach ($day_2 as $item_2) {
         if ($item_2['attendance_type'] == "Press") {
             $on_press_2 = $on_press_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Participants" || $item_2['attendance_type'] == "Participants(ISCP full member)") {
+        if ($item_2['attendance_type'] == "Participants") {
             $on_participant_2 = $on_participant_2 + 1;
+        }
+        if ($item_2['attendance_type'] == "Sponsor") {
+            $on_sponsor_2 = $on_sponsor_2 + 1;
         }
         if ($item_2['attendance_type'] == "Other" || $item_2['attendance_type'] == "Exhibitor") {
             $on_others_2 = $on_others_2 + 1;
@@ -349,8 +376,8 @@ foreach ($day_2 as $item_2) {
         if ($item_2['attendance_type'] == "Panel") {
             $panel_2 = $panel_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Faculty") {
-            $faculty_2 = $faculty_2 + 1;
+        if ($item_2['attendance_type'] == "committee") {
+            $committee_2 = $committee_2 + 1;
         }
         if ($item_2['attendance_type'] == "Organizer") {
             $organizer_2 = $organizer_2 + 1;
@@ -361,8 +388,11 @@ foreach ($day_2 as $item_2) {
         if ($item_2['attendance_type'] == "Press") {
             $press_2 = $press_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Paritipants" || $item_2['attendance_type'] == "Paritipants(ISCP full member)") {
+        if ($item_2['attendance_type'] == "Paritipants") {
             $participant_2 = $participant_2 + 1;
+        }
+        if ($item_2['attendance_type'] == "Sponsor") {
+            $sponsor_2 = $sponsor_2 + 1;
         }
         if ($item_2['attendance_type'] == "Other" || $item_2['attendance_type'] == "Exhibitor") {
             $others_2 = $others_2 + 1;
@@ -383,8 +413,8 @@ foreach ($day_2_e as $item_2_e) {
         if ($item_2_e['attendance_type'] == "Panel") {
             $on_panel_2_e = $on_panel_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Faculty") {
-            $on_faculty_2_e = $on_faculty_2_e + 1;
+        if ($item_2_e['attendance_type'] == "committee") {
+            $on_committee_2_e = $on_committee_2_e + 1;
         }
         if ($item_2_e['attendance_type'] == "Organizer") {
             $on_organizer_2_e = $on_organizer_2_e + 1;
@@ -395,8 +425,11 @@ foreach ($day_2_e as $item_2_e) {
         if ($item_2_e['attendance_type'] == "Press") {
             $on_press_2_e = $on_press_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Participants" || $item_2_e['attendance_type'] == "Participants(ISCP full member)") {
+        if ($item_2_e['attendance_type'] == "Participants") {
             $on_participant_2_e = $on_participant_2_e + 1;
+        }
+        if ($item_2_e['attendance_type'] == "Sponsor") {
+            $on_sponsor_2_e = $on_sponsor_2_e + 1;
         }
         if ($item_2_e['attendance_type'] == "Other" || $item_2_e['attendance_type'] == "Exhibitor") {
             $on_others_2_e = $on_others_2_e + 1;
@@ -413,8 +446,8 @@ foreach ($day_2_e as $item_2_e) {
         if ($item_2_e['attendance_type'] == "Panel") {
             $panel_2_e = $panel_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Faculty") {
-            $faculty_2_e = $faculty_2_e + 1;
+        if ($item_2_e['attendance_type'] == "committee") {
+            $committee_2_e = $committee_2_e + 1;
         }
         if ($item_2_e['attendance_type'] == "Organizer") {
             $organizer_2_e = $organizer_2_e + 1;
@@ -425,8 +458,11 @@ foreach ($day_2_e as $item_2_e) {
         if ($item_2_e['attendance_type'] == "Press") {
             $press_2_e = $press_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Paritipants" || $item_2_e['attendance_type'] == "Participants(ISCP full member)") {
+        if ($item_2_e['attendance_type'] == "Paritipants") {
             $participant_2_e = $participant_2_e + 1;
+        }
+        if ($item_2_e['attendance_type'] == "Sponsor") {
+            $sponsor_2_e = $sponsor_2_e + 1;
         }
         if ($item_2_e['attendance_type'] == "Other" || $item_2_e['attendance_type'] == "Exhibitor") {
             $others_2_e = $others_2_e + 1;
@@ -447,8 +483,8 @@ foreach ($day_3 as $item_3) {
         if ($item_3['attendance_type'] == "Panel") {
             $on_panel_3 = $on_panel_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Faculty") {
-            $on_faculty_3 = $on_faculty_3 + 1;
+        if ($item_3['attendance_type'] == "committee") {
+            $on_committee_3 = $on_committee_3 + 1;
         }
         if ($item_3['attendance_type'] == "Organizer") {
             $on_organizer_3 = $on_organizer_3 + 1;
@@ -459,8 +495,11 @@ foreach ($day_3 as $item_3) {
         if ($item_3['attendance_type'] == "Press") {
             $on_press_3 = $on_press_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Participants" || $item_3['attendance_type'] == "Participants(ISCP full member)") {
+        if ($item_3['attendance_type'] == "Participants") {
             $on_participant_3 = $on_participant_3 + 1;
+        }
+        if ($item_3['attendance_type'] == "Sponsor") {
+            $on_sponsor_3 = $on_sponsor_3 + 1;
         }
         if ($item_3['attendance_type'] == "Other" || $item_3['attendance_type'] == "Exhibitor") {
             $on_others_3 = $on_others_3 + 1;
@@ -477,8 +516,8 @@ foreach ($day_3 as $item_3) {
         if ($item_3['attendance_type'] == "Panel") {
             $panel_3 = $panel_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Faculty") {
-            $faculty_3 = $faculty_3 + 1;
+        if ($item_3['attendance_type'] == "committee") {
+            $committee_3 = $committee_3 + 1;
         }
         if ($item_3['attendance_type'] == "Organizer") {
             $organizer_3 = $organizer_3 + 1;
@@ -489,8 +528,11 @@ foreach ($day_3 as $item_3) {
         if ($item_3['attendance_type'] == "Press") {
             $press_3 = $press_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Paritipants" || $item_3['attendance_type'] == "Participants(ISCP full member)") {
+        if ($item_3['attendance_type'] == "Paritipants") {
             $participant_3 = $participant_3 + 1;
+        }
+        if ($item_3['attendance_type'] == "Sponsor") {
+            $sponsor_3 = $sponsor_3 + 1;
         }
         if ($item_3['attendance_type'] == "Other" || $item_3['attendance_type'] == "Exhibitor") {
             $others_3 = $others_3 + 1;
@@ -511,8 +553,8 @@ foreach ($day_3_e as $item_3_e) {
         if ($item_3_e['attendance_type'] == "Panel") {
             $on_panel_3_e = $on_panel_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Faculty") {
-            $on_faculty_3_e = $on_faculty_3_e + 1;
+        if ($item_3_e['attendance_type'] == "committee") {
+            $on_committee_3_e = $on_committee_3_e + 1;
         }
         if ($item_3_e['attendance_type'] == "Organizer") {
             $on_organizer_3_e = $on_organizer_3_e + 1;
@@ -523,8 +565,11 @@ foreach ($day_3_e as $item_3_e) {
         if ($item_3_e['attendance_type'] == "Press") {
             $on_press_3_e = $on_press_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Participants" || $item_3_e['attendance_type'] == "Participants(ISCP full member)") {
+        if ($item_3_e['attendance_type'] == "Participants") {
             $on_participant_3_e = $on_participant_3_e + 1;
+        }
+        if ($item_3_e['attendance_type'] == "Sponsor") {
+            $on_sponsor_3_e = $on_sponsor_3_e + 1;
         }
         if ($item_3_e['attendance_type'] == "Other" || $item_3_e['attendance_type'] == "Exhibitor") {
             $on_others_3_e = $on_others_3_e + 1;
@@ -541,8 +586,8 @@ foreach ($day_3_e as $item_3_e) {
         if ($item_3_e['attendance_type'] == "Panel") {
             $panel_3_e = $panel_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Faculty") {
-            $faculty_3_e = $faculty_3_e + 1;
+        if ($item_3_e['attendance_type'] == "committee") {
+            $committee_3_e = $committee_3_e + 1;
         }
         if ($item_3_e['attendance_type'] == "Organizer") {
             $organizer_3_e = $organizer_3_e + 1;
@@ -553,8 +598,11 @@ foreach ($day_3_e as $item_3_e) {
         if ($item_3_e['attendance_type'] == "Press") {
             $press_3_e = $press_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Paritipants" || $item_3_e['attendance_type'] == "Participants(ISCP full member)") {
+        if ($item_3_e['attendance_type'] == "Paritipants") {
             $participant_3_e = $participant_3_e + 1;
+        }
+        if ($item_3_e['attendance_type'] == "Sponsor") {
+            $sponsor_3_e = $sponsor_3_e + 1;
         }
         if ($item_3_e['attendance_type'] == "Other" || $item_3_e['attendance_type'] == "Exhibitor") {
             $others_3_e = $others_3_e + 1;
@@ -625,7 +673,7 @@ $day_3_users = count($day_3) + count($day_3_e);
 
         </tr>
         <tr>
-            <th class="bg-red-100" rowspan="6">사전등록</th>
+            <th class="bg-red-100" rowspan="8">사전등록</th>
             <th class="bg-red-100">Speaker</th>
             <td>
                 <?php echo isset($speaker_1_e) ? $speaker_1_e : 0; ?>
@@ -739,38 +787,38 @@ $day_3_users = count($day_3) + count($day_3_e);
             </td>
         </tr>
         <tr>
-            <th class="bg-red-100">Faculty</th>
+            <th class="bg-red-100">Committee</th>
             <td>
-                <?php echo isset($faculty_1_e) ? $faculty_1_e : 0; ?>
+                <?php echo isset($committee_1_e) ? $committee_1_e : 0; ?>
             </td>
             <td>
-                <?php echo isset($faculty_1) ?  $faculty_1  : 0; ?>
+                <?php echo isset($committee_1) ?  $committee_1  : 0; ?>
             </td>
             <td>
-                <?php echo isset($faculty_2_e) ? $faculty_2_e  : 0; ?>
+                <?php echo isset($committee_2_e) ? $committee_2_e  : 0; ?>
             </td>
             <td>
-                <?php echo isset($faculty_2) ?  $faculty_2 : 0; ?>
+                <?php echo isset($committee_2) ?  $committee_2 : 0; ?>
             </td>
             <td>
-                <?php echo isset($faculty_3_e) ? $faculty_3_e : 0; ?>
+                <?php echo isset($committee_3_e) ? $committee_3_e : 0; ?>
             </td>
             <td>
-                <?php echo isset($faculty_3) ? $faculty_3 : 0; ?>
+                <?php echo isset($committee_3) ? $committee_3 : 0; ?>
             </td>
             <td>
                 <?php
                 /**day1 */
                 if (isset($participant_1_e) && !isset($participant_2_e) && !isset($participant_3_e)) {
-                    echo  $faculty_1_e + $faculty_1;
+                    echo  $committee_1_e + $committee_1;
                 }
                 /**day 2 */
                 else if (isset($participant_1_e) && isset($participant_2_e) && !isset($participant_3_e)) {
-                    echo $faculty_1_e + $faculty_1 + $faculty_2_e + $faculty_2;
+                    echo $committee_1_e + $committee_1 + $committee_2_e + $committee_2;
                 }
                 /**day 3 */
                 else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
-                    echo  $faculty_1_e + $faculty_1 + $faculty_2_e + $faculty_2 + $faculty_3_e + $faculty_3;
+                    echo  $committee_1_e + $committee_1 + $committee_2_e + $committee_2 + $committee_3_e + $committee_3;
                 }
                 ?>
             </td>
@@ -813,6 +861,84 @@ $day_3_users = count($day_3) + count($day_3_e);
                 ?>
             </td>
         </tr>
+
+        
+        <tr>
+            <th class="bg-red-100">Sponsor</th>
+            <td>
+                <?php echo isset($sponsor_1_e) ? $sponsor_1_e : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($sponsor_1) ?  $sponsor_1  : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($sponsor_2_e) ? $sponsor_2_e  : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($sponsor_2) ?  $sponsor_2 : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($sponsor_3_e) ? $sponsor_3_e : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($sponsor_3) ? $sponsor_3 : 0; ?>
+            </td>
+            <td>
+                <?php
+                /**day1 */
+                if (isset($participant_1_e) && !isset($participant_2_e) && !isset($participant_3_e)) {
+                    echo   $sponsor_1_e + $sponsor_1;
+                }
+                /**day 2 */
+                else if (isset($participant_1_e) && isset($participant_2_e) && !isset($participant_3_e)) {
+                    echo   $sponsor_1_e + $sponsor_1 + $sponsor_2_e + $sponsor_2;
+                }
+                /**day 3 */
+                else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
+                    echo  $sponsor_1_e + $sponsor_1 + $sponsor_2_e + $sponsor_2 + $sponsor_3_e + $sponsor_3;
+                }
+                ?>
+            </td>
+        </tr>
+       
+        <tr>
+            <th class="bg-red-100">Press</th>
+            <td>
+                <?php echo isset($press_1_e) ? $press_1_e : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($press_1) ?  $press_1  : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($press_2_e) ? $press_2_e  : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($press_2) ?  $press_2 : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($press_3_e) ? $press_3_e : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($press_3) ? $press_3 : 0; ?>
+            </td>
+            <td>
+                <?php
+                /**day1 */
+                if (isset($participant_1_e) && !isset($participant_2_e) && !isset($participant_3_e)) {
+                    echo   $press_1_e + $press_1;
+                }
+                /**day 2 */
+                else if (isset($participant_1_e) && isset($participant_2_e) && !isset($participant_3_e)) {
+                    echo   $press_1_e + $press_1 + $press_2_e + $press_2_e;
+                }
+                /**day 3 */
+                else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
+                    echo  $press_1_e + $press_1 + $press_2_e + $press_2_e + $press_3_e + $press_3;
+                }
+                ?>
+            </td>
+        </tr>
+
         <tr>
             <th class="bg-red-100">Others</th>
             <td>
@@ -854,22 +980,22 @@ $day_3_users = count($day_3) + count($day_3_e);
         <tr>
             <th class="bg-red-100" colspan="2">계</th>
             <td class="day_1_e">
-                <?php echo  $speaker_1_e + $chairperson_1_e + $panel_1_e + $faculty_1_e + $organizer_1_e + $preceptor_1_e + $press_1_e + $participant_1_e + $others_1_e   ?>
+                <?php echo  $speaker_1_e + $chairperson_1_e + $panel_1_e + $committee_1_e + $organizer_1_e + $preceptor_1_e + $press_1_e + $participant_1_e + $others_1_e   ?>
             </td>
             <td class="day_1">
-                <?php echo  $speaker_1 + $chairperson_1 + $panel_1 + $faculty_1 + $organizer_1 + $preceptor_1 + $press_1 + $participant_1 + $others_1   ?>
+                <?php echo  $speaker_1 + $chairperson_1 + $panel_1 + $committee_1 + $organizer_1 + $preceptor_1 + $press_1 + $participant_1 + $others_1   ?>
             </td>
             <td class="day_2_e">
-                <?php echo  $speaker_2_e + $chairperson_2_e + $panel_2_e + $faculty_2_e + $organizer_2_e + $preceptor_2_e + $press_2_e + $participant_2_e + $others_2_e   ?>
+                <?php echo  $speaker_2_e + $chairperson_2_e + $panel_2_e + $committee_2_e + $organizer_2_e + $preceptor_2_e + $press_2_e + $participant_2_e + $others_2_e   ?>
             </td>
             <td class="day_2">
-                <?php echo  $speaker_2 + $chairperson_2 + $panel_2 + $faculty_2 + $organizer_2 + $preceptor_2 + $press_2 + $participant_2 + $others_2   ?>
+                <?php echo  $speaker_2 + $chairperson_2 + $panel_2 + $committee_2 + $organizer_2 + $preceptor_2 + $press_2 + $participant_2 + $others_2   ?>
             </td>
             <td class="day_3_e">
-                <?php echo  $speaker_3_e + $chairperson_3_e + $panel_3_e + $faculty_3_e + $organizer_3_e + $preceptor_3_e + $press_3_e + $participant_3_e + $others_3_e   ?>
+                <?php echo  $speaker_3_e + $chairperson_3_e + $panel_3_e + $committee_3_e + $organizer_3_e + $preceptor_3_e + $press_3_e + $participant_3_e + $others_3_e   ?>
             </td>
             <td class="day_3">
-                <?php echo  $speaker_3 + $chairperson_3 + $panel_3 + $faculty_3 + $organizer_3 + $preceptor_3 + $press_3 + $participant_3 + $others_3   ?>
+                <?php echo  $speaker_3 + $chairperson_3 + $panel_3 + $committee_3 + $organizer_3 + $preceptor_3 + $press_3 + $participant_3 + $others_3   ?>
             </td>
             <td rowspan="2" class="count_7"></td>
         </tr>
@@ -877,11 +1003,11 @@ $day_3_users = count($day_3) + count($day_3_e);
             <th class="bg-red-100" colspan="2">합계</th>
             <td colspan="2" class="count_1"></td>
             <td colspan="2" class="count_2"></td>
-            <td colspan="2" class="count_3" style="display: none;"></td>
+            <td colspan="2" class="count_3"></td>
         </tr>
 
         <tr>
-            <th class="bg-blue-100" rowspan="6">현장등록</th>
+            <th class="bg-blue-100" rowspan="8">현장등록</th>
             <th class="bg-blue-100">Speaker</th>
             <td>
                 <?php echo isset($on_speaker_1_e) ? $on_speaker_1_e : 0; ?>
@@ -995,38 +1121,38 @@ $day_3_users = count($day_3) + count($day_3_e);
             </td>
         </tr>
         <tr>
-            <th class="bg-blue-100">Faculty</th>
+            <th class="bg-blue-100">Committee</th>
             <td>
-                <?php echo isset($on_faculty_1_e) ? $on_faculty_1_e : 0; ?>
+                <?php echo isset($on_committee_1_e) ? $on_committee_1_e : 0; ?>
             </td>
             <td>
-                <?php echo isset($on_faculty_1) ?  $on_faculty_1  : 0; ?>
+                <?php echo isset($on_committee_1) ?  $on_committee_1  : 0; ?>
             </td>
             <td>
-                <?php echo isset($on_faculty_2_e) ? $on_faculty_2_e  : 0; ?>
+                <?php echo isset($on_committee_2_e) ? $on_committee_2_e  : 0; ?>
             </td>
             <td>
-                <?php echo isset($on_faculty_2) ?  $on_faculty_2 : 0; ?>
+                <?php echo isset($on_committee_2) ?  $on_committee_2 : 0; ?>
             </td>
             <td>
-                <?php echo isset($on_faculty_3_e) ? $on_faculty_3_e : 0; ?>
+                <?php echo isset($on_committee_3_e) ? $on_committee_3_e : 0; ?>
             </td>
             <td>
-                <?php echo isset($on_faculty_3) ? $on_faculty_3 : 0; ?>
+                <?php echo isset($on_committee_3) ? $on_committee_3 : 0; ?>
             </td>
             <td>
                 <?php
                 /**day1 */
                 if (isset($on_participant_1_e) && !isset($on_participant_2_e) && !isset($on_participant_3_e)) {
-                    echo $on_faculty_1_e + $on_faculty_1;
+                    echo $on_committee_1_e + $on_committee_1;
                 }
                 /**day 2 */
                 else if (isset($on_participant_1_e) && isset($on_participant_2_e) && !isset($on_participant_3_e)) {
-                    echo  $on_faculty_1_e + $on_faculty_1 + $on_faculty_2_e + $on_faculty_2;
+                    echo  $on_committee_1_e + $on_committee_1 + $on_committee_2_e + $on_committee_2;
                 }
                 /**day 3 */
                 else if (isset($on_participant_1_e) && isset($on_participant_2_e) && isset($on_participant_3_e)) {
-                    echo $on_faculty_1_e + $on_faculty_1 + $on_faculty_2_e + $on_faculty_2 + $on_faculty_3_e + $on_faculty_3;
+                    echo $on_committee_1_e + $on_committee_1 + $on_committee_2_e + $on_committee_2 + $on_committee_3_e + $on_committee_3;
                 }
                 ?>
             </td>
@@ -1065,6 +1191,82 @@ $day_3_users = count($day_3) + count($day_3_e);
                 /**day 3 */
                 else if (isset($on_participant_1_e) && isset($on_participant_2_e) && isset($on_participant_3_e)) {
                     echo  $on_participant_1_e + $on_participant_1 + $on_participant_2_e + $on_participant_2 + $on_participant_3_e + $on_participant_3;
+                }
+                ?>
+            </td>
+        </tr>
+
+        <tr>
+            <th class="bg-blue-100">Sponsor</th>
+            <td>
+                <?php echo isset($on_sponsor_1_e) ? $on_sponsor_1_e : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($on_sponsor_1) ?  $on_sponsor_1  : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($on_sponsor_2_e) ? $on_sponsor_2_e  : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($on_sponsor_2) ?  $on_sponsor_2 : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($on_sponsor_3_e) ? $on_sponsor_3_e : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($on_sponsor_3) ? $on_sponsor_3 : 0; ?>
+            </td>
+            <td>
+                <?php
+                /**day1 */
+                if (isset($on_participant_1_e) && !isset($on_participant_2_e) && !isset($on_participant_3_e)) {
+                    echo  $on_sponsor_1_e + $on_sponsor_1;
+                }
+                /**day 2 */
+                else if (isset($on_participant_1_e) && isset($on_participant_2_e) && !isset($on_participant_3_e)) {
+                    echo  $on_sponsor_1_e + $on_sponsor_1 + $on_sponsor_2_e + $on_sponsor_2;
+                }
+                /**day 3 */
+                else if (isset($on_participant_1_e) && isset($on_participant_2_e) && isset($on_participant_3_e)) {
+                    echo  $on_sponsor_1_e + $on_sponsor_1 + $on_sponsor_2_e + $on_sponsor_2 + $on_sponsor_3_e + $on_sponsor_3;
+                }
+                ?>
+            </td>
+        </tr>
+
+        <tr>
+            <th class="bg-blue-100">Press</th>
+            <td>
+                <?php echo isset($on_press_1_e) ? $on_press_1_e : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($on_press_1) ?  $on_press_1  : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($on_press_2_e) ? $on_press_2_e  : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($on_press_2) ?  $on_press_2 : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($on_press_3_e) ? $on_press_3_e : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($on_press_3) ? $on_press_3 : 0; ?>
+            </td>
+            <td>
+                <?php
+                /**day1 */
+                if (isset($on_participant_1_e) && !isset($on_participant_2_e) && !isset($on_participant_3_e)) {
+                    echo  $on_press_1_e + $on_press_1;
+                }
+                /**day 2 */
+                else if (isset($on_participant_1_e) && isset($on_participant_2_e) && !isset($on_participant_3_e)) {
+                    echo  $on_press_1_e + $on_press_1 + $on_press_2_e + $on_press_2;
+                }
+                /**day 3 */
+                else if (isset($on_participant_1_e) && isset($on_participant_2_e) && isset($on_participant_3_e)) {
+                    echo  $on_press_1_e + $on_press_1 + $on_press_2_e + $on_press_2 + $on_press_3_e + $on_press_3;
                 }
                 ?>
             </td>
@@ -1109,22 +1311,22 @@ $day_3_users = count($day_3) + count($day_3_e);
         <tr>
             <th class="bg-blue-100" colspan="2">계</th>
             <td class="on_day_1_e">
-                <?php echo  $on_speaker_1_e + $on_chairperson_1_e + $on_panel_1_e + $on_faculty_1_e + $on_organizer_1_e + $on_preceptor_1_e + $on_press_1_e + $on_participant_1_e + $on_others_1_e   ?>
+                <?php echo  $on_speaker_1_e + $on_chairperson_1_e + $on_panel_1_e + $on_committee_1_e + $on_organizer_1_e + $on_preceptor_1_e + $on_press_1_e + $on_participant_1_e + $on_others_1_e   ?>
             </td>
             <td class="on_day_1">
-                <?php echo  $on_speaker_1 + $on_chairperson_1 + $on_panel_1 + $on_faculty_1 + $on_organizer_1 + $on_preceptor_1 + $on_press_1 + $on_participant_1 + $on_others_1   ?>
+                <?php echo  $on_speaker_1 + $on_chairperson_1 + $on_panel_1 + $on_committee_1 + $on_organizer_1 + $on_preceptor_1 + $on_press_1 + $on_participant_1 + $on_others_1   ?>
             </td>
             <td class="on_day_2_e">
-                <?php echo  $on_speaker_2_e + $on_chairperson_2_e + $on_panel_2_e + $on_faculty_2_e + $on_organizer_2_e + $on_preceptor_2_e + $on_press_2_e + $on_participant_2_e + $on_others_2_e   ?>
+                <?php echo  $on_speaker_2_e + $on_chairperson_2_e + $on_panel_2_e + $on_committee_2_e + $on_organizer_2_e + $on_preceptor_2_e + $on_press_2_e + $on_participant_2_e + $on_others_2_e   ?>
             </td>
             <td class="on_day_2">
-                <?php echo  $on_speaker_2 + $on_chairperson_2 + $on_panel_2 + $on_faculty_2 + $on_organizer_2 + $on_preceptor_2 + $on_press_2 + $on_participant_2 + $on_others_2   ?>
+                <?php echo  $on_speaker_2 + $on_chairperson_2 + $on_panel_2 + $on_committee_2 + $on_organizer_2 + $on_preceptor_2 + $on_press_2 + $on_participant_2 + $on_others_2   ?>
             </td>
             <td class="on_day_3_e">
-                <?php echo  $on_speaker_3_e + $on_chairperson_3_e + $on_panel_3_e + $on_faculty_3_e + $on_organizer_3_e + $on_preceptor_3_e + $on_press_3_e + $on_participant_3_e + $on_others_3_e   ?>
+                <?php echo  $on_speaker_3_e + $on_chairperson_3_e + $on_panel_3_e + $on_committee_3_e + $on_organizer_3_e + $on_preceptor_3_e + $on_press_3_e + $on_participant_3_e + $on_others_3_e   ?>
             </td>
             <td class="on_day_3">
-                <?php echo  $on_speaker_3 + $on_chairperson_3 + $on_panel_3 + $on_faculty_3 + $on_organizer_3 + $on_preceptor_3 + $on_press_3 + $on_participant_3 + $on_others_3   ?>
+                <?php echo  $on_speaker_3 + $on_chairperson_3 + $on_panel_3 + $on_committee_3 + $on_organizer_3 + $on_preceptor_3 + $on_press_3 + $on_participant_3 + $on_others_3   ?>
             </td>
             <td rowspan="2" class="count_8"></td>
         </tr>
