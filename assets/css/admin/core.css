@@ -126,25 +126,25 @@
   height: 340px;
   position: relative;
   width: 100%;
-  margin-top: 112px;
+  margin-top: 100px;
 }
 
 #printThis .reg {
   width: 25%;
     text-align: right !important;
-    transform: translate(236px, -98px);
+    transform: translate(236px, -103px);
     margin: 0;
 }
 
 #printThis .number_box {
   width: 8cm;
   transform: rotate(0.5turn);
-  padding-bottom: 216px;
+  padding-bottom: 230px;
 }
 
 #printThis .last_reg{
   transform: rotate(0.5turn);
-  padding-bottom: 180px;
+  padding-bottom: 185px;
   text-align: right;
   padding-right: 36px;
 }
