@@ -63,52 +63,45 @@ body {
     <div class="content" id="nametag">
         <div id="printThis">
             <div id="editor1" contenteditable="true">
-                <?php
-                $lang = preg_match("/[\xE0-\xFF][\x80-\xFF][\x80-\xFF]/", $users['name_kor']);
-                $nicknameLength = mb_strlen($users['first_name'], "UTF-8") + mb_strlen($users['last_name'], "UTF-8");
-                $orgLength = mb_strlen($users['org_nametag'], "UTF-8") + mb_strlen($users['nation'], "UTF-8");
-                $participant = $users['attendance_type'];
-                // echo $nicknameLength;
-                // echo mb_strlen($users['org_nametag'], "UTF-8") + mb_strlen($users['nation'], "UTF-8");
-                echo '<div class="a4_area">';
-                echo '<div class="bg_area">';
-                echo '<div class="txt_con">';
-                echo '<div class="number_box">';
-                echo '<div class="reg_1">' .  $users['registration_no'] . '</div>';
-                echo '<div class="reg_2">' .  $users['registration_no'] . '</div>';
-                echo '</div>';
-                echo '<div class="reg" id="reg">' .  $users['registration_no'] . '</div>';
-          
-                /**닉네임 조건식 17글자이상 24글자 미만 */
-                if ($nicknameLength >= 17 && $nicknameLength < 24) {
+            <?php
+
+                    $substring = 'ICOMES2024-';
+                    $zero_number = str_replace('ICOMES2024-','', $users['registration_no']);
+                    $number = ltrim($zero_number, 0);
+
+                    $nicknameLength = mb_strlen($users['first_name'], "UTF-8") + mb_strlen($users['last_name'], "UTF-8");
+                    $orgLength = mb_strlen($users['org_nametag'], "UTF-8");
+                    $won = $users['nation'] == "Republic of Korea" ? "KRW" : "USD";
+                    //echo $nicknameLength;
+                    // echo mb_strlen($users['org_nametag'], "UTF-8") + mb_strlen($users['nation'], "UTF-8");
+                    echo '<div class="a4_area">';
+                    echo '<div class="bg_area">';
+                    echo '<div class="txt_con">';
+
+                    echo '<div class="reg" id="reg">' .  $number . '</div>';
+
+                    /**닉네임 조건식 17글자이상 24글자 미만 */
                     echo '<div class="nick_name lang_en small_nickname" id="first_name">' .  $users['first_name'] . '</div>';
                     echo '<div class="nick_name lang_en small_nickname" id="last_name">' .  $users['last_name'] . '</div>';
-                }
-                /**닉네임 조건식 24글자 이상 */
-                else if ($nicknameLength >= 24) {
-                    echo '<div class="nick_name lang_en small_small_nickname" id="first_name">' .  $users['first_name'] . '</div>';
-                    echo '<div class="nick_name lang_en small_small_nickname" id="last_name">' .  $users['last_name'] . '</div>';
-                }
-                /**닉네임 조건식 17글자 미만 */
-                else if ($nicknameLength < 17) {
-                    echo '<div class="nick_name lang_en" id="first_name">' .  $users['first_name'] . '</div>';
-                    echo '<div class="nick_name lang_en" id="last_name">' .  $users['last_name'] . '</div>';
-                }
-                /**소속 조건식 30글자 기준 */
-                if ($orgLength <= 30) {
+
+
+                    /**소속 조건식 30글자 기준 */
                     echo '<div class="org" id="org">' . $users['org_nametag'] . '</div>';
                     echo '<div class="org" id="org">' . $users['nation'] . '</div>';
-                } else {
-                    echo '<div class="org" id="org" style="height:57px;">' . $users['org_nametag'] . '</div>';
-                    echo '<div class="org" id="org" style="height:33px;">' . $users['nation'] . '</div>';
-                }
-                echo '<div id="qrcode" class=""><img src="/assets/images/QR/qrcode_' . $users['registration_no'] . '.jpg"></div>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-                ?>
+
+                    echo '<div id="qrcode" class=""><img src="/assets/images/QR/qrcode_' . $users['registration_no'] . '.jpg"></div>';
+                    echo '<div class="number_box">';
+                    echo '<div class="">' .  $users['first_name'] . ' ' .$users['last_name'] .'</div>';
+                    echo '<div class="">' .  $users['registration_no'] . '</div>';
+                    echo '<div class="">' .$won.' '.  $users['fee'] . '</div>';
+                    echo '</div>';
+                    echo '<div class="last_reg">' .  $number . '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    ?>
             </div>
         </div>
     </div>
