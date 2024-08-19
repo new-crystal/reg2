@@ -108,7 +108,7 @@
     width: 10cm;
     height: 24cm;
     border: 1px solid transparent;
-    background-image: url('../../images/nametag_bg.png');
+    background-image: url('../../images/nametag_bg2.jpg');
     background-size: contain;
     margin: 0;
     background-repeat: no-repeat;
@@ -126,32 +126,31 @@
   height: 340px;
   position: relative;
   width: 100%;
-  margin-top: 535px;
+  margin-top: 112px;
 }
 
 #printThis .reg {
   width: 25%;
     text-align: right !important;
-    transform: translate(263px, -91px);
+    transform: translate(236px, -98px);
     margin: 0;
 }
 
 #printThis .number_box {
   width: 8cm;
-  transform: rotate(0.5turn) translate(0px,507px);
-  display: flex !important;
+  transform: rotate(0.5turn);
+  padding-bottom: 216px;
 }
 
-#printThis .reg_1, #printThis .reg_2{
-  width: 25%;
+#printThis .last_reg{
+  transform: rotate(0.5turn);
+  padding-bottom: 180px;
+  text-align: right;
+  padding-right: 36px;
 }
 
-#printThis .reg_1{
-  transform: translate(-6px, 1px);
-}
-
-#printThis .reg_2{
-  transform: translate(28px, 1px);
+#printThis .number_box > div{
+  text-align: right;
 }
 
 
@@ -175,17 +174,6 @@
 
 #printThis .small_small_nickname{
   font-size: 27px !important;
-}
-
-
-#printThis .nick_name{
-  font-family: Arial_bold;
-  line-height: 61px;
-  font-weight: 400;
-  font-size: 44px;
-  letter-spacing: 20px;
-  padding: 19px 40px 0 58px;
-  overflow: hidden;
 }
 
 #printThis .nick_name.lang_en{
@@ -6558,7 +6546,7 @@ h6.panel-title,
     width: 10cm;
     height: 24cm;
     border: 1px solid transparent;
-    background-image: url('../../images/nametag_bg.png');
+    background-image: url('../../images/nametag_bg2.jpg');
     background-size: contain;
     margin: 0;
     background-repeat: no-repeat;
@@ -6570,13 +6558,6 @@ h6.panel-title,
     text-align: center;
     margin: 0 auto;
     font-weight: bold;
-}
-
-#printThis .txt_con{
-  height: 340px;
-  position: relative;
-  width: 100%;
-  margin-top: 535px;
 }
 
 #printThis .org{
@@ -6603,7 +6584,8 @@ h6.panel-title,
 }
 
 #printThis .nick_name{
-  line-height: 61px;
+  font-family: Arial_bold;
+  line-height: 50px;
   font-weight: 400;
   font-size: 44px;
   letter-spacing: 20px;
