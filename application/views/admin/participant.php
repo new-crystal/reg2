@@ -215,7 +215,7 @@ foreach ($day_1 as $item_1) {
         if ($item_1['attendance_type'] == "Press") {
             $on_press_1 = $on_press_1 + 1;
         }
-        if ($item_1['attendance_type'] == "Participants") {
+        if ($item_1['attendance_type'] == "Participants" || $item_1['attendance_type'] == "Abstract Presenter" ) {
             $on_participant_1 = $on_participant_1 + 1;
         }
         if ($item_1['attendance_type'] == "Sponsor") {
@@ -248,7 +248,7 @@ foreach ($day_1 as $item_1) {
         if ($item_1['attendance_type'] == "Press") {
             $press_1 = $press_1 + 1;
         }
-        if ($item_1['attendance_type'] == "Paritipants") {
+        if ($item_1['attendance_type'] == "Participants"|| $item_1['attendance_type'] == "Abstract Presenter" ) {
             $participant_1 = $participant_1 + 1;
         }
         if ($item_1['attendance_type'] == "Sponsor") {
@@ -273,7 +273,7 @@ foreach ($day_1_e as $item_1_e) {
         if ($item_1_e['attendance_type'] == "Panel") {
             $on_panel_1_e = $on_panel_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "committee") {
+        if ($item_1_e['attendance_type'] == "Committee") {
             $on_committee_1_e = $on_committee_1_e + 1;
         }
         if ($item_1_e['attendance_type'] == "Organizer") {
@@ -285,7 +285,7 @@ foreach ($day_1_e as $item_1_e) {
         if ($item_1_e['attendance_type'] == "Press") {
             $on_press_1_e = $on_press_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Participants") {
+        if ($item_1_e['attendance_type'] == "Participants" || $item_1_e['attendance_type'] == "Abstract Presenter" ) {
             $on_participant_1_e = $on_participant_1_e + 1;
         }
         if ($item_1_e['attendance_type'] == "Sponsor") {
@@ -306,7 +306,7 @@ foreach ($day_1_e as $item_1_e) {
         if ($item_1_e['attendance_type'] == "Panel") {
             $panel_1_e = $panel_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "committee") {
+        if ($item_1_e['attendance_type'] == "Committee") {
             $committee_1_e = $committee_1_e + 1;
         }
         if ($item_1_e['attendance_type'] == "Organizer") {
@@ -318,7 +318,7 @@ foreach ($day_1_e as $item_1_e) {
         if ($item_1_e['attendance_type'] == "Press") {
             $press_1_e = $press_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Paritipants") {
+        if ($item_1_e['attendance_type'] == "Participants" || $item_1_e['attendance_type'] == "Abstract Presenter" ) {
             $participant_1_e = $participant_1_e + 1;
         }
         if ($item_1_e['attendance_type'] == "Sponsor") {
@@ -343,7 +343,7 @@ foreach ($day_2 as $item_2) {
         if ($item_2['attendance_type'] == "Panel") {
             $on_panel_2 = $on_panel_2 + 1;
         }
-        if ($item_2['attendance_type'] == "committee") {
+        if ($item_2['attendance_type'] == "Committee") {
             $on_committee_2 = $on_committee_2 + 1;
         }
         if ($item_2['attendance_type'] == "Organizer") {
@@ -355,7 +355,7 @@ foreach ($day_2 as $item_2) {
         if ($item_2['attendance_type'] == "Press") {
             $on_press_2 = $on_press_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Participants") {
+        if ($item_2['attendance_type'] == "Participants" || $item_2['attendance_type'] == "Abstract Presenter" ) {
             $on_participant_2 = $on_participant_2 + 1;
         }
         if ($item_2['attendance_type'] == "Sponsor") {
@@ -376,7 +376,7 @@ foreach ($day_2 as $item_2) {
         if ($item_2['attendance_type'] == "Panel") {
             $panel_2 = $panel_2 + 1;
         }
-        if ($item_2['attendance_type'] == "committee") {
+        if ($item_2['attendance_type'] == "Committee") {
             $committee_2 = $committee_2 + 1;
         }
         if ($item_2['attendance_type'] == "Organizer") {
@@ -388,7 +388,7 @@ foreach ($day_2 as $item_2) {
         if ($item_2['attendance_type'] == "Press") {
             $press_2 = $press_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Paritipants") {
+        if ($item_2['attendance_type'] == "Participants"|| $item_2['attendance_type'] == "Abstract Presenter" ) {
             $participant_2 = $participant_2 + 1;
         }
         if ($item_2['attendance_type'] == "Sponsor") {
@@ -413,7 +413,7 @@ foreach ($day_2_e as $item_2_e) {
         if ($item_2_e['attendance_type'] == "Panel") {
             $on_panel_2_e = $on_panel_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "committee") {
+        if ($item_2_e['attendance_type'] == "Committee") {
             $on_committee_2_e = $on_committee_2_e + 1;
         }
         if ($item_2_e['attendance_type'] == "Organizer") {
@@ -425,7 +425,7 @@ foreach ($day_2_e as $item_2_e) {
         if ($item_2_e['attendance_type'] == "Press") {
             $on_press_2_e = $on_press_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Participants") {
+        if ($item_2_e['attendance_type'] == "Participants" || $item_2_e['attendance_type'] == "Abstract Presenter" ) {
             $on_participant_2_e = $on_participant_2_e + 1;
         }
         if ($item_2_e['attendance_type'] == "Sponsor") {
@@ -446,7 +446,7 @@ foreach ($day_2_e as $item_2_e) {
         if ($item_2_e['attendance_type'] == "Panel") {
             $panel_2_e = $panel_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "committee") {
+        if ($item_2_e['attendance_type'] == "Committee") {
             $committee_2_e = $committee_2_e + 1;
         }
         if ($item_2_e['attendance_type'] == "Organizer") {
@@ -458,7 +458,7 @@ foreach ($day_2_e as $item_2_e) {
         if ($item_2_e['attendance_type'] == "Press") {
             $press_2_e = $press_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Paritipants") {
+        if ($item_2_e['attendance_type'] == "Participants" || $item_2_e['attendance_type'] == "Abstract Presenter" ) {
             $participant_2_e = $participant_2_e + 1;
         }
         if ($item_2_e['attendance_type'] == "Sponsor") {
@@ -483,7 +483,7 @@ foreach ($day_3 as $item_3) {
         if ($item_3['attendance_type'] == "Panel") {
             $on_panel_3 = $on_panel_3 + 1;
         }
-        if ($item_3['attendance_type'] == "committee") {
+        if ($item_3['attendance_type'] == "Committee") {
             $on_committee_3 = $on_committee_3 + 1;
         }
         if ($item_3['attendance_type'] == "Organizer") {
@@ -495,7 +495,7 @@ foreach ($day_3 as $item_3) {
         if ($item_3['attendance_type'] == "Press") {
             $on_press_3 = $on_press_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Participants") {
+        if ($item_3['attendance_type'] == "Participants" || $item_3['attendance_type'] == "Abstract Presenter" ) {
             $on_participant_3 = $on_participant_3 + 1;
         }
         if ($item_3['attendance_type'] == "Sponsor") {
@@ -516,7 +516,7 @@ foreach ($day_3 as $item_3) {
         if ($item_3['attendance_type'] == "Panel") {
             $panel_3 = $panel_3 + 1;
         }
-        if ($item_3['attendance_type'] == "committee") {
+        if ($item_3['attendance_type'] == "Committee") {
             $committee_3 = $committee_3 + 1;
         }
         if ($item_3['attendance_type'] == "Organizer") {
@@ -528,7 +528,7 @@ foreach ($day_3 as $item_3) {
         if ($item_3['attendance_type'] == "Press") {
             $press_3 = $press_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Paritipants") {
+        if ($item_3['attendance_type'] == "Participants" || $item_3['attendance_type'] == "Abstract Presenter" ) {
             $participant_3 = $participant_3 + 1;
         }
         if ($item_3['attendance_type'] == "Sponsor") {
@@ -553,7 +553,7 @@ foreach ($day_3_e as $item_3_e) {
         if ($item_3_e['attendance_type'] == "Panel") {
             $on_panel_3_e = $on_panel_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "committee") {
+        if ($item_3_e['attendance_type'] == "Committee") {
             $on_committee_3_e = $on_committee_3_e + 1;
         }
         if ($item_3_e['attendance_type'] == "Organizer") {
@@ -565,7 +565,7 @@ foreach ($day_3_e as $item_3_e) {
         if ($item_3_e['attendance_type'] == "Press") {
             $on_press_3_e = $on_press_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Participants") {
+        if ($item_3_e['attendance_type'] == "Participants" || $item_3_e['attendance_type'] == "Abstract Presenter" ) {
             $on_participant_3_e = $on_participant_3_e + 1;
         }
         if ($item_3_e['attendance_type'] == "Sponsor") {
@@ -586,7 +586,7 @@ foreach ($day_3_e as $item_3_e) {
         if ($item_3_e['attendance_type'] == "Panel") {
             $panel_3_e = $panel_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "committee") {
+        if ($item_3_e['attendance_type'] == "Committee") {
             $committee_3_e = $committee_3_e + 1;
         }
         if ($item_3_e['attendance_type'] == "Organizer") {
@@ -598,7 +598,7 @@ foreach ($day_3_e as $item_3_e) {
         if ($item_3_e['attendance_type'] == "Press") {
             $press_3_e = $press_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Paritipants") {
+        if ($item_3_e['attendance_type'] == "Participants"|| $item_3_e['attendance_type'] == "Abstract Presenter" ) {
             $participant_3_e = $participant_3_e + 1;
         }
         if ($item_3_e['attendance_type'] == "Sponsor") {

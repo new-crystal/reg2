@@ -785,7 +785,7 @@ class PHPExcel_Cell
      *    Column index from string
      *
      *    @param    string $pString
-     *    @return    int Column index (base 1 !!!)
+     *    @return    int Column index (base 1 !!)
      */
     public static function columnIndexFromString($pString = 'A')
     {
@@ -827,7 +827,7 @@ class PHPExcel_Cell
     /**
      *    String from columnindex
      *
-     *    @param    int $pColumnIndex Column index (base 0 !!!)
+     *    @param    int $pColumnIndex Column index (base 0 !!)
      *    @return    string
      */
     public static function stringFromColumnIndex($pColumnIndex = 0)

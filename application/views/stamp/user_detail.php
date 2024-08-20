@@ -52,7 +52,7 @@
                                 <tr>
                                     <th>Event 1 수령 유무</th>
                                     <td> 
-                                        <input id="dp1" type="text" value="<?php echo $item['event_1']; ?>" size="16" class="form-control event_1" name="event_1">
+                                        <input id="" type="text" value="<?php echo $item['event_1']; ?>" size="16" class="form-control event_1" name="event_1">
                                         <select class="form-control input-lg m-bot15" id="event_1_select">
                                             <option value="" selected="selected">직접입력</option>
                                             <option value="Y">Y</option>

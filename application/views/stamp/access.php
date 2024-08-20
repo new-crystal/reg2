@@ -191,19 +191,19 @@ $qrcode = $_GET["qrcode"] ?? "";
                                     </th>
                                     <td id="is_prize">
                                     <?php 
-                                    if(isset($comment_user)){
-                                   
-                                        $filtered_array = array_filter($comment_user, function($item) {
-                                            return $item['is_prize'] === 'Y';
-                                        });
-                                        if(count($filtered_array) == 0){
-                                            echo 'N';
-                                        }else{
-                                            foreach($filtered_array as $item){
-                                                echo $item['is_prize'] . '(' . $item['quiz_num'] . ')'; 
-                                            }
-                                        }     
-                                    }
+                                        if(isset($comment_user)){
+                                    
+                                            $filtered_array = array_filter($comment_user, function($item) {
+                                                return $item['is_prize'] === 'Y';
+                                            });
+                                            if(count($filtered_array) == 0){
+                                                echo 'N';
+                                            }else{
+                                                foreach($filtered_array as $item){
+                                                    echo $item['is_prize']. ' ' . '(' . $item['quiz_num'] . ')'; 
+                                                }
+                                            }     
+                                        }
                                     ?>
                                     </td>
                                 </tr>

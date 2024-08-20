@@ -49,10 +49,17 @@
                                         </span>
                                     </a>
                                 </li>
+                                <li style="margin-bottom: 2rem;" <?php if ($primary_menu == 'non_user') echo 'class="active"' ?>>
+                                    <a href="/event/not_received">
+                                        <i class="icon-list-unordered"></i>
+                                        <span>미수령 관리
+                                        </span>
+                                    </a>
+                                </li>
                                 <li style="margin-bottom: 2rem;" <?php if ($primary_menu == 'stamp') echo 'class="active"' ?>>
                                     <a href="/event/access">
                                         <i class="icon-list-unordered"></i>
-                                        <span> Stamp 관리
+                                        <span> Event 관리
                                         </span>
                                     </a>
                                 </li>

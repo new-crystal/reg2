@@ -29,6 +29,9 @@
         left: 52%;
         transform: translate(-50%, -50%);
     }
+    .reg_num{
+        cursor: pointer;
+    }
 </style>
 <!-- Main content -->
 <div class="content-wrapper">
@@ -65,46 +68,26 @@
             <div class="panel-heading">
                 <h5 class="panel-title">등록 인원(<?php echo count($users) ?>)</h5>
                 <div class="heading-elements">
-                    <!-- <form action="/admin/qr_excel_download" method="post">
+                    <form action="/admin/qr_excel_download" method="post">
                         <button class="btn btn-primary pull-right"><i class="icon-download4"></i> &nbspExcel
                             Download</button>
-                    </form> -->
-                    <form action="/admin/all_deposit_check" method="post" id="all_depositForm">
-                        <button class="btn btn-primary pull-right"><i class="icon-checkmark"></i>전부 입금확인</button>
                     </form>
-                    <form action="/admin/deposit_check" method="post" id="depositForm">
-                        <button class="btn btn-primary pull-right"><i class="icon-checkmark"></i> 입금확인</button>
-                    </form>
-                    <form action="/admin/non_deposit_check" method="post" id="non_depositForm">
-                        <button class="btn btn-danger pull-right"><i class="icon-checkmark"></i> 미결제처리</button>
-                    </form>
-                    <a class="btn btn-primary pull-right" href="/admin/add_user"><i class="icon-add"></i> 등록</a>
-                    <!-- <a class="btn btn-primary pull-right" href="/access/scan_qr"><i class="icon-add"></i> 등록데스크
-                        QR</a> -->
-                    <a class="btn btn-primary pull-right" href="/access/row_scan_qr" target="_blank"><i class="icon-add"></i> 등록데스크 가로
-                        QR</a>
                 </div>
             </div>
 
             <table class="table datatable-basic">
                 <thead>
                     <tr>
-                        <th style="width: 30px;"></th>
                         <th>Registration No.</th>
-                        <th>결제상태</th>
-                        <!-- <th style="width:90px;">등록시간</th> -->
-                        <!-- <th style="width:60px;">KES <br>회원여부</th> -->
-                        <th>Type of Participation</th>
+                        <th>참가유형</th>
                         <th>Full Name</th>
                         <th>성함</th>
-                        <th>네임택용 Affiliation </th>
-                        <!-- <th>Country</th> -->
+                        <th>소속</th>
                         <th>Phone Number</th>
                         <th>ID(E-mail)</th>
-                        <!-- <th style="width:100px;">Category</th> -->
-                        <th>등록비</th>
-                        <!-- <th style="width:90px;">결제일</th> -->
-                        <!-- <th style="width:80px;">결제 방식</th> -->
+                        <th>당첨 퀴즈</th>
+                        <th>Event 1 수령 유무</th>
+                        <th>Event 2 수령 유무</th>
                         <th>메모</th>
                     </tr>
                 </thead>
@@ -118,31 +101,28 @@
                         } else {
                             echo '<tr>';
                         }
-                        echo '<td style="text-align: center;"><input type="checkbox" name="depositChk" class="depositChk" value="' .  $item['registration_no'] . '"></td>';
-                        // echo '<td>' . $index++ . '</td>';
-                        echo '<td class="user_d" onclick="copy(\'' . $item['registration_no'] . '\')">' . $item['registration_no'] . '</td>';
-                        // echo '<td style="text-align: center;">' . number_format($item['fee']) . '</td>';
-                        if ($item['deposit'] != "결제완료") {
-                            echo '<td style="color:red;">';
-                        } else {
-                            echo '<td style="color:blue;">';
-                        }
-                        echo '' . $item['deposit'] . '</td>';
-                        echo '</td>';
-                        // echo '<td>' . $item['time'] . '</td>';
-                        // echo '<td>' . $item['kes_member_status'] . '</td>';
-                        echo '<td>' . $item['attendance_type'] . '</td>';
 
+                        $quize = "";
+                        if($item['prize_q1'] == 'Y'){
+                            $quize = "Q1";
+                        }
+                        else if($item['prize_q2'] == 'Y'){
+                            $quize = "Q2";
+                        }
+                        else if($item['prize_q3'] == 'Y'){
+                            $quize = "Q4";
+                        }
+
+                        echo '<td class="reg_num pointer">' . $item['registration_no'] . '</td>';
+                        echo '<td>' . $item['attendance_type'] . '</td>';
                         echo '<td>' . $item['first_name']  . " " . $item['last_name'] .  '</td>';
                         echo '<td>' . $item['name_kor'] . '</td>';
                         echo '<td>' . $item['org_nametag'] . '</td>';
-                        // echo '<td>' . $item['nation'] . '</td>';
                         echo '<td>' . $item['phone'] . '</td>';
-                        echo '<td class="user_d"><a href="/admin/user_detail?n=' . $item['registration_no'] . '" target="_self">' . $item['email'] . '</a></td>';
-                        // echo '<td>' . $item['member_type']  . '</td>';
-                        echo '<td>' . $item['fee']  . '</td>';
-                        // echo '<td>' . $item['deposit_date']  . '</td>';
-                        // echo '<td>' . $item['deposit_method']  . '</td>';
+                        echo '<td class="user_d"><a href="/event/user_detail?n=' . $item['registration_no'] . '" target="_self">' . $item['email'] . '</a></td>';
+                        echo '<td>' . $quize . '</td>';
+                        echo '<td>' . $item['event_1'] . '</td>';
+                        echo '<td>' . $item['event_2'] . '</td>';
                         if ($item['memo'] != "" && $item['memo'] != 'null') {
                             echo '<td>';
                             echo '<button class="btn qr_btn memo bg-indigo-800" onclick="onClickMemo(\'' . $item['registration_no'] . '\')" data-id="' . $item['registration_no'] . '" style="padding:8px;">메모</button>';
@@ -151,6 +131,7 @@
                             echo '<button class="btn qr_btn memo border-indigo-800 text-indigo-800 bg-white" onclick="onClickMemo(\'' . $item['registration_no'] . '\')" data-id="' . $item['registration_no'] . '"style="padding:8px;">메모</button>';
                         }
                         echo '</td>';
+
                         echo '</tr>';
                     }
                     ?>
@@ -160,7 +141,7 @@
         </div>
         <!-- /basic datatable -->
         <div class="footer text-muted">
-            © 2023. <a href="#">온라인 학술대회</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">(주)인투온</a>
+            © 2024. <a href="#">온라인 학술대회</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">(주)인투온</a>
         </div>
     </div>
     <!-- /content area -->
@@ -182,6 +163,14 @@
     //            }
     //        })
 
+    const regNumList = document.querySelectorAll(".reg_num");
+
+    regNumList.forEach((num)=>{
+        num.addEventListener("click", ()=>{
+            copy(num.innerText)
+        })
+    })
+
     function copy(text) {
         if (navigator.clipboard) {
             navigator.clipboard
@@ -196,7 +185,7 @@
     }
 
     function onClickMemo(id) {
-        const url = `/admin/memo?n=${id}`;
+        const url = `/event/add_memo?n=${id}`;
         window.open(url, "Certificate", "width=500, height=300, top=30, left=30");
     }
 
