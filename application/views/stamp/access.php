@@ -190,7 +190,21 @@ $qrcode = $_GET["qrcode"] ?? "";
                                         댓글 이벤트 당첨 유무
                                     </th>
                                     <td id="is_prize">
-                                    <?php if (isset($comment_user['is_prize']) ) echo $comment_user['is_prize']; ?>
+                                    <?php 
+                                    if(isset($comment_user)){
+                                   
+                                        $filtered_array = array_filter($comment_user, function($item) {
+                                            return $item['is_prize'] === 'Y';
+                                        });
+                                        if(count($filtered_array) == 0){
+                                            echo 'N';
+                                        }else{
+                                            foreach($filtered_array as $item){
+                                                echo $item['is_prize'] . '(' . $item['quiz_num'] . ')'; 
+                                            }
+                                        }     
+                                    }
+                                    ?>
                                     </td>
                                 </tr>
                             </table>
@@ -303,6 +317,6 @@ $qrcode = $_GET["qrcode"] ?? "";
             }
         })
         
-        prize.innerText == "Y" && yellowBackground(prize);
+        prize.innerText.includes('Y')  && yellowBackground(prize);
     }
 </script>
