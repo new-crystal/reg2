@@ -365,4 +365,15 @@ class Users extends CI_Model
 		return $query->result_array();
 	}
 
+	public function get_none_user()
+	{
+		$query = $this->db->query("
+				SELECT *
+				FROM users a
+				WHERE (a.prize_q1 = 'Y' OR a.prize_q2 = 'Y' OR a.prize_q3 = 'Y')
+				AND a.event_2 = 'N'
+				ORDER BY a.time DESC;
+		");
+		return $query->result_array();
+	}
 }

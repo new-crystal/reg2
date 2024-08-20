@@ -109,9 +109,6 @@ table th {
                             echo '<tr>';
                         }
                         echo '<td style="text-align: center;"><input type="checkbox" name="depositChk" class="depositChk" value="' .  $item['registration_no'] . '"></td>';
-                        // echo '<td>' . $index++ . '</td>';
-                        // echo '<td>' . $item['type3'] . '</td>';
-                        // echo '<td>' . substr($item['time'], 0, 10) . '</td>';
                         echo '<td class="user_d" onclick="copy(\'' . $item['registration_no'] . '\')">' . $item['registration_no'] . '</td>';
                         echo '<td>' . $item['attendance_type'] . '</td>';
                         echo '<td>' . $item['first_name']  . " " .  $item['last_name'] . '</td>';
@@ -120,13 +117,13 @@ table th {
                         echo '<td class="user_d"><a href="/admin/user_detail?n=' . $item['registration_no'] . '" target="_self">' . $item['email'] . '</a></td>';
                         echo '<td>' . $item['phone'] . '</td>';
                         echo '<td>';
-                        // if ($item['nation'] == "Republic of Korea") {
+                         if ($item['nation'] == "Republic of Korea") {
                             if ($item['QR_SMS_SEND_YN'] == "Y") {
                                 echo '<button style="background:transparent;border:none" onclick="onClickMsm(\'' . $item['registration_no'] . '\')"><div class="msm_btn btn btn-success qr_btn"  data-id="' . $item['registration_no'] . '">문자발송</div></button>';
                             } else {
                                 echo '<button style="background:transparent;border:none" onclick="onClickMsm(\'' . $item['registration_no'] . '\')"><div class="msm_btn btn btn-non-success qr_btn" data-id="' . $item['registration_no'] . '">문자발송</div></button>';
                             }
-                        // }
+                         }
                         echo '</td>';
                         echo '<td>';
                         if ($item['QR_MAIL_SEND_YN'] == "Y") {

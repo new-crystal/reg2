@@ -227,7 +227,22 @@ class Event extends CI_Controller{
         $object_writer->save('php://output');
     }
 
-    
+    public function not_received()
+    {
+        
+        $this->load->view('admin/header');
+        if (!isset($this->session->admin_data['logged_in']))
+            $this->load->view('admin/login');
+        else {
+            // 
+            $data['primary_menu'] = 'non_user';
+            $data['users'] = $this->users->get_none_user();
+
+            $this->load->view('stamp/left_side.php', $data);
+            $this->load->view('stamp/non_users', $data);
+        }
+        $this->load->view('footer');
+    }
   
 }
 
