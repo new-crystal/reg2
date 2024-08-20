@@ -56,9 +56,10 @@ class Stamp extends CI_Model
 
     public function get_comment_access($number){
         $query = $this->db->query("
-                  	SELECT 
+                    SELECT 
                         rr.idx, 
-                        co.is_prize
+                        co.is_prize,
+                        co.quiz_num
                     FROM 
                         icomes2024.request_registration AS rr
                     LEFT JOIN 
@@ -68,9 +69,9 @@ class Stamp extends CI_Model
                         AND rr.is_deleted = 'N' 
                         AND rr.idx = {$number}
                     GROUP BY 
-                        rr.idx, co.is_prize;
+                        rr.idx, co.is_prize, co.quiz_num;
                     ");
-      return $query -> row_array();
+      return $query -> result_array();
     }
 
     public function update_event($info, $where)
