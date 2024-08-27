@@ -79,10 +79,7 @@
                 <thead>
                     <tr>
                         <th>Registration No.</th>
-                        <th>참가유형</th>
                         <th>Full Name</th>
-                        <th>성함</th>
-                        <th>소속</th>
                         <th>Phone Number</th>
                         <th>ID(E-mail)</th>
                         <th>당첨 퀴즈</th>
@@ -102,33 +99,19 @@
                             echo '<tr>';
                         }
 
-                        $quize = "";
-                        if($item['prize_q1'] == 'Y'){
-                            $quize = "Q1";
-                        }
-                        else if($item['prize_q2'] == 'Y'){
-                            $quize = "Q2";
-                        }
-                        else if($item['prize_q3'] == 'Y'){
-                            $quize = "Q4";
-                        }
-
-                        echo '<td class="reg_num pointer">' . $item['registration_no'] . '</td>';
-                        echo '<td>' . $item['attendance_type'] . '</td>';
+                        echo '<td class="reg_num pointer">' . $item['reg_no'] . '</td>';
                         echo '<td>' . $item['first_name']  . " " . $item['last_name'] .  '</td>';
-                        echo '<td>' . $item['name_kor'] . '</td>';
-                        echo '<td>' . $item['org_nametag'] . '</td>';
                         echo '<td>' . $item['phone'] . '</td>';
-                        echo '<td class="user_d"><a href="/event/user_detail?n=' . $item['registration_no'] . '" target="_self">' . $item['email'] . '</a></td>';
-                        echo '<td>' . $quize . '</td>';
+                        echo '<td class="user_d"><a href="/event/user_detail?n=' . $item['reg_no'] . '" target="_self">' . $item['email'] . '</a></td>';
+                        echo '<td>' . $item['quiz_num'] . '</td>';
                         echo '<td>' . $item['event_1'] . '</td>';
                         echo '<td>' . $item['event_2'] . '</td>';
-                        if ($item['memo'] != "" && $item['memo'] != 'null') {
+                        if ($item['event_memo'] != "" && $item['event_memo'] != 'null') {
                             echo '<td>';
-                            echo '<button class="btn qr_btn memo bg-indigo-800" onclick="onClickMemo(\'' . $item['registration_no'] . '\')" data-id="' . $item['registration_no'] . '" style="padding:8px;">메모</button>';
+                            echo '<button class="btn qr_btn memo bg-indigo-800" onclick="onClickMemo(\'' . $item['reg_no'] . '\')" data-id="' . $item['reg_no'] . '" style="padding:8px;">이벤트 메모</button>';
                         } else {
                             echo '<td>';
-                            echo '<button class="btn qr_btn memo border-indigo-800 text-indigo-800 bg-white" onclick="onClickMemo(\'' . $item['registration_no'] . '\')" data-id="' . $item['registration_no'] . '"style="padding:8px;">메모</button>';
+                            echo '<button class="btn qr_btn memo border-indigo-800 text-indigo-800 bg-white" onclick="onClickMemo(\'' . $item['reg_no'] . '\')" data-id="' . $item['reg_no'] . '"style="padding:8px;">이벤트 메모</button>';
                         }
                         echo '</td>';
 
