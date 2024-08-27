@@ -368,11 +368,29 @@ class Users extends CI_Model
 	public function get_none_user()
 	{
 		$query = $this->db->query("
-				SELECT *
-				FROM users a
-				WHERE (a.prize_q1 = 'Y' OR a.prize_q2 = 'Y' OR a.prize_q3 = 'Y')
-				AND a.event_2 = 'N'
-				ORDER BY a.time DESC;
+				SELECT 
+					rr.idx, 
+					CONCAT('ICOMES2024-', LPAD(rr.idx, 4, '0')) AS reg_no,
+					rr.first_name, 
+					rr.last_name, 
+					rr.phone, 
+					rr.email,
+					u.event_1,
+					u.event_2,
+					co.is_prize,
+					co.quiz_num,
+					u.event_memo
+				FROM 
+					icomes2024.request_registration AS rr
+				LEFT JOIN 
+					icomes2024.comments co ON rr.register = co.member_idx
+				LEFT JOIN
+					users u ON u.registration_no = CONCAT('ICOMES2024-', LPAD(rr.idx, 4, '0'))
+				WHERE 
+					rr.status IN (2, 5) 
+					AND rr.is_deleted = 'N' 
+					AND co.is_prize = 'Y'
+
 		");
 		return $query->result_array();
 	}
