@@ -359,7 +359,8 @@ class Users extends CI_Model
 			 WHERE DATE(TIME) = '2024-09-07'
 			GROUP BY registration_no
 		) b2 ON a.registration_no = b2.qr_registration_no
-		WHERE a.qr_generated = 'Y' AND a.deposit = '결제완료' AND a.attendance_type != 'Participants' AND a.attendance_type != 'Press'
+		WHERE a.qr_generated = 'Y' AND a.deposit = '결제완료' AND a.attendance_type != 'Participants' 
+			AND a.attendance_type != 'Press' AND a.attendance_type != 'Abstract Presenter'
 		ORDER BY a.id ASC
 ");
 		return $query->result_array();

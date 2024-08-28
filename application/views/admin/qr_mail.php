@@ -23,34 +23,34 @@ table {
 }
 </style>
 <div align="center" style="width:750px;margin:0 auto;font-size:0;line-height:0;border:0">
-    <div style="line-height:0;font-size:0;margin:0;padding:0">
-        <img alt="img1" src="https://image.webeon.net/ISCP/231123/ISCP_QR_01.png" />
+   <div align="center" style="line-height:0;font-size:0;margin:0;padding:0">
+        <img src="https://image.webeon.net/icomes2024/qr/img01.png" alt="" border="0" style="width:100%;" />
     </div>
-    <div style="line-height:0;font-size:0;margin:0;padding:0">
-        <a href="https://iscp2023.org/" target="_blank">
-            <img src="https://image.webeon.net/ISCP/231123/ISCP_QR_02.png">
-        </a>
+    <div align="center" style="line-height:0;font-size:0;margin:0;padding:0">
+        <img src="https://image.webeon.net/icomes2024/qr/img02.png" alt="" border="0" style="width:100%;" />
     </div>
-    <div style="line-height:0;font-size:0;margin:0;padding:0">
-        <img src="https://image.webeon.net/ISCP/231123/ISCP_QR_03.png">
+    <div align="center" style="line-height:0;font-size:0;margin:0;padding:0">
+        <img src="https://image.webeon.net/icomes2024/qr/img03.png" alt="" border="0" style="width:100%;" />
     </div>
     <div style="line-height:0;font-size:0;margin:0;padding:0;background-color: #FFF;">
         <img width="200px" height="200px"
             src="data:image/jpg;base64,<?php echo base64_encode(file_get_contents(getcwd() . '/assets/images/QR/qrcode_' . $users['registration_no'] . '.jpg')); ?>"
             alt="" />
     </div>
-    <div style="line-height:0;font-size:0;margin:0;padding:0">
-        <img src="https://image.webeon.net/ISCP/231123/ISCP_QR_04.png" usemap="#image-map">
-
-        <map name="image-map" id="#image-map">
-            <area target="_blank" alt="" title="" href="https://iscp2023.org/main/cme_credits_Information.php"
-                coords="256,294,496,358" shape="rect">
-        </map>
-    </div>
-    <div style="line-height:0;font-size:0;margin:0;padding:0">
-        <img src="https://image.webeon.net/ISCP/231123/ISCP_QR_05.png">
-
-    </div>
+    
+			<div align="center" style="line-height:0;font-size:0;margin:0;padding:0">
+                <a href="https://icomes.or.kr/main/venue.php" target="_blank">
+                    <img src="https://image.webeon.net/icomes2024/qr/img04.png" alt="" border="0" style="width:100%;" />
+                </a>
+            </div>
+	
+            <div align="center" style="line-height:0;font-size:0;margin:0;padding:0">
+				<img src="https://image.webeon.net/icomes2024/qr/img05.png" alt="" border="0" style="width:100%;" />
+            </div>
+			
+			<div align="center" style="line-height:0;font-size:0;margin:0;padding:0">
+				<img src="https://image.webeon.net/icomes2024/qr/img06.png" alt="" border="0" style="width:100%;" />
+            </div>
 
     <div style="width:750px;display:flex; justify-content:center; margin-top:1rem;">
         <input id="email" style="width:350px; height:40px; padding:1rem;" placeholder="받으실 email주소를 작성해주세요." />
