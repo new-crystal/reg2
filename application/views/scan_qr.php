@@ -180,6 +180,25 @@ input {
         .entrance_time {
             transform: translate(-1px, -62px);
         }
+        .alert>h6 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        position: relative;
+        /* animation: fadeInUp 1s; */
+        font-family: Gong;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: #540e73;
+        }
+
+        .alert>h4 {
+        font-size: 1.7rem;
+        font-weight: 600;
+        position: relative;
+        /* animation: fadeInUp 1s; */
+        font-family: Gong;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #540e73;
+        }
 
 /* input {
     background-color: #f9a21b;
@@ -192,6 +211,8 @@ input {
     <div id="container" class="w-full h-full flex items-center">
         <div class="alert">
             <p class="alert_text">Attendance Check Complete!</p>
+            <h6 class="alert_text">예상 평점(Korean Only) : <?php echo $score ?>점</h6>
+            <h4 class="alert_text">This is a CME Credit system exclusively for Korean participants.</h4>
         </div>
         <div class="no_alert" style="display:none;">
             <p class="no_alert_text">Please Check the QR Code.</p>

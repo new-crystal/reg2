@@ -1388,7 +1388,6 @@ class Admin extends CI_Controller
             $userId = $_GET['n'];
             $where = array(
                 'registration_no' => $userId,
-                // [240308] sujeong / msm 주석 
                 'nation' => 'Republic of Korea'
             );
             $info = array(
@@ -1454,18 +1453,18 @@ class Admin extends CI_Controller
                     $this->users->update_msm_status($info, $where);
                     $postdata = http_build_query(
                         array(
-                            'CATEGORY_D_1'      => 'QrSystem',
-                            'CATEGORY_D_2'      => 'iscp',
-                            'CATEGORY_D_3'      => '231123',
-                            'SEND_ADDRESS'      => 'icomes@into-on.com',
+                            'CATEGORY_D_1'      => 'ICOMES',
+                            'CATEGORY_D_2'      => 'qr',
+                            'CATEGORY_D_3'      => '240905',
+                            'SEND_ADDRESS'      => 'icomes_webmail@into-on.com',
                             'SEND_NAME'         => 'ICOMES 2024',
                             'RECV_ADDRESS'      =>  $users['email'],
                             'RECV_NAME'         =>  $users['first_name'] . ' ' . $users['last_name'],
-                            'REPLY_ADDRESS'     => 'icomes@into-on.com',
+                            'REPLY_ADDRESS'     => 'icomes_webmail@into-on.com',
                             'REPLY_NAME'        => 'ICOMES 2024',
-                            'EMAIL_SUBJECT'     => '[ICOMES 2024] ',
+                            'EMAIL_SUBJECT'     => '[ICOMES 2024] On-site Participant Information',
                             'EMAIL_ALTBODY'     => 'ICOMES 2024',
-                            'EMAIL_TEMPLETE_ID' => 'Qr_iscp_231123',
+                            'EMAIL_TEMPLETE_ID' => 'Qr_icomes_240905',
                             'EMBED_IMAGE_GRID'  => 'null',
                             'INSERT_TEXT_GRID'    => "{" .
                                 '"$text1" : ' . '"' .  $users['name_kor'] . '",' .
@@ -1636,19 +1635,19 @@ class Admin extends CI_Controller
 
         $postdata = http_build_query(
             array(
-                'CATEGORY_D_1'      => 'QrSystem',
-                'CATEGORY_D_2'      => 'iscp',
-                'CATEGORY_D_3'      => '231123',
-                'SEND_ADDRESS'      => 'icomes@into-on.com',
+                'CATEGORY_D_1'      => 'ICOMES',
+                'CATEGORY_D_2'      => 'qr',
+                'CATEGORY_D_3'      => '240905',
+                'SEND_ADDRESS'      => 'icomes_webmail@into-on.com',
                 'SEND_NAME'         => 'ICOMES 2024',
                 'RECV_ADDRESS'      => $data['users']['email'],
                 'RECV_NAME'         => $data['users']['first_name'] . ' ' . $data['users']['last_name'],
-                'REPLY_ADDRESS'     => 'icomes@into-on.com',
+                'REPLY_ADDRESS'     => 'icomes_webmail@into-on.com',
                 'REPLY_NAME'        => 'ICOMES 2024',
                 'EMAIL_SUBJECT'     => 'ICOMES 2024',
                 'EMAIL_ALTBODY'     => 'ICOMES 2024',
-                'EMAIL_SUBJECT'     => '[ICOMES 2024] ',
-                'EMAIL_TEMPLETE_ID' => 'Qr_iscp_231123',
+                'EMAIL_SUBJECT'     => '[ICOMES 2024] On-site Participant Information',
+                'EMAIL_TEMPLETE_ID' => 'Qr_icomes_240905',
                 'EMBED_IMAGE_GRID'  => 'null',
                 'INSERT_TEXT_GRID'    => "{" .
                     '"$text1" : ' . '"' . $data['users']['name_kor'] . '",' .
@@ -1687,18 +1686,18 @@ class Admin extends CI_Controller
 
         $postdata = http_build_query(
             array(
-                'CATEGORY_D_1'      => 'QrSystem',
-                'CATEGORY_D_2'      => 'iscp',
-                'CATEGORY_D_3'      => '231123',
-                'SEND_ADDRESS'      => 'icomes@into-on.com',
+                'CATEGORY_D_1'      => 'ICOMES',
+                'CATEGORY_D_2'      => 'qr',
+                'CATEGORY_D_3'      => '240905',
+                'SEND_ADDRESS'      => 'icomes_webmail@into-on.com',
                 'SEND_NAME'         => 'ICOMES 2024',
                 'RECV_ADDRESS'      => $email,
                 'RECV_NAME'         => $data['users']['first_name'] . ' ' . $data['users']['last_name'],
-                'REPLY_ADDRESS'     => 'icomes@into-on.com',
+                'REPLY_ADDRESS'     => 'icomes_webmail@into-on.com',
                 'REPLY_NAME'        => 'ICOMES 2024',
-                'EMAIL_SUBJECT'     => '[ICOMES 2024] ',
+                'EMAIL_SUBJECT'     => '[ICOMES 2024] On-site Participant Information',
                 'EMAIL_ALTBODY'     => 'ICOMES 2024',
-                'EMAIL_TEMPLETE_ID' => 'Qr_iscp_231123',
+                'EMAIL_TEMPLETE_ID' => 'Qr_icomes_240905',
                 'EMBED_IMAGE_GRID'  => 'null',
                 'INSERT_TEXT_GRID'    => "{" .
                     '"$text1" : ' . '"' . $data['users']['name_kor'] . '",' .
