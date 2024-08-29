@@ -129,7 +129,7 @@ input {
 .alert {
     width: 100%;
     height: 290px;
-    background: #ffc425;
+    background: #540e73;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -364,7 +364,7 @@ window.onload = () => {
     alertTime = setTimeout(() => {
         alert.style.display = "none";
         noAlert.style.display = "none";
-    }, 3000)
+    }, 5000)
     inputs.forEach((input) => {
         textTime = setTimeout(() => {
             input.value = ""
