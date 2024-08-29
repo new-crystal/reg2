@@ -360,7 +360,7 @@ class Users extends CI_Model
 			GROUP BY registration_no
 		) b2 ON a.registration_no = b2.qr_registration_no
 		WHERE a.qr_generated = 'Y' AND a.deposit = '결제완료' AND a.attendance_type != 'Participants' 
-			AND a.attendance_type != 'Press' AND a.attendance_type != 'Abstract Presenter'
+			AND a.attendance_type != 'Press' AND a.attendance_type != 'Abstract Presenter' AND a.attendance_type != 'Sponsor'
 		ORDER BY a.id ASC
 ");
 		return $query->result_array();
@@ -391,7 +391,6 @@ class Users extends CI_Model
 					rr.status IN (2, 5) 
 					AND rr.is_deleted = 'N' 
 					AND co.is_prize = 'Y'
-
 		");
 		return $query->result_array();
 	}

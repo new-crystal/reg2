@@ -168,7 +168,21 @@ $remark3 = "";
                                         </select>
                                     </td>
                                 </tr>
-
+                                <tr>
+                                    <th>분야 구분</th>
+                                    <td> <input class="form-control attendance" type="text" value="<?php echo $item['occupation_type']; ?>" name="occupation_type" id="occupation_type">
+                                        <select class="form-control input-lg m-bot15" id="occupation_select">
+                                            <option value="" selected="selected">직접입력</option>
+                                            <option value="Medical">Medical</option>
+                                            <option value="Food & Nutrition">Food & Nutrition</option>
+                                            <option value="Exercise">Exercise</option>
+                                            <option value="Sponsor">Sponsor</option>
+                                            <option value="Press">Press</option>
+                                            <option value="Others">Others</option>
+                                            <option value="정책 세션">정책 세션</option>
+                                        </select>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <th>참석자구분</th>
                                     <td>
@@ -380,6 +394,9 @@ $remark3 = "";
     const member_type = document.querySelector(".member_type");
     const member_type_select = document.querySelector("#member_type_select")
 
+    const occupation_type = document.querySelector("#occupation_type");
+    const occupation_type_select = document.querySelector("#occupation_select")
+
     const ynList = document.querySelectorAll(".yn")
 
 
@@ -391,6 +408,11 @@ $remark3 = "";
     /**member_type select box */
     member_type_select.addEventListener("change", () => {
         member_type.value = member_type_select.options[member_type_select.selectedIndex].value;
+    })
+
+      /**member_type select box */
+      occupation_type_select.addEventListener("change", () => {
+        occupation_type.value = occupation_type_select.options[occupation_type_select.selectedIndex].value;
     })
 
     function removeUser(reg) {

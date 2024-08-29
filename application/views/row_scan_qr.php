@@ -325,7 +325,7 @@
         alertTime = setTimeout(() => {
             alert.style.display = "none";
             noAlert.style.display = "none";
-        }, 3000)
+        }, 5000)
         inputs.forEach((input) => {
             textTime = setTimeout(() => {
                 input.value = "";
