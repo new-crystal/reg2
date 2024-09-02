@@ -65,7 +65,7 @@ $remark3 = "";
                                 <tr>
                                     <td colspan="2">
                                         <button type="button" class="btn btn-primary" onclick="print('<?php echo $item['registration_no']; ?>')">QR Print</button>
-                                        <button type="button" class="btn" onclick="location.href='qr_layout_k?n='+'<?php echo $item['registration_no'];?>'">정책프린트</button>
+                                        <button type="button" class="btn" style="float: right;" onclick="location.href='qr_layout_k?n='+'<?php echo $item['registration_no'];?>'">정책프린트</button>
                                     </td>
                                 </tr>
                                
@@ -119,32 +119,32 @@ $remark3 = "";
 
                                 <tr>
                                     <th>special request food</th>
-                                    <td> <input id="dp1" type="text" value="<?php echo $item['special_request_food']; ?>" size="16" class="form-control" name="special_request_food">
+                                    <td> <input id="special_request_food" type="text" value="<?php echo $item['special_request_food']; ?>" size="16" class="form-control" name="special_request_food">
 
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <th>2일차 조식 여부</th>
-                                    <td> <input id="dp1" type="text" value="<?php echo $item['day2_breakfast_yn']; ?>" size="16" class="form-control yn" name="day2_breakfast_yn">
+                                    <td> <input id="day2_breakfast_yn" type="text" value="<?php echo $item['day2_breakfast_yn']; ?>" size="16" class="form-control yn" name="day2_breakfast_yn">
 
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>2일차 오찬 여부</th>
-                                    <td> <input id="dp1" type="text" value="<?php echo $item['day2_luncheon_yn']; ?>" size="16" class="form-control yn" name="day2_luncheon_yn">
+                                    <td> <input id="day2_luncheon_yn" type="text" value="<?php echo $item['day2_luncheon_yn']; ?>" size="16" class="form-control yn" name="day2_luncheon_yn">
 
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>3일차 조식 여부</th>
-                                    <td> <input id="dp1" type="text" value="<?php echo $item['day3_breakfast_yn']; ?>" size="16" class="form-control yn" name="day3_breakfast_yn">
+                                    <td> <input id="day3_breakfast_yn" type="text" value="<?php echo $item['day3_breakfast_yn']; ?>" size="16" class="form-control yn" name="day3_breakfast_yn">
 
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>3일차 오찬 여부</th>
-                                    <td> <input id="dp1" type="text" value="<?php echo $item['day3_luncheon_yn']; ?>" size="16" class="form-control yn" name="day3_luncheon_yn">
+                                    <td> <input id="day3_luncheon_yn" type="text" value="<?php echo $item['day3_luncheon_yn']; ?>" size="16" class="form-control yn" name="day3_luncheon_yn">
 
                                     </td>
                                 </tr>
@@ -316,27 +316,27 @@ $remark3 = "";
 
                                 <tr>
                                     <th>qr print 여부</th>
-                                    <td><input class="form-control yn" type="text" value="<?php echo $item['qr_print']; ?>" name="qr_print" id="phone"></td>
+                                    <td><input class="form-control yn" type="text" value="<?php echo $item['qr_print']; ?>" name="qr_print" id="qr_print" disabled></td>
                                 </tr>
                                 <tr>
                                     <th>day 1 출결여부</th>
-                                    <td><input class="form-control yn" type="text" value="<?php echo $item['qr_chk_day_1']; ?>" name="qr_chk_day_1" id="phone">
+                                    <td><input class="form-control yn" type="text" value="<?php echo $item['qr_chk_day_1']; ?>" name="qr_chk_day_1" id="qr_chk_day_1" disabled>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>day 2 출결여부</th>
-                                    <td><input class="form-control yn" type="text" value="<?php echo $item['qr_chk_day_2']; ?>" name="qr_chk_day_2" id="phone">
+                                    <td><input class="form-control yn" type="text" value="<?php echo $item['qr_chk_day_2']; ?>" name="qr_chk_day_2" id="qr_chk_day_2" disabled>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>day 3 출결여부</th>
-                                    <td><input class="form-control yn" type="text" value="<?php echo $item['qr_chk_day_3']; ?>" name="qr_chk_day_3" id="phone">
+                                    <td><input class="form-control yn" type="text" value="<?php echo $item['qr_chk_day_3']; ?>" name="qr_chk_day_3" id="qr_chk_day_3" disabled>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Where did you get the information about the conference?</th>
                                     <td>
-                                        <input class="form-control" type="text" value="<?php echo $item['conference_info']; ?>" name="conference_info" id="phone">
+                                        <input class="form-control" type="text" value="<?php echo $item['conference_info']; ?>" name="conference_info" id="conference_info">
                                     </td>
                                 </tr>
                                 <tr>
@@ -347,7 +347,7 @@ $remark3 = "";
                                 </tr>
                                 <tr>
                                     <th>결제상태</th>
-                                    <td> <input type="text" class="form-control" value="<?php echo $item['deposit']; ?>" name="deposit" id="ln"></td>
+                                    <td> <input type="text" class="form-control" value="<?php echo $item['deposit']; ?>" name="deposit" id="deposit"></td>
                                 </tr>
                                 <tr>
                                     <th>결제일</th>
