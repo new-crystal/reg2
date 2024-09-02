@@ -52,7 +52,7 @@ $on_participant_1 = 0;
 $on_committee_1 = 0;
 $on_others_1 = 0;
 $on_sponsor_1 = 0;
-
+$on_k_session_1 = 0;
 /**day1 korean pre-registration */
 $speaker_1 = 0;
 $chairperson_1 = 0;
@@ -64,6 +64,8 @@ $press_1 = 0;
 $participant_1 = 0;
 $others_1 = 0;
 $sponsor_1 = 0;
+$k_session_1 = 0;
+$free_1 = 0;
 
 /**day1 eng onsite*/
 $on_speaker_1_e = 0;
@@ -76,6 +78,7 @@ $on_press_1_e = 0;
 $on_participant_1_e = 0;
 $on_others_1_e = 0;
 $on_sponsor_1_e = 0;
+$on_k_session_1_e = 0;
 
 /**day1 eng pre-regi*/
 $speaker_1_e = 0;
@@ -88,6 +91,8 @@ $press_1_e = 0;
 $participant_1_e = 0;
 $others_1_e = 0;
 $sponsor_1_e = 0;
+$k_session_1_e = 0;
+$free_1_e = 0;
 
 /**day 2 korean onsite */
 $on_speaker_2 = 0;
@@ -100,6 +105,7 @@ $on_press_2 = 0;
 $on_participant_2 = 0;
 $on_others_2 = 0;
 $on_sponsor_2 = 0;
+$on_k_session_2 = 0;
 
 /**day2 korean pre-registration */
 $speaker_2 = 0;
@@ -112,6 +118,8 @@ $press_2 = 0;
 $participant_2 = 0;
 $others_2 = 0;
 $sponsor_2 = 0;
+$k_session_2 = 0;
+$free_2 = 0;
 
 /**day2 eng onsite*/
 $on_speaker_2_e = 0;
@@ -124,7 +132,7 @@ $on_press_2_e = 0;
 $on_participant_2_e = 0;
 $on_others_2_e = 0;
 $on_sponsor_2_e = 0;
-
+$on_k_session_2_e = 0;
 
 /**day2 eng pre-regi*/
 $speaker_2_e = 0;
@@ -137,7 +145,8 @@ $press_2_e = 0;
 $participant_2_e = 0;
 $others_2_e = 0;
 $sponsor_2_e = 0;
-
+$k_session_2_e = 0;
+$free_2_e = 0;
 
 /**day 3 korean onsite */
 $on_speaker_3 = 0;
@@ -150,6 +159,7 @@ $on_press_3 = 0;
 $on_participant_3 = 0;
 $on_others_3 = 0;
 $on_sponsor_3 = 0;
+$on_k_session_3 = 0;
 
 /**day3 korean pre-registration */
 $speaker_3 = 0;
@@ -162,6 +172,8 @@ $press_3 = 0;
 $participant_3 = 0;
 $others_3 = 0;
 $sponsor_3 = 0;
+$k_session_3 = 0;
+$free_3 = 0;
 
 /**day3 eng onsite*/
 $on_speaker_3_e = 0;
@@ -174,6 +186,7 @@ $on_press_3_e = 0;
 $on_participant_3_e = 0;
 $on_others_3_e = 0;
 $on_sponsor_3_e = 0;
+$on_k_session_3_e = 0;
 
 /**day3 eng pre-regi*/
 $speaker_3_e = 0;
@@ -186,7 +199,8 @@ $press_3_e = 0;
 $participant_3_e = 0;
 $others_3_e = 0;
 $sponsor_3_e = 0;
-
+$k_session_3_e = 0;
+$free_3_e = 0;
 
 foreach ($day_1 as $item_1) {
     //print_r($item_1['attendance_type']);
@@ -222,7 +236,13 @@ foreach ($day_1 as $item_1) {
             $on_sponsor_1 = $on_sponsor_1 + 1;
         }
         if ($item_1['attendance_type'] == "Other" || $item_1['attendance_type'] == "Exhibitor") {
-            $others_1 = $others_1 + 1;
+            $on_others_1 = $on_others_1 + 1;
+        }
+        else if ($item_1['attendance_type'] == "정책 세션") {
+            $on_k_session_1 = $on_k_session_1 + 1;
+        }
+        else{
+            $on_others_1 = $on_others_1 + 1;
         }
     } else {
         // print_r($item['attendance_type']);
@@ -230,31 +250,40 @@ foreach ($day_1 as $item_1) {
         if ($item_1['attendance_type'] == "Speaker") {
             $speaker_1 = $speaker_1 + 1;
         }
-        if ($item_1['attendance_type'] == "Chairperson") {
+        else if ($item_1['attendance_type'] == "Chairperson") {
             $chairperson_1 = $chairperson_1 + 1;
         }
-        if ($item_1['attendance_type'] == "Panel") {
+        else if ($item_1['attendance_type'] == "Panel") {
             $panel_1 = $panel_1 + 1;
         }
-        if ($item_1['attendance_type'] == "Committee") {
+        else if ($item_1['attendance_type'] == "Committee") {
             $committee_1 = $committee_1 + 1;
         }
-        if ($item_1['attendance_type'] == "Organizer") {
+        else if ($item_1['attendance_type'] == "Organizer") {
             $organizer_1 = $organizer_1 + 1;
         }
-        if ($item_1['attendance_type'] == "Preceptor") {
+        else if ($item_1['attendance_type'] == "Preceptor") {
             $preceptor_1 = $preceptor_1 + 1;
         }
-        if ($item_1['attendance_type'] == "Press") {
+        else if ($item_1['attendance_type'] == "Press") {
             $press_1 = $press_1 + 1;
         }
-        if ($item_1['attendance_type'] == "Participants"|| $item_1['attendance_type'] == "Abstract Presenter" ) {
+        else if ($item_1['attendance_type'] == "Participants"|| $item_1['attendance_type'] == "Abstract Presenter" ) {
             $participant_1 = $participant_1 + 1;
         }
-        if ($item_1['attendance_type'] == "Sponsor") {
+        else if ($item_1['attendance_type'] == "Sponsor") {
             $sponsor_1 = $sponsor_1 + 1;
         }
-        if ($item_1['attendance_type'] == "Other") {
+        else if ($item_1['attendance_type'] == "Other") {
+            $others_1 = $others_1 + 1;
+        }
+        else if ($item_1['attendance_type'] == "정책 세션") {
+            $k_session_1 = $k_session_1 + 1;
+        }
+        else if ($item_1['attendance_type'] == "Sponsor(free)") {
+            $free_1 = $free_1 + 1;
+        }
+        else{
             $others_1 = $others_1 + 1;
         }
     }
@@ -267,31 +296,37 @@ foreach ($day_1_e as $item_1_e) {
         if ($item_1_e['attendance_type'] == "Speaker") {
             $on_speaker_1_e = $on_speaker_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Chairperson") {
+        else if ($item_1_e['attendance_type'] == "Chairperson") {
             $on_chairperson_1_e = $on_chairperson_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Panel") {
+        else if ($item_1_e['attendance_type'] == "Panel") {
             $on_panel_1_e = $on_panel_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Committee") {
+        else if ($item_1_e['attendance_type'] == "Committee") {
             $on_committee_1_e = $on_committee_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Organizer") {
+        else if ($item_1_e['attendance_type'] == "Organizer") {
             $on_organizer_1_e = $on_organizer_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Preceptor") {
+        else if ($item_1_e['attendance_type'] == "Preceptor") {
             $on_preceptor_1_e = $on_preceptor_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Press") {
+        else if ($item_1_e['attendance_type'] == "Press") {
             $on_press_1_e = $on_press_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Participants" || $item_1_e['attendance_type'] == "Abstract Presenter" ) {
+        else if ($item_1_e['attendance_type'] == "Participants" || $item_1_e['attendance_type'] == "Abstract Presenter" ) {
             $on_participant_1_e = $on_participant_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Sponsor") {
+        else if ($item_1_e['attendance_type'] == "Sponsor") {
             $on_sponsor_1_e = $on_sponsor_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Other" || $item_1_e['attendance_type'] == "Exhibitor") {
+        else if ($item_1_e['attendance_type'] == "Other" || $item_1_e['attendance_type'] == "Exhibitor") {
+            $on_others_1_e = $on_others_1_e + 1;
+        }
+        else if ($item_1_e['attendance_type'] == "정책 세션") {
+            $on_k_session_1_e = $on_k_session_1_e + 1;
+        }
+        else{
             $on_others_1_e = $on_others_1_e + 1;
         }
     } else {
@@ -300,31 +335,40 @@ foreach ($day_1_e as $item_1_e) {
         if ($item_1_e['attendance_type'] == "Speaker") {
             $speaker_1_e = $speaker_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Chairperson") {
+        else if ($item_1_e['attendance_type'] == "Chairperson") {
             $chairperson_1_e = $chairperson_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Panel") {
+        else if ($item_1_e['attendance_type'] == "Panel") {
             $panel_1_e = $panel_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Committee") {
+        else if ($item_1_e['attendance_type'] == "Committee") {
             $committee_1_e = $committee_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Organizer") {
+        else if ($item_1_e['attendance_type'] == "Organizer") {
             $organizer_1_e = $organizer_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Preceptor") {
+        else if ($item_1_e['attendance_type'] == "Preceptor") {
             $preceptor_1_e = $preceptor_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Press") {
+        else if ($item_1_e['attendance_type'] == "Press") {
             $press_1_e = $press_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Participants" || $item_1_e['attendance_type'] == "Abstract Presenter" ) {
+        else if ($item_1_e['attendance_type'] == "Participants" || $item_1_e['attendance_type'] == "Abstract Presenter" ) {
             $participant_1_e = $participant_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Sponsor") {
+        else if ($item_1_e['attendance_type'] == "Sponsor") {
             $sponsor_1_e = $sponsor_1_e + 1;
         }
-        if ($item_1_e['attendance_type'] == "Other" || $item_1_e['attendance_type'] == "Exhibitor") {
+        else if ($item_1_e['attendance_type'] == "Other" || $item_1_e['attendance_type'] == "Exhibitor") {
+            $others_1_e = $others_1_e + 1;
+        }
+        else if ($item_1_e['attendance_type'] == "정책 세션") {
+            $k_session_1_e = $k_session_1_e + 1;
+        }
+        else if ($item_1_e['attendance_type'] == "Sponsor(free)") {
+            $free_1_e = $free_e + 1;
+        }
+        else{
             $others_1_e = $others_1_e + 1;
         }
     }
@@ -337,31 +381,37 @@ foreach ($day_2 as $item_2) {
         if ($item_2['attendance_type'] == "Speaker") {
             $on_speaker_2 = $on_speaker_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Chairperson") {
+        else if ($item_2['attendance_type'] == "Chairperson") {
             $on_chairperson_2 = $on_chairperson_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Panel") {
+        else if ($item_2['attendance_type'] == "Panel") {
             $on_panel_2 = $on_panel_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Committee") {
+        else if ($item_2['attendance_type'] == "Committee") {
             $on_committee_2 = $on_committee_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Organizer") {
+        else if ($item_2['attendance_type'] == "Organizer") {
             $on_organizer_2 = $on_organizer_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Preceptor") {
+        else if ($item_2['attendance_type'] == "Preceptor") {
             $on_preceptor_2 = $on_preceptor_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Press") {
+        else if ($item_2['attendance_type'] == "Press") {
             $on_press_2 = $on_press_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Participants" || $item_2['attendance_type'] == "Abstract Presenter" ) {
+        else if ($item_2['attendance_type'] == "Participants" || $item_2['attendance_type'] == "Abstract Presenter" ) {
             $on_participant_2 = $on_participant_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Sponsor") {
+        else if ($item_2['attendance_type'] == "Sponsor") {
             $on_sponsor_2 = $on_sponsor_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Other" || $item_2['attendance_type'] == "Exhibitor") {
+        else if ($item_2['attendance_type'] == "Other" || $item_2['attendance_type'] == "Exhibitor") {
+            $on_others_2 = $on_others_2 + 1;
+        }
+        else if ($item_2['attendance_type'] == "정책 세션") {
+            $on_k_session_2 = $on_k_session_2 + 1;
+        }
+        else{
             $on_others_2 = $on_others_2 + 1;
         }
     } else {
@@ -370,31 +420,40 @@ foreach ($day_2 as $item_2) {
         if ($item_2['attendance_type'] == "Speaker") {
             $speaker_2 = $speaker_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Chairperson") {
+        else if ($item_2['attendance_type'] == "Chairperson") {
             $chairperson_2 = $chairperson_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Panel") {
+        else if ($item_2['attendance_type'] == "Panel") {
             $panel_2 = $panel_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Committee") {
+        else if ($item_2['attendance_type'] == "Committee") {
             $committee_2 = $committee_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Organizer") {
+        else if ($item_2['attendance_type'] == "Organizer") {
             $organizer_2 = $organizer_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Preceptor") {
+        else if ($item_2['attendance_type'] == "Preceptor") {
             $preceptor_2 = $preceptor_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Press") {
+        else if ($item_2['attendance_type'] == "Press") {
             $press_2 = $press_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Participants"|| $item_2['attendance_type'] == "Abstract Presenter" ) {
+        else if ($item_2['attendance_type'] == "Participants"|| $item_2['attendance_type'] == "Abstract Presenter" ) {
             $participant_2 = $participant_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Sponsor") {
+        else if ($item_2['attendance_type'] == "Sponsor") {
             $sponsor_2 = $sponsor_2 + 1;
         }
-        if ($item_2['attendance_type'] == "Other" || $item_2['attendance_type'] == "Exhibitor") {
+        else if ($item_2['attendance_type'] == "Other" || $item_2['attendance_type'] == "Exhibitor") {
+            $others_2 = $others_2 + 1;
+        }
+        else if ($item_2['attendance_type'] == "정책 세션") {
+            $k_session_2 = $k_session_2 + 1;
+        }
+        else if ($item_2['attendance_type'] == "Sponsor(free)") {
+            $free_2 = $free_2 + 1;
+        }
+        else{
             $others_2 = $others_2 + 1;
         }
     }
@@ -407,31 +466,37 @@ foreach ($day_2_e as $item_2_e) {
         if ($item_2_e['attendance_type'] == "Speaker") {
             $on_speaker_2_e = $on_speaker_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Chairperson") {
+        else if ($item_2_e['attendance_type'] == "Chairperson") {
             $on_chairperson_2_e = $on_chairperson_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Panel") {
+        else if ($item_2_e['attendance_type'] == "Panel") {
             $on_panel_2_e = $on_panel_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Committee") {
+        else if ($item_2_e['attendance_type'] == "Committee") {
             $on_committee_2_e = $on_committee_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Organizer") {
+        else if ($item_2_e['attendance_type'] == "Organizer") {
             $on_organizer_2_e = $on_organizer_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Preceptor") {
+        else if ($item_2_e['attendance_type'] == "Preceptor") {
             $on_preceptor_2_e = $on_preceptor_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Press") {
+        else if ($item_2_e['attendance_type'] == "Press") {
             $on_press_2_e = $on_press_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Participants" || $item_2_e['attendance_type'] == "Abstract Presenter" ) {
+        else if ($item_2_e['attendance_type'] == "Participants" || $item_2_e['attendance_type'] == "Abstract Presenter" ) {
             $on_participant_2_e = $on_participant_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Sponsor") {
+        else if ($item_2_e['attendance_type'] == "Sponsor") {
             $on_sponsor_2_e = $on_sponsor_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Other" || $item_2_e['attendance_type'] == "Exhibitor") {
+        else if ($item_2_e['attendance_type'] == "Other" || $item_2_e['attendance_type'] == "Exhibitor") {
+            $on_others_2_e = $on_others_2_e + 1;
+        }
+        else if ($item_2_e['attendance_type'] == "정책 세션") {
+            $on_k_session_2_e = $on_k_session_2_e + 1;
+        }
+        else{
             $on_others_2_e = $on_others_2_e + 1;
         }
     } else {
@@ -440,31 +505,40 @@ foreach ($day_2_e as $item_2_e) {
         if ($item_2_e['attendance_type'] == "Speaker") {
             $speaker_2_e = $speaker_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Chairperson") {
+        else if ($item_2_e['attendance_type'] == "Chairperson") {
             $chairperson_2_e = $chairperson_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Panel") {
+        else if ($item_2_e['attendance_type'] == "Panel") {
             $panel_2_e = $panel_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Committee") {
+        else if ($item_2_e['attendance_type'] == "Committee") {
             $committee_2_e = $committee_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Organizer") {
+        else if ($item_2_e['attendance_type'] == "Organizer") {
             $organizer_2_e = $organizer_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Preceptor") {
+        else if ($item_2_e['attendance_type'] == "Preceptor") {
             $preceptor_2_e = $preceptor_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Press") {
+        else if ($item_2_e['attendance_type'] == "Press") {
             $press_2_e = $press_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Participants" || $item_2_e['attendance_type'] == "Abstract Presenter" ) {
+        else if ($item_2_e['attendance_type'] == "Participants" || $item_2_e['attendance_type'] == "Abstract Presenter" ) {
             $participant_2_e = $participant_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Sponsor") {
+        else if ($item_2_e['attendance_type'] == "Sponsor") {
             $sponsor_2_e = $sponsor_2_e + 1;
         }
-        if ($item_2_e['attendance_type'] == "Other" || $item_2_e['attendance_type'] == "Exhibitor") {
+        else if ($item_2_e['attendance_type'] == "Other" || $item_2_e['attendance_type'] == "Exhibitor") {
+            $others_2_e = $others_2_e + 1;
+        } 
+        else if ($item_2_e['attendance_type'] == "정책 세션") {
+            $k_session_2_e = $k_session_2_e + 1;
+        }
+        else if ($item_2_e['attendance_type'] == "Sponsor(free)") {
+            $free_2_e = $free_2_e + 1;
+        }
+        else{
             $others_2_e = $others_2_e + 1;
         }
     }
@@ -477,31 +551,37 @@ foreach ($day_3 as $item_3) {
         if ($item_3['attendance_type'] == "Speaker") {
             $on_speaker_3 = $on_speaker_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Chairperson") {
+        else if ($item_3['attendance_type'] == "Chairperson") {
             $on_chairperson_3 = $on_chairperson_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Panel") {
+        else if ($item_3['attendance_type'] == "Panel") {
             $on_panel_3 = $on_panel_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Committee") {
+        else if ($item_3['attendance_type'] == "Committee") {
             $on_committee_3 = $on_committee_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Organizer") {
+        else if ($item_3['attendance_type'] == "Organizer") {
             $on_organizer_3 = $on_organizer_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Preceptor") {
+        else if ($item_3['attendance_type'] == "Preceptor") {
             $on_preceptor_3 = $on_preceptor_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Press") {
+        else if ($item_3['attendance_type'] == "Press") {
             $on_press_3 = $on_press_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Participants" || $item_3['attendance_type'] == "Abstract Presenter" ) {
+        else if ($item_3['attendance_type'] == "Participants" || $item_3['attendance_type'] == "Abstract Presenter" ) {
             $on_participant_3 = $on_participant_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Sponsor") {
+        else if ($item_3['attendance_type'] == "Sponsor") {
             $on_sponsor_3 = $on_sponsor_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Other" || $item_3['attendance_type'] == "Exhibitor") {
+        else if ($item_3['attendance_type'] == "Other" || $item_3['attendance_type'] == "Exhibitor") {
+            $on_others_3 = $on_others_3 + 1;
+        }   
+        else if ($item_3['attendance_type'] == "정책 세션") {
+            $on_k_session_3 = $on_k_session_3 + 1;
+        }
+        else{
             $on_others_3 = $on_others_3 + 1;
         }
     } else {
@@ -510,31 +590,40 @@ foreach ($day_3 as $item_3) {
         if ($item_3['attendance_type'] == "Speaker") {
             $speaker_3 = $speaker_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Chairperson") {
+        else if ($item_3['attendance_type'] == "Chairperson") {
             $chairperson_3 = $chairperson_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Panel") {
+        else if ($item_3['attendance_type'] == "Panel") {
             $panel_3 = $panel_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Committee") {
+        else if ($item_3['attendance_type'] == "Committee") {
             $committee_3 = $committee_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Organizer") {
+        else if ($item_3['attendance_type'] == "Organizer") {
             $organizer_3 = $organizer_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Preceptor") {
+        else if ($item_3['attendance_type'] == "Preceptor") {
             $preceptor_3 = $preceptor_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Press") {
+        else if ($item_3['attendance_type'] == "Press") {
             $press_3 = $press_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Participants" || $item_3['attendance_type'] == "Abstract Presenter" ) {
+        else if ($item_3['attendance_type'] == "Participants" || $item_3['attendance_type'] == "Abstract Presenter" ) {
             $participant_3 = $participant_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Sponsor") {
+        else if ($item_3['attendance_type'] == "Sponsor") {
             $sponsor_3 = $sponsor_3 + 1;
         }
-        if ($item_3['attendance_type'] == "Other" || $item_3['attendance_type'] == "Exhibitor") {
+        else if ($item_3['attendance_type'] == "Other" || $item_3['attendance_type'] == "Exhibitor") {
+            $others_3 = $others_3 + 1;
+        } 
+        else if ($item_3['attendance_type'] == "정책 세션") {
+            $k_session_3 = $k_session_3 + 1;
+        }
+        else if ($item_3['attendance_type'] == "Sponsor(free)") {
+            $free_3 = $free_3 + 1;
+        }
+        else{
             $others_3 = $others_3 + 1;
         }
     }
@@ -547,31 +636,37 @@ foreach ($day_3_e as $item_3_e) {
         if ($item_3_e['attendance_type'] == "Speaker") {
             $on_speaker_3_e = $on_speaker_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Chairperson") {
+        else if ($item_3_e['attendance_type'] == "Chairperson") {
             $on_chairperson_3_e = $on_chairperson_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Panel") {
+        else if ($item_3_e['attendance_type'] == "Panel") {
             $on_panel_3_e = $on_panel_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Committee") {
+        else if ($item_3_e['attendance_type'] == "Committee") {
             $on_committee_3_e = $on_committee_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Organizer") {
+        else if ($item_3_e['attendance_type'] == "Organizer") {
             $on_organizer_3_e = $on_organizer_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Preceptor") {
+        else if ($item_3_e['attendance_type'] == "Preceptor") {
             $on_preceptor_3_e = $on_preceptor_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Press") {
+        else if ($item_3_e['attendance_type'] == "Press") {
             $on_press_3_e = $on_press_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Participants" || $item_3_e['attendance_type'] == "Abstract Presenter" ) {
+        else if ($item_3_e['attendance_type'] == "Participants" || $item_3_e['attendance_type'] == "Abstract Presenter" ) {
             $on_participant_3_e = $on_participant_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Sponsor") {
+        else if ($item_3_e['attendance_type'] == "Sponsor") {
             $on_sponsor_3_e = $on_sponsor_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Other" || $item_3_e['attendance_type'] == "Exhibitor") {
+        else if ($item_3_e['attendance_type'] == "Other" || $item_3_e['attendance_type'] == "Exhibitor") {
+            $on_others_3_e = $on_others_3_e + 1;
+        }
+        else if ($item_3_e['attendance_type'] == "정책 세션"){
+            $on_k_session_3_e = $on_k_session_3_e + 1;
+        }
+        else{
             $on_others_3_e = $on_others_3_e + 1;
         }
     } else {
@@ -580,31 +675,40 @@ foreach ($day_3_e as $item_3_e) {
         if ($item_3_e['attendance_type'] == "Speaker") {
             $speaker_3_e = $speaker_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Chairperson") {
+        else if ($item_3_e['attendance_type'] == "Chairperson") {
             $chairperson_3_e = $chairperson_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Panel") {
+        else if ($item_3_e['attendance_type'] == "Panel") {
             $panel_3_e = $panel_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Committee") {
+        else if ($item_3_e['attendance_type'] == "Committee") {
             $committee_3_e = $committee_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Organizer") {
+        else if ($item_3_e['attendance_type'] == "Organizer") {
             $organizer_3_e = $organizer_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Preceptor") {
+        else if ($item_3_e['attendance_type'] == "Preceptor") {
             $preceptor_3_e = $preceptor_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Press") {
+        else if ($item_3_e['attendance_type'] == "Press") {
             $press_3_e = $press_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Participants"|| $item_3_e['attendance_type'] == "Abstract Presenter" ) {
+        else if ($item_3_e['attendance_type'] == "Participants"|| $item_3_e['attendance_type'] == "Abstract Presenter" ) {
             $participant_3_e = $participant_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Sponsor") {
+        else if ($item_3_e['attendance_type'] == "Sponsor") {
             $sponsor_3_e = $sponsor_3_e + 1;
         }
-        if ($item_3_e['attendance_type'] == "Other" || $item_3_e['attendance_type'] == "Exhibitor") {
+        else if ($item_3_e['attendance_type'] == "Other" || $item_3_e['attendance_type'] == "Exhibitor") {
+            $others_3_e = $others_3_e + 1;
+        }
+        else if($item_3_e['attendance_type'] == "정책 세션" ){
+            $k_session_3_e =  $k_session_3_e  + 1;
+        }
+        else if($item_3_e['attendance_type'] == "Spnsor(free)" ){
+            $free_3_e =  $free_3_e  + 1;
+        }
+        else{
             $others_3_e = $others_3_e + 1;
         }
     }
@@ -673,7 +777,7 @@ $day_3_users = count($day_3) + count($day_3_e);
 
         </tr>
         <tr>
-            <th class="bg-red-100" rowspan="8">사전등록</th>
+            <th class="bg-red-100" rowspan="10">사전등록</th>
             <th class="bg-red-100">Speaker</th>
             <td>
                 <?php echo isset($speaker_1_e) ? $speaker_1_e : 0; ?>
@@ -938,6 +1042,43 @@ $day_3_users = count($day_3) + count($day_3_e);
                 ?>
             </td>
         </tr>
+        <tr>
+            <th class="bg-red-100">Sponsor(free)</th>
+            <td>
+                <?php echo isset($free_1_e) ? $free_1_e : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($free_1) ?  $free_1  : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($free_2_e) ? $free_2_e  : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($free_2) ?  $free_2 : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($free_3_e) ? $free_3_e : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($free_3) ? $free_3 : 0; ?>
+            </td>
+            <td>
+                <?php
+                /**day1 */
+                if (isset($participant_1_e) && !isset($participant_2_e) && !isset($participant_3_e)) {
+                    echo    $others_1_e + $others_1;
+                }
+                /**day 2 */
+                else if (isset($participant_1_e) && isset($participant_2_e) && !isset($participant_3_e)) {
+                    echo    $others_1_e + $others_1 + $others_2_e + $others_2;
+                }
+                /**day 3 */
+                else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
+                    echo   $others_1_e + $others_1 + $others_2_e + $others_2 + $others_3_e + $others_3;
+                }
+                ?>
+            </td>
+        </tr>
 
         <tr>
             <th class="bg-red-100">Others</th>
@@ -978,24 +1119,61 @@ $day_3_users = count($day_3) + count($day_3_e);
         </tr>
 
         <tr>
+            <th class="bg-red-100">정책 세션</th>
+            <td>
+                <?php echo isset($k_session_1_e) ? $k_session_1_e : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($k_session_1) ?  $k_session_1  : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($k_session_2_e) ? $k_session_2_e  : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($k_session_2) ?  $k_session_2 : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($k_session_3_e) ? $k_session_3_e : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($k_session_3) ? $k_session_3 : 0; ?>
+            </td>
+            <td>
+                <?php
+                /**day1 */
+                if (isset($participant_1_e) && !isset($participant_2_e) && !isset($participant_3_e)) {
+                    echo    $k_session_1_e + $k_session_1;
+                }
+                /**day 2 */
+                else if (isset($participant_1_e) && isset($participant_2_e) && !isset($participant_3_e)) {
+                    echo    $k_session_1_e + $k_session_1 + $k_session_2_e + $k_session_2;
+                }
+                /**day 3 */
+                else if (isset($participant_1_e) && isset($participant_2_e) && isset($participant_3_e)) {
+                    echo   $k_session_1_e + $k_session_1 + $k_session_2_e + $k_session_2 + $k_session_3_e + $k_session_3;
+                }
+                ?>
+            </td>
+        </tr>
+        <tr>
             <th class="bg-red-100" colspan="2">계</th>
             <td class="day_1_e">
-                <?php echo  $speaker_1_e + $chairperson_1_e + $panel_1_e + $committee_1_e + $organizer_1_e + $preceptor_1_e + $press_1_e + $participant_1_e + $others_1_e   ?>
+                <?php echo  $speaker_1_e + $chairperson_1_e + $panel_1_e + $committee_1_e + $organizer_1_e + $preceptor_1_e + $press_1_e + $participant_1_e + $others_1_e + $sponsor_1_e + $free_1_e + $k_session_1_e; ?>
             </td>
             <td class="day_1">
-                <?php echo  $speaker_1 + $chairperson_1 + $panel_1 + $committee_1 + $organizer_1 + $preceptor_1 + $press_1 + $participant_1 + $others_1   ?>
+                <?php echo  $speaker_1 + $chairperson_1 + $panel_1 + $committee_1 + $organizer_1 + $preceptor_1 + $press_1 + $participant_1 + $others_1 + $sponsor_1 + $free_1 + $k_session_1; ?>
             </td>
             <td class="day_2_e">
-                <?php echo  $speaker_2_e + $chairperson_2_e + $panel_2_e + $committee_2_e + $organizer_2_e + $preceptor_2_e + $press_2_e + $participant_2_e + $others_2_e   ?>
+                <?php echo  $speaker_2_e + $chairperson_2_e + $panel_2_e + $committee_2_e + $organizer_2_e + $preceptor_2_e + $press_2_e + $participant_2_e + $others_2_e + $sponsor_2_e + $free_2_e + $k_session_2_e; ?>
             </td>
             <td class="day_2">
-                <?php echo  $speaker_2 + $chairperson_2 + $panel_2 + $committee_2 + $organizer_2 + $preceptor_2 + $press_2 + $participant_2 + $others_2   ?>
+                <?php echo  $speaker_2 + $chairperson_2 + $panel_2 + $committee_2 + $organizer_2 + $preceptor_2 + $press_2 + $participant_2 + $others_2 + $sponsor_2 + $free_2 + $k_session_2; ?>
             </td>
             <td class="day_3_e">
-                <?php echo  $speaker_3_e + $chairperson_3_e + $panel_3_e + $committee_3_e + $organizer_3_e + $preceptor_3_e + $press_3_e + $participant_3_e + $others_3_e   ?>
+                <?php echo  $speaker_3_e + $chairperson_3_e + $panel_3_e + $committee_3_e + $organizer_3_e + $preceptor_3_e + $press_3_e + $participant_3_e + $others_3_e + $sponsor_3_e + $free_3_e + $k_session_3_e;  ?>
             </td>
             <td class="day_3">
-                <?php echo  $speaker_3 + $chairperson_3 + $panel_3 + $committee_3 + $organizer_3 + $preceptor_3 + $press_3 + $participant_3 + $others_3   ?>
+                <?php echo  $speaker_3 + $chairperson_3 + $panel_3 + $committee_3 + $organizer_3 + $preceptor_3 + $press_3 + $participant_3 + $others_3 + $sponsor_3 + $free_3 + $k_session_3; ?>
             </td>
             <td rowspan="2" class="count_7"></td>
         </tr>
@@ -1007,7 +1185,7 @@ $day_3_users = count($day_3) + count($day_3_e);
         </tr>
 
         <tr>
-            <th class="bg-blue-100" rowspan="8">현장등록</th>
+            <th class="bg-blue-100" rowspan="9">현장등록</th>
             <th class="bg-blue-100">Speaker</th>
             <td>
                 <?php echo isset($on_speaker_1_e) ? $on_speaker_1_e : 0; ?>
@@ -1309,24 +1487,61 @@ $day_3_users = count($day_3) + count($day_3_e);
             </td>
         </tr>
         <tr>
+            <th class="bg-blue-100">정책 세션</th>
+            <td>
+                <?php echo isset($on_k_session_1_e) ? $on_k_session_1_e : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($on_k_session_1) ?  $on_k_session_1  : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($on_k_session_2_e) ? $on_k_session_2_e  : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($on_k_session_2) ?  $on_k_session_2 : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($on_k_session_3_e) ? $on_k_session_3_e : 0; ?>
+            </td>
+            <td>
+                <?php echo isset($on_k_session_3) ? $on_k_session_3 : 0; ?>
+            </td>
+            <td>
+                <?php
+                /**day1 */
+                if (isset($on_participant_1_e) && !isset($on_participant_2_e) && !isset($on_participant_3_e)) {
+                    echo  $on_k_session_1_e + $on_k_session_1;
+                }
+                /**day 2 */
+                else if (isset($on_participant_1_e) && isset($on_participant_2_e) && !isset($on_participant_3_e)) {
+                    echo $on_k_session_1_e + $on_k_session_1 + $on_k_session_2_e + $on_k_session_2;
+                }
+                /**day 3 */
+                else if (isset($on_participant_1_e) && isset($on_participant_2_e) && isset($on_participant_3_e)) {
+                    echo  $on_k_session_1_e + $on_k_session_1 + $on_k_session_2_e + $on_k_session_2 + $on_k_session_3_e + $on_k_session_3;
+                }
+                ?>
+            </td>
+        </tr>
+        <tr>
             <th class="bg-blue-100" colspan="2">계</th>
             <td class="on_day_1_e">
-                <?php echo  $on_speaker_1_e + $on_chairperson_1_e + $on_panel_1_e + $on_committee_1_e + $on_organizer_1_e + $on_preceptor_1_e + $on_press_1_e + $on_participant_1_e + $on_others_1_e   ?>
+                <?php echo  $on_speaker_1_e + $on_chairperson_1_e + $on_panel_1_e + $on_committee_1_e + $on_organizer_1_e + $on_preceptor_1_e + $on_press_1_e + $on_participant_1_e + $on_others_1_e + $on_sponsor_1_e + $on_k_session_1_e;  ?>
             </td>
             <td class="on_day_1">
-                <?php echo  $on_speaker_1 + $on_chairperson_1 + $on_panel_1 + $on_committee_1 + $on_organizer_1 + $on_preceptor_1 + $on_press_1 + $on_participant_1 + $on_others_1   ?>
+                <?php echo  $on_speaker_1 + $on_chairperson_1 + $on_panel_1 + $on_committee_1 + $on_organizer_1 + $on_preceptor_1 + $on_press_1 + $on_participant_1 + $on_others_1 + $on_sponsor_1 + $on_k_session_1; ?>
             </td>
             <td class="on_day_2_e">
-                <?php echo  $on_speaker_2_e + $on_chairperson_2_e + $on_panel_2_e + $on_committee_2_e + $on_organizer_2_e + $on_preceptor_2_e + $on_press_2_e + $on_participant_2_e + $on_others_2_e   ?>
+                <?php echo  $on_speaker_2_e + $on_chairperson_2_e + $on_panel_2_e + $on_committee_2_e + $on_organizer_2_e + $on_preceptor_2_e + $on_press_2_e + $on_participant_2_e + $on_others_2_e + $on_sponsor_2_e + $on_k_session_2_e; ?>
             </td>
             <td class="on_day_2">
-                <?php echo  $on_speaker_2 + $on_chairperson_2 + $on_panel_2 + $on_committee_2 + $on_organizer_2 + $on_preceptor_2 + $on_press_2 + $on_participant_2 + $on_others_2   ?>
+                <?php echo  $on_speaker_2 + $on_chairperson_2 + $on_panel_2 + $on_committee_2 + $on_organizer_2 + $on_preceptor_2 + $on_press_2 + $on_participant_2 + $on_others_2 + $on_sponsor_2 + $on_k_session_2;  ?>
             </td>
             <td class="on_day_3_e">
-                <?php echo  $on_speaker_3_e + $on_chairperson_3_e + $on_panel_3_e + $on_committee_3_e + $on_organizer_3_e + $on_preceptor_3_e + $on_press_3_e + $on_participant_3_e + $on_others_3_e   ?>
+                <?php echo  $on_speaker_3_e + $on_chairperson_3_e + $on_panel_3_e + $on_committee_3_e + $on_organizer_3_e + $on_preceptor_3_e + $on_press_3_e + $on_participant_3_e + $on_others_3_e + $on_sponsor_3_e + $on_k_session_3_e; ?>
             </td>
             <td class="on_day_3">
-                <?php echo  $on_speaker_3 + $on_chairperson_3 + $on_panel_3 + $on_committee_3 + $on_organizer_3 + $on_preceptor_3 + $on_press_3 + $on_participant_3 + $on_others_3   ?>
+                <?php echo  $on_speaker_3 + $on_chairperson_3 + $on_panel_3 + $on_committee_3 + $on_organizer_3 + $on_preceptor_3 + $on_press_3 + $on_participant_3 + $on_others_3 + $on_sponsor_3 + $on_k_session_3; ?>
             </td>
             <td rowspan="2" class="count_8"></td>
         </tr>

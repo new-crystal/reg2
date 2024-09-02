@@ -347,6 +347,20 @@ class Admin extends CI_Controller
         $this->load->view('admin/qr_layout', $data);
     }
 
+    function qr_layout_k()
+    {
+
+        $this->load->view('admin/header');
+        $regNo = $_GET['n'];
+        $where = array(
+            'registration_no' => $regNo
+        );
+        $data['users'] = $this->users->get_user($where);
+        //                var_dump($data['users']);
+        $this->load->view('admin/qr_layout_k', $data);
+    }
+
+
 
 
     public function qr_layout_all()
@@ -1456,11 +1470,11 @@ class Admin extends CI_Controller
                             'CATEGORY_D_1'      => 'ICOMES',
                             'CATEGORY_D_2'      => 'qr',
                             'CATEGORY_D_3'      => '240905',
-                            'SEND_ADDRESS'      => 'icomes_webmail@into-on.com',
+                            'SEND_ADDRESS'      => 'icomes@into-on.com',
                             'SEND_NAME'         => 'ICOMES 2024',
                             'RECV_ADDRESS'      =>  $users['email'],
                             'RECV_NAME'         =>  $users['first_name'] . ' ' . $users['last_name'],
-                            'REPLY_ADDRESS'     => 'icomes_webmail@into-on.com',
+                            'REPLY_ADDRESS'     => 'icomes@into-on.com',
                             'REPLY_NAME'        => 'ICOMES 2024',
                             'EMAIL_SUBJECT'     => '[ICOMES 2024] On-site Participant Information',
                             'EMAIL_ALTBODY'     => 'ICOMES 2024',
@@ -1638,11 +1652,11 @@ class Admin extends CI_Controller
                 'CATEGORY_D_1'      => 'ICOMES',
                 'CATEGORY_D_2'      => 'qr',
                 'CATEGORY_D_3'      => '240905',
-                'SEND_ADDRESS'      => 'icomes_webmail@into-on.com',
+                'SEND_ADDRESS'      => 'icomes@into-on.com',
                 'SEND_NAME'         => 'ICOMES 2024',
                 'RECV_ADDRESS'      => $data['users']['email'],
                 'RECV_NAME'         => $data['users']['first_name'] . ' ' . $data['users']['last_name'],
-                'REPLY_ADDRESS'     => 'icomes_webmail@into-on.com',
+                'REPLY_ADDRESS'     => 'icomes@into-on.com',
                 'REPLY_NAME'        => 'ICOMES 2024',
                 'EMAIL_SUBJECT'     => 'ICOMES 2024',
                 'EMAIL_ALTBODY'     => 'ICOMES 2024',
@@ -1689,11 +1703,11 @@ class Admin extends CI_Controller
                 'CATEGORY_D_1'      => 'ICOMES',
                 'CATEGORY_D_2'      => 'qr',
                 'CATEGORY_D_3'      => '240905',
-                'SEND_ADDRESS'      => 'icomes_webmail@into-on.com',
+                'SEND_ADDRESS'      => 'icomes@into-on.com',
                 'SEND_NAME'         => 'ICOMES 2024',
                 'RECV_ADDRESS'      => $email,
                 'RECV_NAME'         => $data['users']['first_name'] . ' ' . $data['users']['last_name'],
-                'REPLY_ADDRESS'     => 'icomes_webmail@into-on.com',
+                'REPLY_ADDRESS'     => 'icomes@into-on.com',
                 'REPLY_NAME'        => 'ICOMES 2024',
                 'EMAIL_SUBJECT'     => '[ICOMES 2024] On-site Participant Information',
                 'EMAIL_ALTBODY'     => 'ICOMES 2024',
