@@ -94,13 +94,13 @@ $qrcode = $_GET["qrcode"] ?? "";
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>event 1 수령 유무</th>
+                                    <th>event 1(스탬프)수령 유무</th>
                                     <td id="event_1" class="qr_text">
                                         <?php echo isset($event['event_1']) ? $event['event_1'] : ''; ?>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>event 2 수령 유무</th>
+                                    <th>event 2(댓글 이벤트) 수령 유무</th>
                                     <td id="event_2" class="qr_text">
                                         <?php echo isset($event['event_2']) ? $event['event_2'] : ''; ?>
                                     </td>
@@ -147,12 +147,6 @@ $qrcode = $_GET["qrcode"] ?? "";
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th class="memoHeader">Poster Zone(1)</th>
-                                    <td id="poster_count" class="qr_text">
-                                        <?php if (isset($user['poster_count'])) echo $user['poster_count'] ?>
-                                    </td>
-                                </tr>
-                                <tr>
                                     <th class="memoHeader">Diamond(1)</th>
                                     <td id="diamond_count" class="qr_text">
                                         <?php if (isset($user['diamond_count'])) echo $user['diamond_count'] ?>
@@ -175,6 +169,12 @@ $qrcode = $_GET["qrcode"] ?? "";
                                     <th class="memoHeader">Silver(6) + Bronze(9)</th>
                                     <td id="silver_count" class="qr_text">
                                         <?php if (isset($user['silver_count']) ||isset($user['bronze_count']) ) echo $user['silver_count'] + $user['bronze_count']; ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="memoHeader">Poster Zone(1)</th>
+                                    <td id="poster_count" class="qr_text">
+                                        <?php if (isset($user['poster_count'])) echo $user['poster_count'] ?>
                                     </td>
                                 </tr>
                                 <!-- <tr>
@@ -254,6 +254,10 @@ $qrcode = $_GET["qrcode"] ?? "";
         target.style.background = 'yellow';
     }
 
+    function violetBackground(target){
+        target.style.background = 'violet';
+    }
+
     eventBtnList.forEach((btn)=>{
         btn.addEventListener("click", (e)=>{
             if(window.location.search !== ""){
@@ -323,8 +327,13 @@ $qrcode = $_GET["qrcode"] ?? "";
         })
 
         gradeList.map((grade)=>{
-            if( grade.name.innerText == grade.count || grade.name.innerText >= grade.count){
-                yellowBackground(grade.name)
+            if( grade.name.innerText >= grade.count){
+                console.log(grade.name.id)
+                if(grade.name.id == 'total_count' || grade.name.id == 'poster_count' || grade.name.id == 'silver_count'){
+                    violetBackground(grade.name)
+                }else{
+                    yellowBackground(grade.name)
+                }
             }
         })
         
