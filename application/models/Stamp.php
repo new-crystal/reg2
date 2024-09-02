@@ -16,12 +16,13 @@ class Stamp extends CI_Model
                         rr.idx AS member_idx, 
                         CONCAT(rr.last_name, ' ', rr.first_name) AS nickname,
                         COUNT(*) AS total_count,
-                         SUM(CASE WHEN eb.grade = 0 THEN 1 ELSE 0 END) AS jomes_count,
-                        SUM(CASE WHEN eb.grade = 1 THEN 1 ELSE 0 END) AS diamond_count,
-                        SUM(CASE WHEN eb.grade = 2 THEN 1 ELSE 0 END) AS platinum_count,
-                        SUM(CASE WHEN eb.grade = 3 THEN 1 ELSE 0 END) AS gold_count,
-                        SUM(CASE WHEN eb.grade = 4 THEN 1 ELSE 0 END) AS silver_count,
-                        SUM(CASE WHEN eb.grade = 5 THEN 1 ELSE 0 END) AS bronze_count
+                        SUM(CASE WHEN eb.grade = 0 THEN 1 ELSE 0 END) AS jomes_count,
+                        SUM(CASE WHEN eb.grade = 1 THEN 1 ELSE 0 END) AS poster_count,
+                        SUM(CASE WHEN eb.grade = 2 THEN 1 ELSE 0 END) AS diamond_count,
+                        SUM(CASE WHEN eb.grade = 3 THEN 1 ELSE 0 END) AS platinum_count,
+                        SUM(CASE WHEN eb.grade = 4 THEN 1 ELSE 0 END) AS gold_count,
+                        SUM(CASE WHEN eb.grade = 5 THEN 1 ELSE 0 END) AS silver_count,
+                        SUM(CASE WHEN eb.grade = 6 THEN 1 ELSE 0 END) AS bronze_count
                     FROM icomes2024.e_booth_log AS ebl
                     LEFT JOIN icomes2024.e_booth AS eb ON ebl.booth_idx = eb.idx
                     LEFT JOIN icomes2024.request_registration AS rr ON rr.register = ebl.member_idx
@@ -39,11 +40,12 @@ class Stamp extends CI_Model
                         CONCAT(rr.last_name, ' ', rr.first_name) AS nickname,
                         COUNT(*) AS total_count,
                         SUM(CASE WHEN eb.grade = 0 THEN 1 ELSE 0 END) AS jomes_count,
-                        SUM(CASE WHEN eb.grade = 1 THEN 1 ELSE 0 END) AS diamond_count,
-                        SUM(CASE WHEN eb.grade = 2 THEN 1 ELSE 0 END) AS platinum_count,
-                        SUM(CASE WHEN eb.grade = 3 THEN 1 ELSE 0 END) AS gold_count,
-                        SUM(CASE WHEN eb.grade = 4 THEN 1 ELSE 0 END) AS silver_count,
-                        SUM(CASE WHEN eb.grade = 5 THEN 1 ELSE 0 END) AS bronze_count
+                        SUM(CASE WHEN eb.grade = 1 THEN 1 ELSE 0 END) AS poster_count,
+                        SUM(CASE WHEN eb.grade = 2 THEN 1 ELSE 0 END) AS diamond_count,
+                        SUM(CASE WHEN eb.grade = 3 THEN 1 ELSE 0 END) AS platinum_count,
+                        SUM(CASE WHEN eb.grade = 4 THEN 1 ELSE 0 END) AS gold_count,
+                        SUM(CASE WHEN eb.grade = 5 THEN 1 ELSE 0 END) AS silver_count,
+                        SUM(CASE WHEN eb.grade = 6 THEN 1 ELSE 0 END) AS bronze_count
                     FROM icomes2024.e_booth_log AS ebl
                     LEFT JOIN icomes2024.e_booth AS eb ON ebl.booth_idx = eb.idx
                     LEFT JOIN icomes2024.request_registration AS rr ON rr.register = ebl.member_idx

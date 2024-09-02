@@ -135,7 +135,7 @@ $qrcode = $_GET["qrcode"] ?? "";
                                     <col />
                                 </colgroup>
                                 <tr>
-                                    <th class="memoHeader">Total Count(25)</th>
+                                    <th class="memoHeader">Total Count(27)</th>
                                     <td id="total_count" class="qr_text">
                                         <?php if (isset($user['total_count'])) echo $user['total_count'] ?>
                                     </td>
@@ -144,6 +144,12 @@ $qrcode = $_GET["qrcode"] ?? "";
                                     <th class="memoHeader">Jomes(1)</th>
                                     <td id="jomes_count" class="qr_text">
                                         <?php if (isset($user['jomes_count'])) echo $user['jomes_count'] ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="memoHeader">Poster Zone(1)</th>
+                                    <td id="poster_count" class="qr_text">
+                                        <?php if (isset($user['poster_count'])) echo $user['poster_count'] ?>
                                     </td>
                                 </tr>
                                 <tr>
@@ -237,6 +243,7 @@ $qrcode = $_GET["qrcode"] ?? "";
 
     const total = document.querySelector('#total_count');
     const diamond = document.querySelector('#diamond_count');
+    const poster= document.querySelector('#poster_count');
     const platinum = document.querySelector('#platinum_count');
     const jomes = document.querySelector('#jomes_count');
     const gold = document.querySelector('#gold_count')
@@ -283,10 +290,14 @@ $qrcode = $_GET["qrcode"] ?? "";
         const gradeList = [
             {
                 name:total,
-                count:25
+                count:27
             },
             {
                 name:jomes,
+                count:1
+            },
+            {
+                name:poster,
                 count:1
             },
             {

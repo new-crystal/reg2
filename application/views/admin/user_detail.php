@@ -63,7 +63,9 @@ $remark3 = "";
                         <div class="detail_table">
                             <table>
                                 <tr>
-                                    <td colspan="2"><button type="button" class="btn btn-primary" onclick="print('<?php echo $item['registration_no']; ?>')">QR Print</button>
+                                    <td colspan="2">
+                                        <button type="button" class="btn btn-primary" onclick="print('<?php echo $item['registration_no']; ?>')">QR Print</button>
+                                        <button type="button" class="btn" onclick="location.href='qr_layout_k?n='+'<?php echo $item['registration_no'];?>'">정책프린트</button>
                                     </td>
                                 </tr>
                                
