@@ -58,7 +58,7 @@
 
                 $nicknameLength = mb_strlen($users['first_name'], "UTF-8") + mb_strlen($users['last_name'], "UTF-8");
                 $orgLength = mb_strlen($users['org_nametag'], "UTF-8");
-                $won = $users['nation'] == "Republic of Korea" ? "KRW" : "USD";
+                $won = $users['nation'] == "Korea" ? "KRW" : "USD";
                 //echo $nicknameLength;
                 // echo mb_strlen($users['org_nametag'], "UTF-8") + mb_strlen($users['nation'], "UTF-8");
                 echo '<div class="a4_area">';

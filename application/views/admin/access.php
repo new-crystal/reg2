@@ -161,7 +161,7 @@ $en_name = $firstName . " " . $lastName
                                 </td>
                             </tr>
                             <tr>
-                                <th class="memoHeader">remark1</th>
+                                <th class="memoHeader">remark1(하단띠지)</th>
                                 <td id="remark1" class="qr_text">
                                     <?php if (isset($user['remark1'])) echo $user['remark1'] ?>
                                 </td>

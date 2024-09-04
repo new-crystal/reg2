@@ -52,7 +52,7 @@ class OnSite extends CI_Controller
             // $uagent = $this->agent->agent_string();
             $email = $email1 . "@" . $email2;
 
-            if ($nation == "Republic of Korea") {
+            if ($nation == "Korea") {
                 $phone = $phone2;
             } else {
                 $phone = '+' . $phone1 . " " . $phone2;

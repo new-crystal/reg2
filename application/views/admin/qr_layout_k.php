@@ -117,8 +117,6 @@
 </style>
 <script>
     document.getElementById("btnPrint").onclick = function() {
-        const id = "<?php echo $users['registration_no']; ?>";
-
         // window.location.href = `https://reg2.webeon.net/qrcode/print_file?registration_no=${id}`
         printElement(document.getElementById("printThis"));
     }
@@ -140,6 +138,10 @@
         $printSection.appendChild(domClone);
         //            console.log($printSection);
         window.print();
+        
+        const id = "<?php echo $users['registration_no']; ?>";
+        //window.location.href = `/admin/k_user?n=${id}`;
+        fetch(`/admin/k_user?n=${id}`)
     }
 </script>
 
