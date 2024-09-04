@@ -851,7 +851,7 @@ class Admin extends CI_Controller
 
             $member_type = "";
 
-            if ($row['nation'] == "Republic of Korea") {
+            if ($row['nation'] == "Korea") {
                 $contry = "국내";
             } else {
                 $contry = "국외";
@@ -1053,7 +1053,7 @@ class Admin extends CI_Controller
             $onsite = "";
             $member_type = "";
 
-            if ($row['nation'] == "Republic of Korea") {
+            if ($row['nation'] == "Korea") {
                 $contry = "국내";
             } else {
                 $contry = "국외";
@@ -1215,7 +1215,7 @@ class Admin extends CI_Controller
             $contry = "";
             $remark3 = "";
 
-            if ($row['nation'] == "Republic of Korea") {
+            if ($row['nation'] == "Korea") {
                 $contry = "국내";
             } else {
                 $contry = "국외";
@@ -1402,7 +1402,7 @@ class Admin extends CI_Controller
             $userId = $_GET['n'];
             $where = array(
                 'registration_no' => $userId,
-                'nation' => 'Republic of Korea'
+                'nation' => 'Korea'
             );
             $info = array(
                 'QR_SMS_SEND_YN' =>  'Y'
@@ -1423,7 +1423,7 @@ class Admin extends CI_Controller
             foreach ($userId as $value) {
                 $wheres = array(
                     // [240308] sujeong / msm 주석 
-                    'nation' => 'Republic of Korea',
+                    'nation' => 'Korea',
                     'qr_generated' =>  'Y',
                     'registration_no' => $value
                 );
@@ -1869,6 +1869,25 @@ class Admin extends CI_Controller
 
             $this->load->view('admin/left_side.php', $data);
             $this->load->view('admin/qr_blank_user');
+        }
+        $this->load->view('footer');
+    }
+
+    public function k_user()
+    {
+        $this->load->view('admin/header');
+        if (!isset($this->session->admin_data['logged_in']))
+            $this->load->view('admin/login');
+        else {
+            // 
+            $userId = $_GET['n'];
+            $where = array(
+                'registration_no' => $userId
+            );
+            $info = array(
+                'qr_chk_day_1' =>  'Y'
+            );
+            $this->users->update_deposit_status($info, $where);
         }
         $this->load->view('footer');
     }
