@@ -97,7 +97,7 @@ $en_name = $firstName . " " . $lastName
                     <div class="w-2/5 flex flex-col items-center justify-center">
                         <h1 class="text-5xl mt-32 font-semibold ">QR CODE 입력 </h1>
                         <div class="w-[850px] flex justify-between">
-                            <input id="qrcode_input" name="qrcode" class="w-[400px] h-[50px] mt-20 p-3 " type="text" autofocus placeholder="영문 확인해주세요!!" />
+                            <input id="qrcode_input" name="qrcode" class="w-[400px] h-[50px] mt-20 p-3 " type="text" autofocus placeholder="영문 확인해주세요!!"/>
                             <button class="w-[150px] h-[40px] bg-slate-300 mt-20 mb-20 hover:bg-slate-400 active:bg-slate-500 text-black" type="submit" id="submit">등록</button>
                             <button class="w-[150px] h-[40px] bg-indigo-950 mt-20 mb-20 hover:bg-slate-300 active:bg-slate-300 text-white" type="button" id="memo_btn">메모</button>
                         </div>
@@ -242,6 +242,25 @@ $en_name = $firstName . " " . $lastName
     const content = document.querySelector(".content")
     const notice = document.querySelector("#notice")
     const attendance_date = document.querySelector("#attendance_date")
+
+    // 한글 음절 및 개별 자모에 대한 영문 자판 매핑
+    const initialConsonant = ['r', 'R', 's', 'e', 'E', 'f', 'a', 'q', 'Q', 't', 'T', 'd', 'w', 'W', 'c', 'z', 'x', 'v', 'g'];
+    const medialVowel = ['k', 'o', 'i', 'O', 'j', 'p', 'u', 'P', 'h', 'hk', 'ho', 'hl', 'y', 'n', 'nj', 'np', 'nl', 'b', 'm', 'ml', 'l'];
+    const finalConsonant = ['', 'r', 'R', 'rt', 's', 'sw', 'sg', 'e', 'f', 'fr', 'fa', 'fq', 'ft', 'fx', 'fv', 'fg', 'a', 'q', 'qt', 't', 'T', 'd', 'w', 'c', 'z', 'x', 'v', 'g'];
+
+    // 개별 자음과 모음에 대한 매핑 (분리된 상태로 입력된 경우 처리)
+    const singleConsonantMap = {
+      'ㄱ': 'r', 'ㄲ': 'R', 'ㄴ': 's', 'ㄷ': 'e', 'ㄸ': 'E', 'ㄹ': 'f', 'ㅁ': 'a',
+      'ㅂ': 'q', 'ㅃ': 'Q', 'ㅅ': 't', 'ㅆ': 'T', 'ㅇ': 'd', 'ㅈ': 'w', 'ㅉ': 'W',
+      'ㅊ': 'c', 'ㅋ': 'z', 'ㅌ': 'x', 'ㅍ': 'v', 'ㅎ': 'g'
+    };
+    
+    const singleVowelMap = {
+      'ㅏ': 'k', 'ㅐ': 'o', 'ㅑ': 'i', 'ㅒ': 'O', 'ㅓ': 'j', 'ㅔ': 'p',
+      'ㅕ': 'u', 'ㅖ': 'P', 'ㅗ': 'h', 'ㅘ': 'hk', 'ㅙ': 'ho', 'ㅚ': 'hl',
+      'ㅛ': 'y', 'ㅜ': 'n', 'ㅝ': 'nj', 'ㅞ': 'np', 'ㅟ': 'nl', 'ㅠ': 'b',
+      'ㅡ': 'm', 'ㅢ': 'ml', 'ㅣ': 'l'
+    };
     var childWindow;
     let popUpWindow;
     let qrvalue = "";
@@ -303,7 +322,8 @@ $en_name = $firstName . " " . $lastName
         e.preventDefault();
         qrvalue = qrcode.value
         qrvalue = qrcode.value.replace(/\s/g, "");
-        fetchData(qrvalue)
+        convertToEnglish(qrvalue)
+        //fetchData(qrvalue)
         qrcode.value = "";
         qrcode.focus();
     })
@@ -365,7 +385,7 @@ $en_name = $firstName . " " . $lastName
             }).then((data) => {
                 executeFunctionInChildWindow(qrcode);
             }).then(() => {
-                window.open(`https://reg2.webeon.net/qrcode/print_file?registration_no=${qrvalue}`, "_blank")
+                window.open(`https://reg2.webeon.net/qrcode/print_file?registration_no=${qrcode}`, "_blank")
             }).then(() => {
 
                 changeBackgroundColorIfNotEmpty(memo);
@@ -439,5 +459,49 @@ $en_name = $firstName . " " . $lastName
             });
         }
     })
+
+      // 한글 음절을 자모로 분리하는 함수
+      function decomposeHangul(syllable) {
+      const hangulBase = 44032; // '가'의 유니코드 값
+      const initialBase = 588;  // 초성 범위
+      const medialBase = 28;    // 중성 범위
+
+      const code = syllable.charCodeAt(0) - hangulBase;
+
+      const initialIdx = Math.floor(code / initialBase);
+      const medialIdx = Math.floor((code % initialBase) / medialBase);
+      const finalIdx = code % medialBase;
+
+      return [initialIdx, medialIdx, finalIdx];
+    }
+
+    // 한글 음절과 개별 자모를 모두 처리하여 영어 자판에 맞게 변환하는 함수
+    function convertToEnglish(input) {
+      
+      let result = '';
+
+      for (let char of input) {
+        const code = char.charCodeAt(0);
+
+        // 한글 음절인지 확인
+        if (code >= 44032 && code <= 55203) {
+          const [initialIdx, medialIdx, finalIdx] = decomposeHangul(char);
+          result += initialConsonant[initialIdx] + medialVowel[medialIdx] + finalConsonant[finalIdx];
+        } 
+        // 개별 자음 처리
+        else if (singleConsonantMap[char]) {
+          result += singleConsonantMap[char];
+        } 
+        // 개별 모음 처리
+        else if (singleVowelMap[char]) {
+          result += singleVowelMap[char];
+        } 
+        // 한글이 아닌 문자는 그대로 출력
+        else {
+          result += char;
+        }
+      }
+      fetchData(result)
+    }
 </script>
 </body>

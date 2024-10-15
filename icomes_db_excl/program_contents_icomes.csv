@@ -1,0 +1,89 @@
+﻿프로그램;program_idx;speaker_idx;contents_title;speaker;start_time;end_time
+Keynote 1;14;1;;Joel K Elmquist (Departments of Internal Medicine and Pharmacology, Center for Hypothalamic Research, University of Texas Southwestern, Dallas, TX);2024-09-06 8:30;2024-09-06 9:10
+Keynote 2;21;2;Sarcopenia, obesity, and metabolic diseases;William Evans(UC Berkeley );2024-09-06 11:10;2024-09-06 11:50
+Keynote 3;34;3;Management of Youth Type 2 Diabetes: New Pharmacotherapeutic Modalities;Silva Arslanian(University of Pittsburgh);2024-09-06 15:40;2024-09-06 16:20
+Keynote 4;44;4;Lifestyle and cardiometabolic risk;Jean-Pierre Després(Quebec Heart and Lung Institute Université Laval, Quebec);2024-09-07 8:30;2024-09-07 9:10
+Keynote 5;57;5;Incretin-based therapy;Michael A Nauck(Division of Diabetology, Medical Department I, St. Josef-Hospital (Ruhr-University Bochum), Gudrunstr. 56, D-44791 Bochum`);2024-09-07 13:50;2024-09-07 14:30
+Keynote 6;58;6;;Michael D. Jensen(Mayo Clinic, Endocrine Research Unit);2024-09-07 14:30;2024-09-07 15:10
+Keynote 7;64;7;Semaglutide;W Timothy Garvey(UAB Diabetes Research Center, University of Alabama at Birmingham, Birmingham, AL);2024-09-07 17:00;2024-09-07 17:40
+Presidential Lecture;50;8;Fatty liver;Cheol-Young Park(Sungkyunkwan University);2024-09-07 11:10;2024-09-07 11:40
+Symposium 1;15;9;Obesity Phenotypes and Precision Medicine;Jean-Pierre Després (VITAM – Research Centre on Sustainable Health, Canada);2024-09-06 9:20;2024-09-06 9:45
+Symposium 1;15;10;;Yoon Jung Park (Ewha Womans University, Korea);2024-09-06 9:45;2024-09-06 10:10
+Symposium 1;15;11;;;2024-09-06 10:10;2024-09-06 10:35
+Symposium 1;15;;Panel Discussion;;2024-09-06 10:35;2024-09-06 10:50
+Symposium 2;16;12;Cross-talk between the gut (microbiota) and peripheral organs in obesity;Chin-Yen Chen(National Yang Ming Chiao Tung University School of Medicine);2024-09-06 9:20;2024-09-06 9:45
+Symposium 2;16;13;;Teppei Fujikawa;2024-09-06 9:45;2024-09-06 10:10
+Symposium 2;16;14;;김기우(연세의대);2024-09-06 10:10;2024-09-06 10:35
+Symposium 2;16;;Panel Discussion;;2024-09-06 10:35;2024-09-06 10:50
+Symposium 3;17;15;Possibility of digital therapeutics for treatment and management of metabolic diseases;Sang Youl Rhee( Kyung Hee University);2024-09-06 9:20;2024-09-06 9:45
+Symposium 3;17;16;Pathopsychologicall basis for the effectiveness of digital therapeutics for metabolic diseases ;Hyung Jin Choi(Seoul National University);2024-09-06 9:45;2024-09-06 10:10
+Symposium 3;17;17;Suggestions for Integrating Digital Therapeutics into Conventional Medical Settings ;Min Kyu Han(Kakao Healthcare);2024-09-06 10:10;2024-09-06 10:35
+Symposium 3;17;;Panel Discussion;;2024-09-06 10:35;2024-09-06 10:50
+Symposium 4;18;18;;Michael D. Jensen(Mayo Clinic, Endocrine Research Unit);2024-09-06 9:20;2024-09-06 9:45
+Symposium 4;18;19;;Michael A Nauck(Division of Diabetology, Medical Department I, St. Josef-Hospital (Ruhr-University Bochum), Gudrunstr. 56, D-44791 Bochum`);2024-09-06 9:45;2024-09-06 10:10
+Symposium 4;18;20;;;2024-09-06 10:10;2024-09-06 10:35
+Symposium 4;18;;Panel Discussion;;2024-09-06 10:35;2024-09-06 10:50
+Symposium 5;29;21;;;2024-09-06 14:00;2024-09-06 14:25
+Symposium 5;29;22;;;2024-09-06 14:25;2024-09-06 14:50
+Symposium 5;29;23;;;2024-09-06 14:50;2024-09-06 15:15
+Symposium 5;29;;Panel Discussion;;2024-09-06 15:15;2024-09-06 15:30
+Symposium 6;30;24;Exercise-induced mitochondrial controls in skeletal muscle;Yu-Ho Kim(University of Massachusetts-Lowell);2024-09-06 14:00;2024-09-06 14:25
+Symposium 6;30;25;Novel Strategies in Managing MAFLD: The Role of Muscle Metabolism and Exercise;Sechang Oh(R Professional University of Rehabilitation);2024-09-06 14:25;2024-09-06 14:50
+Symposium 6;30;26;Sarcopenia, Menopause, and Exercise Intervention in Women;Young-Min Park(Incheon National University);2024-09-06 14:50;2024-09-06 15:15
+Symposium 6;30;;Panel Discussion;;2024-09-06 15:15;2024-09-06 15:30
+Symposium 7;31;27;;Mottillo Emilio(Wayne State University);2024-09-06 14:00;2024-09-06 14:25
+Symposium 7;31;28;;Maria Ulvmar (Uppsala University);2024-09-06 14:25;2024-09-06 14:50
+Symposium 7;31;29;;Dong Wook Choi(고려대학교 생명과학부);2024-09-06 14:50;2024-09-06 15:15
+Symposium 7;31;;Panel Discussion;;2024-09-06 15:15;2024-09-06 15:30
+Symposium 8;32;30;;;2024-09-06 14:00;2024-09-06 14:25
+Symposium 8;32;31;;;2024-09-06 14:25;2024-09-06 14:50
+Symposium 8;32;32;;;2024-09-06 14:50;2024-09-06 15:15
+Symposium 8;32;;Panel Discussion;;2024-09-06 15:15;2024-09-06 15:30
+Symposium 9;35;33;;;2024-09-06 16:30;2024-09-06 16:55
+Symposium 9;35;34;;;2024-09-06 16:55;2024-09-06 17:20
+Symposium 9;35;35;;;2024-09-06 17:20;2024-09-06 17:45
+Symposium 9;35;;Panel Discussion;;2024-09-06 17:45;2024-09-06 18:00
+Symposium 10;36;36;;;2024-09-06 16:30;2024-09-06 16:55
+Symposium 10;36;37;;;2024-09-06 16:55;2024-09-06 17:20
+Symposium 10;36;38;;;2024-09-06 17:20;2024-09-06 17:45
+Symposium 10;36;;Panel Discussion;;2024-09-06 17:45;2024-09-06 18:00
+Symposium 11;37;39;;;2024-09-06 16:30;2024-09-06 16:55
+Symposium 11;37;40;;;2024-09-06 16:55;2024-09-06 17:20
+Symposium 11;37;41;;;2024-09-06 17:20;2024-09-06 17:45
+Symposium 11;37;;Panel Discussion;;2024-09-06 17:45;2024-09-06 18:00
+Symposium 12;38;42;;;2024-09-06 16:30;2024-09-06 16:55
+Symposium 12;38;43;;;2024-09-06 16:55;2024-09-06 17:20
+Symposium 12;38;44;;;2024-09-06 17:20;2024-09-06 17:45
+Symposium 12;38;;Panel Discussion;;2024-09-06 17:45;2024-09-06 18:00
+Symposium 13;45;45;;;2024-09-07 9:20;2024-09-07 9:45
+Symposium 13;45;46;;;2024-09-07 9:45;2024-09-07 10:10
+Symposium 13;45;47;;;2024-09-07 10:10;2024-09-07 10:35
+Symposium 13;45;;Panel Discussion;;2024-09-07 10:35;2024-09-07 10:50
+Symposium 14;46;48;;William Evans(UC Berkeley/Duke University );2024-09-07 9:20;2024-09-07 9:45
+Symposium 14;46;49;;Marc Hellerstein(UC Berkeley );2024-09-07 9:45;2024-09-07 10:10
+Symposium 14;46;50;;Il-Young Kim(Gachon University );2024-09-07 10:10;2024-09-07 10:35
+Symposium 14;46;;Panel Discussion;;2024-09-07 10:35;2024-09-07 10:50
+Symposium 15;47;51;Applications of Digital Health and Nutrition Approaches for Obesity Prevention and Management in the Western Pacific Region;Wen Peng(Nutrition and Health Promotion Center, Medical College, Qinghai University);2024-09-07 9:20;2024-09-07 9:45
+Symposium 15;47;52;Protocols and practices of telenutrition in weight loss interventions.;Melissa Ventura Marra(Human Nutrition and Foods, West Virginia University);2024-09-07 9:45;2024-09-07 10:10
+Symposium 15;47;53;Telenutrition for weight management: benefits, limits, and future perspectives.;Shinok Park (Noom Korea);2024-09-07 10:10;2024-09-07 10:35
+Symposium 15;47;;Panel Discussion;;2024-09-07 10:35;2024-09-07 10:50
+Symposium 16;48;54;;김동욱;2024-09-07 9:20;2024-09-07 9:45
+Symposium 16;48;55;;;2024-09-07 9:45;2024-09-07 10:10
+Symposium 16;48;56;;;2024-09-07 10:10;2024-09-07 10:35
+Symposium 16;48;;Panel Discussion;;2024-09-07 10:35;2024-09-07 10:50
+Symposium 17;59;57;;;2024-09-07 15:20;2024-09-07 15:45
+Symposium 17;59;58;;;2024-09-07 15:45;2024-09-07 16:10
+Symposium 17;59;59;;;2024-09-07 16:10;2024-09-07 16:35
+Symposium 17;59;;Panel Discussion;;2024-09-07 16:35;2024-09-07 16:50
+Symposium 18;60;60;;손조은(경북대);2024-09-07 15:20;2024-09-07 15:45
+Symposium 18;60;61;;Chen Ran (The Scripps Research Institute);2024-09-07 15:45;2024-09-07 16:10
+Symposium 18;60;62;;Zhan Cheng(University of Science and Technology of China );2024-09-07 16:10;2024-09-07 16:35
+Symposium 18;60;;Panel Discussion;;2024-09-07 16:35;2024-09-07 16:50
+Symposium 19;61;63;;;2024-09-07 15:20;2024-09-07 15:45
+Symposium 19;61;64;;;2024-09-07 15:45;2024-09-07 16:10
+Symposium 19;61;65;;;2024-09-07 16:10;2024-09-07 16:35
+Symposium 19;61;;Panel Discussion;;2024-09-07 16:35;2024-09-07 16:50
+Symposium 20;62;66;Impact of Progressive Dynamic Resistance Training on Skeletal Muscle and Vascular Function in Older Adults: A Study on the Oldest Old.;Oh Sung Kwon(University of Connecticut);2024-09-07 15:20;2024-09-07 15:45
+Symposium 20;62;67;Association between social jetlag, sedentary activity, and cardiometabolic health in Japanese workers;Jaehoon Seol(University of Tsukuba);2024-09-07 15:45;2024-09-07 16:10
+Symposium 20;62;68;Obesity and Physical Activity;Minhwa Suk(Seoul National University of Education);2024-09-07 16:10;2024-09-07 16:35
+Symposium 20;62;;Panel Discussion;;2024-09-07 16:35;2024-09-07 16:50

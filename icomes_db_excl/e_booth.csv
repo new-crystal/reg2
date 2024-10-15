@@ -1,0 +1,26 @@
+﻿name;grade;stamp_count;logo_card_path;booth;location;order;is_required
+novo nordisk;0;0;/2024_logo01_1.png;1;Lobby, 3F;;1
+Alvogen;1;0;/2024_logo02_1.png;2;Center,2F;0;1
+Hanmi Pharm;1;0;/2024_logo03.png;3;Grand Hall Lobby ;1;1
+Chong Kun Dang;1;0;/2024_logo04.png;4;Lounge;2;1
+HANDOK;2;0;/2024_logo05.png;5;Lobby, 1F;0;1
+YUHAN;2;0;/2024_logo06.png;6;B2F;1;1
+Dong-A ST;2;0;/2024_logo07.png;7;Lobby, 3F;2;1
+inno N;2;0;/2024_logo08.png;8;Center,2F;3;1
+DAEWOONG;2;0;/2024_logo09.png;9;Grand Hall Lobby ;4;1
+Lilly;2;0;/2024_logo10.png;10;Lounge;5;1
+Astra Zeneca;3;0;/2024_logo11.png;11;Lobby, 1F;0;0
+LG Chem;3;0;/2024_logo12.png;12;B2F;1;0
+CELLTRION;3;0;/2024_logo13.png;13;Lobby, 3F;2;0
+sanofi;3;0;/2024_logo14.png;14;Center,2F;3;0
+BORYUNG;3;0;/2024_logo15.png;15;Grand Hall Lobby ;4;0
+Kwangdong;3;0;/2024_logo16.png;16;Lounge;5;0
+GC Biopharma;4;0;/2024_logo17.png;17;Lobby, 1F;0;0
+AJU PHARM;4;0;/2024_logo18.png;18;B2F;1;0
+Daiichi Sankyo;4;0;/2024_logo19.png;19;Lobby, 3F;2;0
+ORGANON;4;0;/2024_logo20.png;20;Center,2F;3;0
+Boehringer INgelheim;4;0;/2024_logo21.png;21;Grand Hall Lobby ;4;0
+dalimbiotech;4;0;/2024_logo22.png;22;Lounge;5;0
+Daewon;4;0;/2024_logo23.png;23;Lobby, 1F;6;0
+DAEWOONG BIO;4;0;/2024_logo24.png;24;B2F;7;0
+jw Pharmaceutical;4;0;/2024_logo25.png;25;B3F;8;0
