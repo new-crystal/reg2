@@ -90,7 +90,7 @@
             }       
             ?>
         <form class="flex flex-col items-start justify-center mt-10">
-            <div class="font-bold text-4xl underline underline-offset-4 mb-4">Day 3</div>
+            <div class="font-bold text-4xl underline underline-offset-4 mb-4">Day 4</div>
             <div class="font-bold text-4xl underline underline-offset-4">Part <?php echo $part;?> <?php echo $part_time; ?></div>
             <div class="flex flex-col items-start">
                 <div class="w-5/6 flex items-center justify-start mt-10">
@@ -311,7 +311,7 @@
 
     function postData(data) {
         $.ajax({
-            url: "/reservation/post_name3",
+            url: "/reservation/post_name4",
             type: "POST",
             data: JSON.stringify(data),
             dataType: "JSON",
