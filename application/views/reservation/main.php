@@ -129,7 +129,7 @@
                         <div class="person <?php echo $disabled; ?>"></div>
                         <input class="person_input" placeholder="예약자 성함" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time1, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
                         <input class="phone_input" placeholder="예약자 휴대폰 번호" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time1, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
-                        <button type="button" class="msm_btn font-bold px-4 py-2 mt-2 <?php echo $checked; ?>" data-id="<?php echo substr($detail_time3, 0, 5); ?>" data-location="<?php echo $j; ?>">문자발송</button>
+                        <button type="button" class="msm_btn font-bold px-4 py-2 mt-2 <?php echo $checked; ?>" data-id="<?php echo substr($detail_time1, 0, 5); ?>" data-location="<?php echo $j; ?>">문자발송</button>
                     </div>
                     <?php } ?>
                 </div>
@@ -153,7 +153,7 @@
 
                         foreach ($users as $user) {
                             if($user['chk_msm'] == 'Y'){
-                                $checked = "border border-green-600 text-green-600";
+                                $checked = "bg-rose-600 text-white";
                             }else{
                                 $checked = "bg-green-600 text-white";
                             }
@@ -170,7 +170,7 @@
                         <div class="person <?php echo $disabled; ?>"></div>
                         <input class="person_input" placeholder="예약자 성함" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time2, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
                         <input class="phone_input" placeholder="예약자 휴대폰 번호" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time2, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
-                        <button type="button" class="msm_btn font-bold px-4 py-2 mt-2 <?php echo $checked; ?>" data-id="<?php echo substr($detail_time3, 0, 5); ?>" data-location="<?php echo $j; ?>">문자발송</button>
+                        <button type="button" class="msm_btn font-bold px-4 py-2 mt-2 <?php echo $checked; ?>" data-id="<?php echo substr($detail_time2, 0, 5); ?>" data-location="<?php echo $j; ?>">문자발송</button>
                     </div>
                     <?php } ?>
                 </div>
@@ -194,7 +194,7 @@
 
                         foreach ($users as $user) {
                             if($user['chk_msm'] == 'Y'){
-                                $checked = "border border-green-600 text-green-600";
+                                $checked = "bg-rose-600 text-white";
                             }else{
                                 $checked = "bg-green-600 text-white";
                             }
