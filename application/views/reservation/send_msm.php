@@ -1,5 +1,6 @@
 <?php
-
+// print_r($users);
+// echo $users['phone'];
 $curl = curl_init();
 $error = "";
 
@@ -73,7 +74,7 @@ if ($err) {
         //echo $response;
         $responseData = json_decode($response, true);
         $code = $responseData['code'];
-        $after = $responseData['data']['AFTER_SMS_QTY'];
+        //$after = $responseData['data']['AFTER_SMS_QTY'];
     }
 }
 
