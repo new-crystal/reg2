@@ -1,8 +1,8 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style>
-    
-    body {
+   
+   body {
         font-family: 'Roboto', sans-serif;
     }
     
@@ -15,8 +15,8 @@
     .person{
         width: 60px;
         height: 60px;
-        border-radius: 50%;
-        border: 1px solid orangered;    
+        border-radius: 50%;  
+        background-color: rgb(37 99 235);
     }
 
     .person_input, .phone_input{
@@ -39,7 +39,7 @@
     }
 
     .disabled{
-        background-color: orangered;
+        background-color: #DDD;
     }
 </style>
 <div class="container">
@@ -333,7 +333,7 @@
             const location = e.target.dataset.location;
             const timeId = e.target.dataset.id;
 
-            const url = `/reservation/send_msm?n=${timeId}&m=${location}`;
+            const url = `/reservation/send_msm?n=${timeId}&m=${location}&d=day3`;
             if (window.confirm("※ 문자 전송을 하시겠습니까?")) {
                 window.open(url, "Certificate", "width=800, height=1000, top=30, left=30")
             } else {
