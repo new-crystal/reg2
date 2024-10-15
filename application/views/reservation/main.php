@@ -109,9 +109,14 @@
                         $nickname = "";
                         $phone = "";
                         $disabled = "";
+                        $checked = "";
 
-                        // $users 배열에서 일치하는 값 찾기
                         foreach ($users as $user) {
+                            if($user['chk_msm'] == 'Y'){
+                                $checked = "border border-green-600 text-green-600";
+                            }else{
+                                $checked = "bg-green-600 text-white";
+                            }
                             if ($user['time_id'] == substr($detail_time1, 0, 5) && $user['location'] == $j && $user['part'] == $part && $user['nickname']) {
                                 $nickname = $user['nickname'];
                                 $phone = $user['phone'];
@@ -124,7 +129,7 @@
                         <div class="person <?php echo $disabled; ?>"></div>
                         <input class="person_input" placeholder="예약자 성함" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time1, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
                         <input class="phone_input" placeholder="예약자 휴대폰 번호" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time1, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
-                        <button type="button" class="msm_btn bg-green-600 font-bold px-4 py-2 text-white mt-2" data-id="<?php echo substr($detail_time1, 0, 5); ?>" data-location="<?php echo $j; ?>">문자발송</button>
+                        <button type="button" class="msm_btn font-bold px-4 py-2 mt-2 <?php echo $checked; ?>" data-id="<?php echo substr($detail_time3, 0, 5); ?>" data-location="<?php echo $j; ?>">문자발송</button>
                     </div>
                     <?php } ?>
                 </div>
@@ -144,8 +149,15 @@
                         $nickname = "";
                         $phone = "";
                         $disabled = "";
+                        $checked = "";
 
                         foreach ($users as $user) {
+                            if($user['chk_msm'] == 'Y'){
+                                $checked = "border border-green-600 text-green-600";
+                            }else{
+                                $checked = "bg-green-600 text-white";
+                            }
+
                             if ($user['time_id'] == substr($detail_time2, 0, 5) && $user['location'] == $j && $user['part'] == $part && $user['nickname']) {
                                 $nickname = $user['nickname'];
                                 $phone = $user['phone'];
@@ -158,7 +170,7 @@
                         <div class="person <?php echo $disabled; ?>"></div>
                         <input class="person_input" placeholder="예약자 성함" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time2, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
                         <input class="phone_input" placeholder="예약자 휴대폰 번호" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time2, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
-                        <button type="button" class="msm_btn bg-green-600 font-bold px-4 py-2 text-white mt-2" data-id="<?php echo substr($detail_time2, 0, 5); ?>" data-location="<?php echo $j; ?>">문자발송</button>
+                        <button type="button" class="msm_btn font-bold px-4 py-2 mt-2 <?php echo $checked; ?>" data-id="<?php echo substr($detail_time3, 0, 5); ?>" data-location="<?php echo $j; ?>">문자발송</button>
                     </div>
                     <?php } ?>
                 </div>
@@ -178,12 +190,20 @@
                         $nickname = "";
                         $phone = "";
                         $disabled = "";
+                        $checked = "";
 
                         foreach ($users as $user) {
+                            if($user['chk_msm'] == 'Y'){
+                                $checked = "border border-green-600 text-green-600";
+                            }else{
+                                $checked = "bg-green-600 text-white";
+                            }
+
                             if ($user['time_id'] == substr($detail_time3, 0, 5) && $user['location'] == $j && $user['part'] == $part && $user['nickname']) {
                                 $nickname = $user['nickname'];
                                 $phone = $user['phone'];
                                 $disabled = "disabled";
+                               
                                 break;
                             }
                         }
@@ -192,7 +212,8 @@
                         <div class="person <?php echo $disabled; ?>"></div>
                         <input class="person_input" placeholder="예약자 성함" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time3, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
                         <input class="phone_input" placeholder="예약자 휴대폰 번호" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time3, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
-                        <button type="button" class="msm_btn bg-green-600 font-bold px-4 py-2 text-white mt-2" data-id="<?php echo substr($detail_time3, 0, 5); ?>" data-location="<?php echo $j; ?>">문자발송</button>
+                        <button type="button" class="msm_btn font-bold px-4 py-2 mt-2 <?php echo $checked; ?>" data-id="<?php echo substr($detail_time3, 0, 5); ?>" data-location="<?php echo $j; ?>">문자발송</button>
+
                     </div>
                     <?php } ?>
                 </div>
@@ -209,6 +230,8 @@
     const reservationBtnList = document.querySelectorAll(".reservation");
     const cancelBtnList = document.querySelectorAll(".cancel");
     const msmBtnList = document.querySelectorAll(".msm_btn");
+
+    const phoneInputList = document.querySelectorAll(".phone_input");
 
     reservationBtnList.forEach((reBtn) => {
         reBtn.addEventListener("click", (e) => {
@@ -318,4 +341,15 @@
             }
         })
     })
+
+    phoneInputList.forEach((phone)=>{
+        phone.addEventListener("blur", (e)=>{
+            const regPhone = /^(01[016789]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
+            if(!regPhone.test(e.target.value)){
+                alert("휴대폰 번호를 확인해주세요.")
+                e.target.value = "";
+            }
+        })
+    })
+
 </script>

@@ -37,7 +37,7 @@ if ($err) {
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://sms.gabia.com/api/send/lms",
+        CURLOPT_URL => "https://sms.gabia.com/api/send/sms",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -47,10 +47,11 @@ if ($err) {
         CURLOPT_CUSTOMREQUEST => "POST",
         CURLOPT_POSTFIELDS => array(
             'phone' =>  $users['phone'], 'callback' => '01090224867',
-            'message' =>  '
-안녕하십니까,
- 
-', 'refkey' => 'RESTAPITEST1548722798', 'subject' => '[예약안내]'
+            'message' => '[하만카돈 예약안내]
+안녕하세요 ' .  $users['nickname'] .'선생님,
+청음 예약하신 시간 30분 전입니다.' . 
+'예약하신 시간은 '. $users['time_id'] .'입니다.' 
+, 'refkey' => 'RESTAPITEST1548722798', 'subject' => '[예약안내]'
 , 'image_cnt' =>'1'
             ),
             CURLOPT_HTTPHEADER => array(
