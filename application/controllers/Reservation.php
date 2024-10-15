@@ -14,28 +14,57 @@ class Reservation extends CI_Controller {
         $this->load->model('music');
     }
 
+	public function login()
+    {
+        $user_id = $this->input->post("user_id");
+        $user_pass = $this->input->post("user_pass");
+
+        if ($user_id == RESERVATION_ID && $user_pass == RESERVATION_PASS) {
+            $this->session->set_userdata('reservation_data', array(
+                'logged_in' => true
+            ));
+        }
+        redirect('reservation');
+    }
+
 	public function index()
 	{
-		$data['users'] = $this->music->get_reservations();
-		$this->load->view('reservation/main.php', $data);
+		if (!isset($this->session->reservation_data['logged_in']))
+			$this->load->view('reservation/login');
+		else {
+			$data['users'] = $this->music->get_reservations();
+			$this->load->view('reservation/main.php', $data);
+		}
 	}
 
 	public function day2()
 	{
-		$data['users'] = $this->music->get_reservations2();
-		$this->load->view('reservation/main2.php', $data);
+		if (!isset($this->session->reservation_data['logged_in']))
+			$this->load->view('reservation/login');
+		else {
+			$data['users'] = $this->music->get_reservations2();
+			$this->load->view('reservation/main2.php', $data);
+		}
 	}
 
 	public function day3()
 	{
-		$data['users'] = $this->music->get_reservations3();
-		$this->load->view('reservation/main3.php', $data);
+		if (!isset($this->session->reservation_data['logged_in']))
+			$this->load->view('reservation/login');
+		else {
+			$data['users'] = $this->music->get_reservations3();
+			$this->load->view('reservation/main3.php', $data);
+		}
 	}
 
 	public function day4()
 	{
-		$data['users'] = $this->music->get_reservations4();
-		$this->load->view('reservation/main4.php', $data);
+		if (!isset($this->session->reservation_data['logged_in']))
+			$this->load->view('reservation/login');
+		else {
+			$data['users'] = $this->music->get_reservations4();
+			$this->load->view('reservation/main4.php', $data);
+		}
 	}
 
 	public function post_name()
@@ -194,10 +223,12 @@ class Reservation extends CI_Controller {
     {
 		$timeId = $_GET['n'];
 		$location = $_GET['m'];
+		$day = $_GET['d'];
 		
 		$where = array(
 			'time_id' => $timeId,
-			'location' => $location
+			'location' => $location,
+			'day' => $day
 		);
 		$info = array(
 			'chk_msm' =>  'Y'

@@ -15,8 +15,8 @@
     .person{
         width: 60px;
         height: 60px;
-        border-radius: 50%;
-        border: 1px solid orangered;    
+        border-radius: 50%;  
+        background-color: rgb(37 99 235);
     }
 
     .person_input, .phone_input{
@@ -39,7 +39,7 @@
     }
 
     .disabled{
-        background-color: orangered;
+        background-color: #DDD;
     }
 </style>
 <div class="container">
@@ -113,7 +113,7 @@
 
                         foreach ($users as $user) {
                             if($user['chk_msm'] == 'Y'){
-                                $checked = "border border-green-600 text-green-600";
+                                $checked = "bg-rose-600 text-white";
                             }else{
                                 $checked = "bg-green-600 text-white";
                             }
@@ -333,7 +333,7 @@
             const location = e.target.dataset.location;
             const timeId = e.target.dataset.id;
 
-            const url = `/reservation/send_msm?n=${timeId}&m=${location}`;
+            const url = `/reservation/send_msm?n=${timeId}&m=${location}&d=day1`;
             if (window.confirm("※ 문자 전송을 하시겠습니까?")) {
                 window.open(url, "Certificate", "width=800, height=1000, top=30, left=30")
             } else {
