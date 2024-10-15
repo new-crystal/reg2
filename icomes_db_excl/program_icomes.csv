@@ -1,0 +1,66 @@
+﻿program_name;program_tag_name;chairpersons;preview;program_place_idx;program_category_idx;program_date;start_time;end_time
+"	Best Article in JOMES";jomes_session;;;1;7;2024-09-05;2024-09-05 15:00;2024-09-05 16:30
+Joint Symposium 1;joint_symposium_1;;;2;15;2024-09-05;2024-09-05 15:00;2024-09-05 16:30
+Committee Session;committee_session_1;;;3;19;2024-09-05;2024-09-05 15:00;2024-09-05 16:30
+Obesity Treatment Guidelines Symposium;obesity_treatment_guidelines_symposium;;;1;9;2024-09-05;2024-09-05 16:40;2024-09-05 18:10
+Joint Symposium;joint_symposium_2;;;2;15;2024-09-05;2024-09-05 16:40;2024-09-05 18:10
+기자간담회;;;;3;;2024-09-05;2024-09-05 16:40;2024-09-05 18:10
+Satellite Symposium 1;satellite_symposium_1;;;1;13;2024-09-05;2024-09-05 18:10;2024-09-05 19:10
+Satellite Symposium 3;satellite_symposium_3;;;2;13;2024-09-05;2024-09-05 18:10;2024-09-05 19:10
+Satellite Symposium 2;satellite_symposium_2;;;1;13;2024-09-05;2024-09-05 18:10;2024-09-05 19:10
+Welcome Cocktail Party;welcome_cocktail_party;;;3;3;2024-09-05;2024-09-05 19:10;2024-09-05 21:00
+Breakfast Symposium 1;breakfast_symposium_1;;;1;11;2024-09-06;2024-09-06 7:30;2024-09-06 8:20
+Breakfast Symposium 2;breakfast_symposium_2;;;2;11;2024-09-06;2024-09-06 7:30;2024-09-06 8:20
+Breakfast Symposium 3;breakfast_symposium_3;;;3;11;2024-09-06;2024-09-06 7:30;2024-09-06 8:20
+Keynote Lecture 1;keynote_lecture_1;;;8;6;2024-09-06;2024-09-06 8:30;2024-09-06 9:10
+Symposium 1;symposium_1;;;1;8;2024-09-06;2024-09-06 9:20;2024-09-06 10:50
+Symposium 2;symposium_2;;;2;8;2024-09-06;2024-09-06 9:20;2024-09-06 10:50
+Symposium 3;symposium_3;;;3;8;2024-09-06;2024-09-06 9:20;2024-09-06 10:50
+Symposium 4;symposium_4;;;4;8;2024-09-06;2024-09-06 9:20;2024-09-06 10:50
+Sponsored Session 1;sponsored_session_1;;;5;14;2024-09-06;2024-09-06 9:20;2024-09-06 10:50
+Opening Address;opening_address;;;8;1;2024-09-06;2024-09-06 11:00;2024-09-06 11:10
+Keynote Lecture 2;keynote_lecture_2;;;8;6;2024-09-06;2024-09-06 11:10;2024-09-06 11:50
+Luncheon Symposium 1;luncheon_symposium_1;;;1;12;2024-09-06;2024-09-06 12:00;2024-09-06 13:00
+Luncheon Symposium 2;luncheon_symposium_2;;;2;12;2024-09-06;2024-09-06 12:00;2024-09-06 13:00
+Luncheon Symposium 3;luncheon_symposium_3;;;3;12;2024-09-06;2024-09-06 12:00;2024-09-06 13:00
+Luncheon Symposium 4;luncheon_symposium_4;;;4;12;2024-09-06;2024-09-06 12:00;2024-09-06 13:00
+Oral Presentation 1;oral_presentation_1;;;4;16;2024-09-06;2024-09-06 13:00;2024-09-06 14:00
+Oral Presentation 2;oral_presentation_2;;;5;16;2024-09-06;2024-09-06 13:00;2024-09-06 14:00
+Guided Poster1;guided_poster_presentation_1;;;7;17;2024-09-06;2024-09-06 13:00;2024-09-06 14:00
+Symposium 5;symposium_5;;;1;8;2024-09-06;2024-09-06 14:00;2024-09-06 15:30
+Symposium 6;symposium_6;;;2;8;2024-09-06;2024-09-06 14:00;2024-09-06 15:30
+Symposium 7;symposium_7;;;3;8;2024-09-06;2024-09-06 14:00;2024-09-06 15:30
+Symposium 8;symposium_8;;;4;8;2024-09-06;2024-09-06 14:00;2024-09-06 15:30
+Sponsored Session 2;sponsored_session_2;;;5;14;2024-09-06;2024-09-06 14:00;2024-09-06 15:30
+Keynote Lecture 3;keynote_lecture_3;;;8;6;2024-09-06;2024-09-06 15:40;2024-09-06 16:20
+Symposium 9;symposium_9;;;1;8;2024-09-06;2024-09-06 16:30;2024-09-06 18:00
+Symposium 10;symposium_10;;;2;8;2024-09-06;2024-09-06 16:30;2024-09-06 18:00
+Symposium 11;symposium_11;;;3;8;2024-09-06;2024-09-06 16:30;2024-09-06 18:00
+Symposium 12;symposium_12;;;4;8;2024-09-06;2024-09-06 16:30;2024-09-06 18:00
+Joint Symposium 2;joint_symposium_2;;;5;15;2024-09-06;2024-09-06 16:30;2024-09-06 18:00
+Congress Banquet *Invited Only;congress_banquet_ceremony;;;6;4;2024-09-06;2024-09-06 18:00;2024-09-06 20:00
+Breakfast Symposium 4;breakfast_symposium_4;;;1;11;2024-09-07;2024-09-07 7:30;2024-09-07 8:20
+Breakfast Symposium 5;breakfast_symposium_5;;;2;11;2024-09-07;2024-09-07 7:30;2024-09-07 8:20
+Breakfast Symposium 6;breakfast_symposium_6;;;3;11;2024-09-07;2024-09-07 7:30;2024-09-07 8:20
+Keynote Lecture 4;keynote_lecture_4;;;8;6;2024-09-07;2024-09-07 8:30;2024-09-07 9:10
+Symposium 13;symposium_13;;;1;8;2024-09-07;2024-09-07 9:20;2024-09-07 10:50
+Symposium 14;symposium_14;;;2;8;2024-09-07;2024-09-07 9:20;2024-09-07 10:50
+Symposium 15;symposium_15;;;3;8;2024-09-07;2024-09-07 9:20;2024-09-07 10:50
+Symposium 16;symposium_16;;;4;8;2024-09-07;2024-09-07 9:20;2024-09-07 10:50
+Sponsored Session 3;sponsored_session_3;;;5;14;2024-09-07;2024-09-07 9:20;2024-09-07 10:50
+Presidential Lecture;presidential_lecture_1;;;8;20;2024-09-07;2024-09-07 11:00;2024-09-07 11:40
+Luncheon Symposium 5;luncheon_symposium_5;;;1;12;2024-09-07;2024-09-07 11:50;2024-09-07 12:50
+Luncheon Symposium 6;luncheon_symposium_6;;;2;12;2024-09-07;2024-09-07 11:50;2024-09-07 12:50
+Luncheon Symposium 7;luncheon_symposium_7;;;3;12;2024-09-07;2024-09-07 11:50;2024-09-07 12:50
+Oral Presentation 3;oral_presentation_3;;;4;16;2024-09-07;2024-09-07 12:50;2024-09-07 13:50
+Oral Presentation 4;oral_presentation_4;;;5;16;2024-09-07;2024-09-07 12:50;2024-09-07 13:50
+Guided Poster 2;guided_poster_presentation_2;;;7;17;2024-09-07;2024-09-07 12:50;2024-09-07 13:50
+Keynote Lecture 5;keynote_lecture_5;;;8;6;2024-09-07;2024-09-07 13:50;2024-09-07 14:30
+Keynote Lecture 6;keynote_lecture_6;;;8;6;2024-09-07;2024-09-07 14:30;2024-09-07 15:10
+Symposium 17;symposium_17;;;1;8;2024-09-07;2024-09-07 15:20;2024-09-07 16:50
+Symposium 18;symposium_18;;;2;8;2024-09-07;2024-09-07 15:20;2024-09-07 16:50
+Symposium 19;symposium_19;;;3;8;2024-09-07;2024-09-07 15:20;2024-09-07 16:50
+Symposium 20;symposium_20;;;4;8;2024-09-07;2024-09-07 15:20;2024-09-07 16:50
+Joint Symposium 3;joint_symposium_3;;;5;15;2024-09-07;2024-09-07 15:20;2024-09-07 16:50
+Keynote Lecture 7;keynote_lecture_7;;;8;6;2024-09-07;2024-09-07 17:00;2024-09-07 17:40
+Closing & Award Ceremony;closing_ceremony;;;8;2;2024-09-07;2024-09-07 17:40;2024-09-07 18:00
