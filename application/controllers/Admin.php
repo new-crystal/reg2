@@ -822,10 +822,10 @@ class Admin extends CI_Controller
         }
 
         foreach ($list as $row) {
-            if (empty($row['mintime'])) {
-                $chk = '미참석';
-            } else {
+            if (isset($row['mintime_day1']) || isset($row['mintime_day2']) || isset($row['mintime_day3'])) {
                 $chk = '참석';
+            } else {
+                $chk = '미참석';
             }
 
             if ($row['d_format'] == '00시간 00분') {

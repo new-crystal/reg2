@@ -61,6 +61,27 @@
         font-size: 85px;
         font-weight: bold;
         text-align: center;
+        color:#000000;
+    }
+
+    .disabled{
+        background-image: url("/assets/images/reservation_disabled.png");
+        color: #B4B4B4;
+    }
+
+    .person_input, .phone_input{
+        width:213px;
+        height: 40px;
+        background-color: #F1F3FF;
+        border-radius: 14px;
+        padding: 12px 46px 12px 8px;
+    }
+
+    .person_input{
+        background-image: url("/assets/images/person_input.png");
+        background-position: 13px center;
+        background-size: 18px 22px;
+        background-repeat: no-repeat;
     }
 </style>
 
