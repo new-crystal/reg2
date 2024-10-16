@@ -1,5 +1,6 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<title>예약 시스템</title>
 <style>
    
    body {

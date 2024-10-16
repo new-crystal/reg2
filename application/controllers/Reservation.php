@@ -237,4 +237,10 @@ class Reservation extends CI_Controller {
 		$data['users'] = $this->music->get_user($where);
 		$this->load->view('reservation/send_msm', $data);
     }
+
+	public function user1()
+	{
+		$data['users'] = $this->music->get_reservations();
+		$this->load->view('reservation/user1.php', $data);
+	}
 }
