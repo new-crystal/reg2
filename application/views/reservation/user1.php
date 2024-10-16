@@ -32,6 +32,10 @@
         font-style: italic;
     }
 
+    .selected{
+        background-image: url("/assets/images/reservation_time_selected.png");
+    }
+
     .reservation_body{
         width: 1080px;
         height: 1320px;
@@ -48,7 +52,7 @@
         font-size: 35px;
         font-style: italic;
         font-weight: bold;
-        margin-bottom: 48px;
+        margin-right: 12px;
     }
 
     .person{
@@ -74,7 +78,7 @@
         height: 40px;
         background-color: #F1F3FF;
         border-radius: 14px;
-        padding: 12px 46px 12px 8px;
+        padding: 12px 4px 12px 8px;
     }
 
     .person_input{
@@ -82,35 +86,61 @@
         background-position: 13px center;
         background-size: 18px 22px;
         background-repeat: no-repeat;
+        text-indent: 30px;
+    }
+
+
+    .phone_input{
+        background-image: url("/assets/images/phone_input.png");
+        background-position: 14px center;
+        background-size: 13px 28px;
+        background-repeat: no-repeat;
+        text-indent: 30px;
+    }
+
+    .person_input:focus, .phone_input:focus{
+        outline: none;
+    }
+
+    .reservation_btn{
+        width: 364px;
+        height: 67px;
+        background-color: #000000;
+        border:1px solid #707070;
+        color:#FFF;
+        border-radius: 34px;
+        position: absolute;
+        bottom:30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size:25px;
+        font-weight: bold;
     }
 </style>
 
-<div class="w-full h-full bg-[#0D0803]">
+<div class="w-[1080px] h-[1920px] mx-auto bg-[#0D0803] overflow-hidden">
     <img src="/assets/images/reservation_header.png" class="mx-auto"/>
     
     <div class="w-[905px] flex items-center justify-between mx-auto reservation_header">
-        <div class="reservation_time">
-            10:00~11:00        
+        <div class="reservation_time" data-id="1">
+            10:00~11:00
         </div>
-        <div class="reservation_time">
+        <div class="reservation_time" data-id="2">
             11:00~12:00     
         </div>
-        <div class="reservation_time">
+        <div class="reservation_time" data-id="3">
             14:00~15:00        
         </div>
-        <div class="reservation_time">
+        <div class="reservation_time" data-id="4">
             15:00~16:00
         </div>
-        <div class="reservation_time">
+        <div class="reservation_time" data-id="5">
             16:00~17:00
         </div>
     </div>
 
     <div class="reservation_body">
-    <?php 
-        //print_r($users);
-        for($i=1; $i<=5; $i++){ 
-            $part = $i;
+        <?php 
             $part_time = "";
             $detail_time1 = "";
             $detail_time2 = "";
@@ -150,8 +180,9 @@
              <form class="flex flex-col items-start justify-center">
 
             <div class="flex flex-col items-start">
-                <div class="w-5/6 flex items-center justify-start">
+                <div class="w-full flex items-center justify-center mb-[48px]">
                     <p class="detail_time"><?php echo $detail_time1; ?></p>
+                    <img src="/assets/images/time_dot.png"/>        
                 </div>
 
                 <div class="w-[920px] flex items-center justify-between *:flex *:flex-col *:items-center *:justify-between">
@@ -178,22 +209,23 @@
                             }
                         }
                     ?>
-                    <div class="w-[210px] h-[255px]">
+                    <div class="w-[210px] h-[210px] mb-[95px]">
                         <div class="person <?php echo $disabled; ?>">
                             <?php echo $j ?>
                         </div>
-                        <input class="person_input" placeholder="예약자 성함" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time1, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
-                        <input class="phone_input" placeholder="예약자 휴대폰 번호" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time1, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
+                        <input class="person_input" placeholder="Your username" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time1, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
+                        <input class="phone_input" placeholder="Your phone number" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time1, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
                     </div>
                     <?php } ?>
                 </div>
             </div>
 
             <div class="flex flex-col items-start">
-                <div class="w-5/6 flex items-center justify-start mt-10">
+                <div class="w-full flex items-center justify-center mb-[48px]">
                     <p class="detail_time"><?php echo $detail_time2; ?></p>
+                    <img src="/assets/images/time_dot.png"/>        
                 </div>
-                <div class="flex items-center justify-center *:mx-10 *:flex *:flex-col *:items-center *:justify-between *:h-52">
+                <div class="w-[920px] flex items-center justify-between *:flex *:flex-col *:items-center *:justify-between">
                     <?php 
                     for ($j = 1; $j <= 4; $j++) {
                         $nickname = "";
@@ -216,20 +248,23 @@
                             }
                         }
                     ?>
-                    <div>
-                        <div class="person <?php echo $disabled; ?>"></div>
-                        <input class="person_input" placeholder="예약자 성함" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time2, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
-                        <input class="phone_input" placeholder="예약자 휴대폰 번호" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time2, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
+                      <div class="w-[210px] h-[210px] mb-[95px]">
+                        <div class="person <?php echo $disabled; ?>">
+                            <?php echo $j ?>
+                        </div>
+                        <input class="person_input" placeholder="Your username" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time2, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
+                        <input class="phone_input" placeholder="Your phone number" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time2, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
                     </div>
                     <?php } ?>
                 </div>
             </div>
 
             <div class="flex flex-col items-start mb-10">
-                <div class="w-5/6 flex items-center justify-start mt-10">
+                <div class="w-full flex items-center justify-center mb-[48px]">
                     <p class="detail_time"><?php echo $detail_time3; ?></p>
+                    <img src="/assets/images/time_dot.png"/>        
                 </div>
-                <div class="flex items-center justify-center *:mx-10 *:flex *:flex-col *:items-center *:justify-between *:h-52">
+                <div class="w-[920px] flex items-center justify-between *:flex *:flex-col *:items-center *:justify-between">
                     <?php 
                     for ($j = 1; $j <= 4; $j++) {
                         $nickname = "";
@@ -253,20 +288,109 @@
                             }
                         }
                     ?>
-                    <div>
-                        <div class="person <?php echo $disabled; ?>"></div>
-                        <input class="person_input" placeholder="예약자 성함" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time3, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
-                        <input class="phone_input" placeholder="예약자 휴대폰 번호" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time3, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
+                     <div class="w-[210px] h-[210px] mb-[95px]">
+                        <div class="person <?php echo $disabled; ?>">
+                            <?php echo $j ?>
+                        </div>
+                        <input class="person_input" placeholder="Your username" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time3, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
+                        <input class="phone_input" placeholder="Your phone number" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time3, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
                     </div>
                     <?php } ?>
                 </div>
             </div>
         </form>
-    
-    <?php
-        }
-    ?>  
+        <div>
+            <button class="reservation_btn">예약하기</button>
+        </div>  
     </div>
 
-
+              
 </div>
+
+
+<script>
+    const timeList = document.querySelectorAll(".reservation_time");
+    const phoneInputList = document.querySelectorAll(".phone_input");
+    const reservationBtn = document.querySelector(".reservation_btn");
+
+    getIndex();
+
+    timeList.forEach((time)=>{
+        time.addEventListener("click", (e)=>{
+            timeList.forEach(el => el.classList.remove('selected'));
+            e.target.classList.add("selected");
+            window.location.href = `/reservation/user1?n=${e.target.dataset.id}`
+        })
+    })
+
+    function getIndex(){
+        const part = window.location.search.split("=")[1];
+        timeList.forEach((el, i) => { 
+            if (i + 1 === Number(part)) {
+                el.classList.add('selected');
+            }}
+        );
+    }
+
+    phoneInputList.forEach((phone)=>{
+        phone.addEventListener("blur", (e)=>{
+            const regPhone = /^(01[016789]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
+            if(!regPhone.test(e.target.value)){
+                alert("휴대폰 번호를 확인해주세요.")
+                e.target.value = "";
+            }
+        })
+    })
+
+    reservationBtn.addEventListener("click", (e)=>{
+        saveData(e)
+    })
+
+    function saveData(e){
+        let reservations = [];
+
+        const part = window.location.search.split("=")[1];
+
+        // 해당 time_id에 해당하는 입력 필드만 가져오기 (data-id가 timeId와 일치하는 입력 필드)
+        const personInputs = document.querySelectorAll(`.person_input`);
+        const phoneInputs = document.querySelectorAll(`.phone_input`);
+
+        personInputs.forEach((personInput, index) => {
+            const phoneInput = phoneInputs[index]; // 동일 인덱스의 휴대폰 필드를 매칭
+
+                reservations.push({
+                    time_id:personInput.dataset.idx,
+                    part: part,
+                    name: personInput.value, 
+                    phone: phoneInput.value, 
+                    location: personInput.getAttribute('data-id')  // data-id를 location으로 사용
+                });
+     
+        });
+
+        const data = {
+            reservations: reservations
+        }
+    
+        postData(data);  // 서버로 데이터 전송
+    }
+
+    function postData(data) {
+        $.ajax({
+            url: "/reservation/post_user1",
+            type: "POST",
+            data: JSON.stringify(data),
+            dataType: "JSON",
+            contentType: "application/json",
+            success: function(res) {
+                //console.log(res.status);
+                if(res.status == "success"){
+                    window.location.reload();
+                }
+            },
+            error: function(err) {
+                console.log(err);
+            }
+        });
+    }
+</script>

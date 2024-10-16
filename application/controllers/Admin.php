@@ -822,7 +822,7 @@ class Admin extends CI_Controller
         }
 
         foreach ($list as $row) {
-            if (isset($row['mintime_day1']) || isset($row['mintime_day2']) || isset($row['mintime_day3'])) {
+            if (isset($row['mintime_day1']) || isset($row['mintime_day2']) || isset($row['mintime_day3']) || $row['onsite_reg'] == 1) {
                 $chk = '참석';
             } else {
                 $chk = '미참석';
