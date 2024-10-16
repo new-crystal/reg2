@@ -332,12 +332,12 @@
         time.addEventListener("click", (e)=>{
             timeList.forEach(el => el.classList.remove('selected'));
             e.target.classList.add("selected");
-            window.location.href = `/reservation/user1?n=${e.target.dataset.id}`
+            window.location.href = `/reservation/user3?n=${e.target.dataset.id}`
         })
     })
 
     function getIndex(){
-        const part = window.location.search.split("=")[1] ?? 1;
+        const part = window.location.search.split("=")[1]?? 1;
         timeList.forEach((el, i) => { 
             if (i + 1 === Number(part)) {
                 el.classList.add('selected');
@@ -390,7 +390,7 @@
 
     function postData(data) {
         $.ajax({
-            url: "/reservation/post_user1",
+            url: "/reservation/post_user3",
             type: "POST",
             data: JSON.stringify(data),
             dataType: "JSON",
