@@ -273,7 +273,7 @@ class Reservation extends CI_Controller {
 		   }
    
 		   // DB 업데이트 실행
-		   $this->music->update_name($info);
+		   $this->music->insert_name($info);
    
 		   // JSON 응답 전송
 		   echo json_encode(array("status" => "success", "message" => "Data updated successfully"), JSON_UNESCAPED_UNICODE);
@@ -317,7 +317,7 @@ class Reservation extends CI_Controller {
 		   }
    
 		   // DB 업데이트 실행
-		   $this->music->update_name($info);
+		   $this->music->insert_name($info);
    
 		   // JSON 응답 전송
 		   echo json_encode(array("status" => "success", "message" => "Data updated successfully"), JSON_UNESCAPED_UNICODE);
@@ -361,7 +361,7 @@ class Reservation extends CI_Controller {
 		   }
    
 		   // DB 업데이트 실행
-		   $this->music->update_name($info);
+		   $this->music->insert_name($info);
    
 		   // JSON 응답 전송
 		   echo json_encode(array("status" => "success", "message" => "Data updated successfully"), JSON_UNESCAPED_UNICODE);
@@ -405,7 +405,7 @@ class Reservation extends CI_Controller {
 		   }
    
 		   // DB 업데이트 실행
-		   $this->music->update_name($info);
+		   $this->music->insert_name($info);
    
 		   // JSON 응답 전송
 		   echo json_encode(array("status" => "success", "message" => "Data updated successfully"), JSON_UNESCAPED_UNICODE);
