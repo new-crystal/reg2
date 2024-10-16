@@ -65,25 +65,25 @@
                 $detail_time2 = "11:20 - 11:40";
                 $detail_time3 = "11:40 - 12:00";
             }
+            // else if($part == 3){
+            //     $part_time = "13:00 - 14:00";
+            //     $detail_time1 = "13:00 - 13:20";
+            //     $detail_time2 = "13:20 - 13:40";
+            //     $detail_time3 = "13:40 - 14:00";
+            // }
             else if($part == 3){
-                $part_time = "13:00 - 14:00";
-                $detail_time1 = "13:00 - 13:20";
-                $detail_time2 = "13:20 - 13:40";
-                $detail_time3 = "13:40 - 14:00";
-            }
-            else if($part == 4){
                 $part_time = "14:00 - 15:00";
                 $detail_time1 = "14:00 - 14:20";
                 $detail_time2 = "14:20 - 14:40";
                 $detail_time3 = "14:40 - 15:00";
             }
-            else if($part == 5){
+            else if($part == 4){
                 $part_time = "15:00 - 16:00";
                 $detail_time1 = "15:00 - 15:20";
                 $detail_time2 = "15:20 - 15:40";
                 $detail_time3 = "15:40 - 16:00";
             }
-            else if($part == 6){
+            else if($part == 5){
                 $part_time = "16:00 - 17:00";
                 $detail_time1 = "16:00 - 16:20";
                 $detail_time2 = "16:20 - 16:40";
