@@ -17,7 +17,7 @@
         width: 60px;
         height: 60px;
         border-radius: 50%;  
-        background-color: rgb(37 99 235);
+        background-color: #DDD;
     }
 
     .person_input, .phone_input{
@@ -40,13 +40,14 @@
     }
 
     .disabled{
-        background-color: #DDD;
+        background-color: rgb(37 99 235);
+        
     }
 </style>
 <div class="container">
     <?php 
         //print_r($users);
-        for($i=1; $i<=6; $i++){ 
+        for($i=1; $i<=5; $i++){ 
             $part = $i;
             $part_time = "";
             $detail_time1 = "";

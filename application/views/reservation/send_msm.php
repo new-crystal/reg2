@@ -1,5 +1,5 @@
 <?php
-// print_r($users);
+//print_r($users);
 // echo $users['phone'];
 $curl = curl_init();
 $error = "";
@@ -38,7 +38,7 @@ if ($err) {
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://sms.gabia.com/api/send/sms",
+        CURLOPT_URL => "https://sms.gabia.com/api/send/lms",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
