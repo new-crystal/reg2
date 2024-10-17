@@ -1,12 +1,11 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<title>예약 시스템</title>
+<title>예약 시스템 day 4</title>
 
 <style>
-     
-     body {
+      body {
         font-family: 'Roboto', sans-serif;
-        background-color: #0D0803;
+        background-color: #000000;
     }
 
     .reservation_header{
@@ -30,6 +29,7 @@
         font-weight: bold;
         font-size: 20px;
         font-style: italic;
+        cursor:pointer;
     }
 
     .selected{
@@ -38,7 +38,7 @@
 
     .reservation_body{
         width: 1080px;
-        height: 1320px;
+        height: 1302px;
         background-color: #FFF;
         border-radius: 40px;
         position: absolute;
@@ -56,21 +56,22 @@
     }
 
     .person{
-        width:130px;
-        height: 100px;
-        background-image: url("/assets/images/reservation_headphone.png");
+        width:170px;
+        height: 150px;
+        background-image: url("/assets/images/sound.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        font-size: 85px;
+        font-size: 75px;
         font-weight: bold;
         text-align: center;
-        color:#000000;
+        color:#FFF;
+        line-height: 2.1;
     }
 
     .disabled{
-        background-image: url("/assets/images/reservation_disabled.png");
-        color: #B4B4B4;
+        /* background-image: url("/assets/images/reservation_disabled.png"); */
+        color: #898989;
     }
 
     .person_input, .phone_input{
@@ -103,10 +104,6 @@
         outline: none;
     }
 
-    input::placeholder{
-        font-weight: bold;
-    }
-
     .reservation_btn{
         width: 364px;
         height: 67px;
@@ -114,10 +111,12 @@
         border:1px solid #707070;
         color:#FFF;
         border-radius: 34px;
-        position: absolute;
+        /* position: absolute;
         bottom:30px;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%); */
+        display: block;
+        margin : 0 auto 20px auto;
         font-size:25px;
         font-weight: bold;
     }
@@ -129,11 +128,22 @@
     .person_input.disabled, .phone_input.disabled{
         background-color: #eee;
     }
+
+    input::placeholder{
+        font-weight: bold;
+    }
+
+    .reload{
+        width:1000px;
+        height: 300px;
+        position: absolute;
+        top:0;
+    }
 </style>
 
-<div class="w-[1080px] h-[1920px] mx-auto bg-[#0D0803] overflow-hidden">
-    <img src="/assets/images/reservation_header.png" class="mx-auto"/>
-    
+<div class="w-[1080px] h-[1920px] mx-auto bg-[#000000] overflow-hidden">
+    <img src="/assets/images/reservation_header-1.png" class="mx-auto"/>
+    <div class="reload"></div>
     <div class="w-[905px] flex items-center justify-between mx-auto reservation_header">
         <div class="reservation_time" data-id="1">
             10:00~11:00
@@ -153,6 +163,9 @@
     </div>
 
     <div class="reservation_body">
+        <div>
+            <button class="reservation_btn">예약하기</button>
+        </div>  
         <?php 
             $part_time = "";
             $detail_time1 = "";
@@ -193,7 +206,7 @@
              <form class="flex flex-col items-start justify-center">
 
             <div class="flex flex-col items-start">
-                <div class="w-full flex items-center justify-center mb-[48px]">
+                <div class="w-full flex items-center justify-center">
                     <p class="detail_time"><?php echo $detail_time1; ?></p>
                     <img src="/assets/images/time_dot.png"/>        
                 </div>
@@ -222,7 +235,7 @@
                             }
                         }
                     ?>
-                    <div class="w-[210px] h-[210px] mb-[95px]">
+                    <div class="w-[213px] h-[250px] mb-[78px]">
                         <div class="person <?php echo $disabled; ?>">
                             <?php echo $j ?>
                         </div>
@@ -234,7 +247,7 @@
             </div>
 
             <div class="flex flex-col items-start">
-                <div class="w-full flex items-center justify-center mb-[48px]">
+                <div class="w-full flex items-center justify-center">
                     <p class="detail_time"><?php echo $detail_time2; ?></p>
                     <img src="/assets/images/time_dot.png"/>        
                 </div>
@@ -261,7 +274,7 @@
                             }
                         }
                     ?>
-                      <div class="w-[210px] h-[210px] mb-[95px]">
+                      <div class="w-[213px] h-[250px] mb-[78px]">
                         <div class="person <?php echo $disabled; ?>">
                             <?php echo $j ?>
                         </div>
@@ -273,7 +286,7 @@
             </div>
 
             <div class="flex flex-col items-start mb-10">
-                <div class="w-full flex items-center justify-center mb-[48px]">
+                <div class="w-full flex items-center justify-center">
                     <p class="detail_time"><?php echo $detail_time3; ?></p>
                     <img src="/assets/images/time_dot.png"/>        
                 </div>
@@ -301,7 +314,7 @@
                             }
                         }
                     ?>
-                     <div class="w-[210px] h-[210px] mb-[95px]">
+                     <div class="w-[213px] h-[250px] mb-[78px]">
                         <div class="person <?php echo $disabled; ?>">
                             <?php echo $j ?>
                         </div>
@@ -311,10 +324,7 @@
                     <?php } ?>
                 </div>
             </div>
-        </form>
-        <div>
-            <button class="reservation_btn">예약하기</button>
-        </div>  
+        </form> 
     </div>
 
               
@@ -325,6 +335,7 @@
     const timeList = document.querySelectorAll(".reservation_time");
     const phoneInputList = document.querySelectorAll(".phone_input");
     const reservationBtn = document.querySelector(".reservation_btn");
+    const reloadBtn = document.querySelector(".reload");
 
     getIndex();
 
@@ -348,11 +359,17 @@
     phoneInputList.forEach((phone)=>{
         phone.addEventListener("blur", (e)=>{
             const regPhone = /^(01[016789]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
-            if(!regPhone.test(e.target.value)){
-                alert("휴대폰 번호를 확인해주세요.")
-                e.target.value = "";
-            }
+            if(e.target.value){
+                if(!regPhone.test(e.target.value)){
+                    alert("휴대폰 번호를 확인해주세요.")
+                    e.target.value = "";
+                }
+            }  
         })
+    })
+
+    reloadBtn.addEventListener("click", ()=>{
+        window.location.reload();
     })
 
     reservationBtn.addEventListener("click", (e)=>{
@@ -362,7 +379,7 @@
     function saveData(e){
         let reservations = [];
 
-        const part = window.location.search.split("=")[1];
+        const part = window.location.search.split("=")[1]?? 1;
 
         // 해당 time_id에 해당하는 입력 필드만 가져오기 (data-id가 timeId와 일치하는 입력 필드)
         const personInputs = document.querySelectorAll(`.person_input`);

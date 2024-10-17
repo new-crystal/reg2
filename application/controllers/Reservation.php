@@ -285,7 +285,7 @@ class Reservation extends CI_Controller {
 	public function user2()
 	{
 		$data['part'] = isset($_GET['n']) ? $_GET['n'] : 1;
-		$data['users'] = $this->music->get_reservations();
+		$data['users'] = $this->music->get_reservations2();
 		$this->load->view('reservation/user2.php', $data);
 	}
 
@@ -329,7 +329,7 @@ class Reservation extends CI_Controller {
 	public function user3()
 	{
 		$data['part'] = isset($_GET['n']) ? $_GET['n'] : 1;
-		$data['users'] = $this->music->get_reservations();
+		$data['users'] = $this->music->get_reservations3();
 		$this->load->view('reservation/user3.php', $data);
 	}
 
@@ -373,7 +373,7 @@ class Reservation extends CI_Controller {
 	public function user4()
 	{
 		$data['part'] = isset($_GET['n']) ? $_GET['n'] : 1;
-		$data['users'] = $this->music->get_reservations();
+		$data['users'] = $this->music->get_reservations4();
 		$this->load->view('reservation/user4.php', $data);
 	}
 

@@ -17,7 +17,8 @@
         width: 60px;
         height: 60px;
         border-radius: 50%;  
-        background-color: rgb(37 99 235);
+        background-color: #DDD;
+       
     }
 
     .person_input, .phone_input{
@@ -31,22 +32,18 @@
         outline: none;
     }
 
-    .btn_box{
-  
-    }
-
     .btn_box > button{
         padding: 8px 16px;
     }
 
     .disabled{
-        background-color: #DDD;
+        background-color: rgb(37 99 235);
     }
 </style>
 <div class="container">
     <?php 
         //print_r($users);
-        for($i=1; $i<=6; $i++){ 
+        for($i=1; $i<=5; $i++){ 
             $part = $i;
             $part_time = "";
             $detail_time1 = "";
@@ -113,7 +110,7 @@
                         $checked = "";
 
                         foreach ($users as $user) {
-                            if($user['chk_msm'] == 'Y'){
+                            if(isset($user['chk_msm']) && $user['chk_msm'] == 'Y'){
                                 $checked = "bg-rose-600 text-white";
                             }else{
                                 $checked = "bg-green-600 text-white";
