@@ -47,8 +47,8 @@ if ($err) {
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
         CURLOPT_POSTFIELDS => array(
-            'phone' =>  $users['phone'], 'callback' => '01090224867',
-            'message' => '[하만카돈 예약안내]
+            'phone' =>  $users['phone'], 'callback' => '01066742507',
+            'message' => '[청음 부스 예약안내]
 안녕하세요 ' .  $users['nickname'] .'선생님,
 청음 예약하신 시간 30분 전입니다.' . 
 '예약하신 시간은 '. $users['time_id'] .'입니다.' 
