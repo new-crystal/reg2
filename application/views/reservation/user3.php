@@ -56,9 +56,9 @@
     }
 
     .person{
-        width:170px;
-        height: 150px;
-        background-image: url("/assets/images/sound.png");
+        width:120px;
+        height: 122px;
+        background-image: url("/assets/images/sound-1.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -66,7 +66,6 @@
         font-weight: bold;
         text-align: center;
         color:#FFF;
-        line-height: 2.1;
     }
 
     .disabled{
@@ -142,7 +141,7 @@
 </style>
 
 <div class="w-[1080px] h-[1920px] mx-auto bg-[#000000] overflow-hidden">
-    <img src="/assets/images/reservation_header-1.png" class="mx-auto"/>
+    <img src="/assets/images/reservation_header-2.png" class="mx-auto"/>
     <div class="reload"></div>
     <div class="w-[905px] flex items-center justify-between mx-auto reservation_header">
         <div class="reservation_time" data-id="1">
@@ -206,7 +205,7 @@
              <form class="flex flex-col items-start justify-center">
 
             <div class="flex flex-col items-start">
-                <div class="w-full flex items-center justify-center">
+                <div class="w-full flex items-center justify-center mb-[30px]">
                     <p class="detail_time"><?php echo $detail_time1; ?></p>
                     <img src="/assets/images/time_dot.png"/>        
                 </div>
@@ -235,19 +234,21 @@
                             }
                         }
                     ?>
-                    <div class="w-[213px] h-[250px] mb-[78px]">
+                    <div class="w-[213px] h-[222px] mb-[78px]">
                         <div class="person <?php echo $disabled; ?>">
                             <?php echo $j ?>
                         </div>
-                        <input class="person_input <?php echo $disabled; ?>" placeholder="Your username" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time1, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
-                        <input class="phone_input <?php echo $disabled; ?>" placeholder="Your phone number" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time1, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
+                        <div class="h-[85px] flex flex-col items-center justify-between">
+                            <input class="person_input <?php echo $disabled; ?>" placeholder="Your username" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time1, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
+                            <input class="phone_input <?php echo $disabled; ?>" placeholder="Your phone number" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time1, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
+                        </div>
                     </div>
                     <?php } ?>
                 </div>
             </div>
 
             <div class="flex flex-col items-start">
-                <div class="w-full flex items-center justify-center">
+                <div class="w-full flex items-center justify-center mb-[30px]">
                     <p class="detail_time"><?php echo $detail_time2; ?></p>
                     <img src="/assets/images/time_dot.png"/>        
                 </div>
@@ -274,19 +275,21 @@
                             }
                         }
                     ?>
-                      <div class="w-[213px] h-[250px] mb-[78px]">
+                      <div class="w-[213px] h-[222px] mb-[78px]">
                         <div class="person <?php echo $disabled; ?>">
                             <?php echo $j ?>
                         </div>
-                        <input class="person_input <?php echo $disabled; ?>" placeholder="Your username" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time2, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
-                        <input class="phone_input <?php echo $disabled; ?>" placeholder="Your phone number" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time2, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
+                        <div class="h-[85px] flex flex-col items-center justify-between">
+                            <input class="person_input <?php echo $disabled; ?>" placeholder="Your username" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time2, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
+                            <input class="phone_input <?php echo $disabled; ?>" placeholder="Your phone number" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time2, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
+                        </div>
                     </div>
                     <?php } ?>
                 </div>
             </div>
 
             <div class="flex flex-col items-start mb-10">
-                <div class="w-full flex items-center justify-center">
+                <div class="w-full flex items-center justify-center mb-[30px]">
                     <p class="detail_time"><?php echo $detail_time3; ?></p>
                     <img src="/assets/images/time_dot.png"/>        
                 </div>
@@ -314,12 +317,14 @@
                             }
                         }
                     ?>
-                     <div class="w-[213px] h-[250px] mb-[78px]">
+                     <div class="w-[213px] h-[222px] mb-[78px]">
                         <div class="person <?php echo $disabled; ?>">
                             <?php echo $j ?>
                         </div>
-                        <input class="person_input <?php echo $disabled; ?>" placeholder="Your username" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time3, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
-                        <input class="phone_input <?php echo $disabled; ?>" placeholder="Your phone number" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time3, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
+                        <div class="h-[85px] flex flex-col items-center justify-between">
+                            <input class="person_input <?php echo $disabled; ?>" placeholder="Your username" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time3, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $nickname; ?>" <?php echo $disabled; ?>/>
+                            <input class="phone_input <?php echo $disabled; ?>" placeholder="Your phone number" data-id="<?php echo $j ?>" data-idx="<?php echo substr($detail_time3, 0, 5); ?>" data-part="<?php echo $part; ?>" value="<?php echo $phone; ?>" <?php echo $disabled; ?>/>
+                        </div>
                     </div>
                     <?php } ?>
                 </div>
