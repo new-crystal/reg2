@@ -1,5 +1,8 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=0.8, minimum-scale=0.8, maximum-scale=0.8, user-scalable=yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <title>예약 시스템 day 1</title>
 
 <style>
@@ -11,15 +14,16 @@
 
     .reservation_header{
         position: absolute;
-        top: 392px;
+        top: 315px;
         left: 50%;
         transform: translateX(-50%);
+        padding: 0 40px;
     }
     
     .reservation_time{
-        width: 180px;
-        height: 85px;
-        background-image: url("/assets/images/reservation_time.png");
+        width: 160px;
+        height: 65px;
+        background-image: url("/assets/images/reservation_time-1.png");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -28,30 +32,32 @@
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        font-size: 20px;
-        font-style: italic;
+        font-size: 24px;
+        /* font-style: italic; */
         cursor:pointer;
+        border: 1px solid #7a7979;
     }
 
     .selected{
-        background-image: url("/assets/images/reservation_time_selected.png");
+        background-image: url("/assets/images/reservation_time_selected-1.png");
+        color: #7a7979;
     }
 
     .reservation_body{
-        width: 1080px;
-        height: 1302px;
+        width: 100%;
+        height: 1200px;
         background-color: #FFF;
-        border-radius: 40px;
+        /* border-radius: 40px; */
         position: absolute;
-        top:542px;
+        top:420px;
         left: 50%;
         transform: translateX(-50%);
-        padding: 40px 80px;
+        padding: 40px;
     }
 
     .detail_time{
         font-size: 35px;
-        font-style: italic;
+        /* font-style: italic; */
         font-weight: 900;
         margin-right: 12px;
     }
@@ -59,45 +65,45 @@
     .person{
         width:120px;
         height: 122px;
-        background-image: url("/assets/images/sound-1.png");
-        background-position: center;
+        /* background-image: url("/assets/images/sound-1.png"); */
+        /* background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
-        font-size: 75px;
+        background-size: cover; */
+        font-size: 100px;
         font-weight: bold;
         text-align: center;
-        color:#FFF;
+        color:#000;
     }
 
     .disabled{
         /* background-image: url("/assets/images/reservation_disabled.png"); */
-        color: #898989;
+        color: #CECECE;
     }
 
     .person_input, .phone_input{
-        width:213px;
+        width:100%;
         height: 40px;
-        background-color: #F1F3FF;
-        border-radius: 14px;
-        padding: 12px 4px 12px 8px;
+        background-color: #EDEDED;
+        /* border-radius: 14px; */
+        padding: 12px 4px 12px 16px;
         font-weight: bold;
     }
 
     .person_input{
-        background-image: url("/assets/images/person_input.png");
-        background-position: 13px center;
+        /* background-image: url("/assets/images/person_input.png"); */
+        /* background-position: 13px center;
         background-size: 18px 22px;
-        background-repeat: no-repeat;
-        text-indent: 30px;
+        background-repeat: no-repeat; */
+        /* text-indent: 30px; */
     }
 
 
     .phone_input{
-        background-image: url("/assets/images/phone_input.png");
-        background-position: 14px center;
+        /* background-image: url("/assets/images/phone_input.png"); */
+        /* background-position: 14px center;
         background-size: 13px 28px;
         background-repeat: no-repeat;
-        text-indent: 30px;
+        text-indent: 30px; */
     }
 
     .person_input:focus, .phone_input:focus{
@@ -107,14 +113,14 @@
     .reservation_btn{
         width: 364px;
         height: 67px;
-        background-color: #000000;
+        background-color: #FFF;
         border:1px solid #707070;
-        color:#FFF;
-        border-radius: 34px;
-        /* position: absolute;
-        bottom:30px;
+        color:#000;
+        /* border-radius: 34px; */
+        position: absolute;
+        top:1700px;
         left: 50%;
-        transform: translateX(-50%); */
+        transform: translateX(-50%);
         display: block;
         margin : 0 auto 20px auto;
         font-size:25px;
@@ -127,45 +133,56 @@
 
     .person_input.disabled, .phone_input.disabled{
         background-color: #eee;
+        color:#FFF
     }
 
     input::placeholder{
         font-weight: bold;
+        color: black !important;
     }
 
     .reload{
-        width:1000px;
+        width:90%;
         height: 300px;
         position: absolute;
         top:0;
     }
+    .agree{
+        width: 80%;
+        font-size: 18px;
+        color:#FFF;
+        position: absolute;
+        top:1650px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 </style>
 
-<div class="w-[1080px] h-[1920px] mx-auto bg-[#000000] overflow-hidden">
-    <img src="/assets/images/reservation_header-2.png" class="mx-auto"/>
+<div class="w-full h-[1820px] mx-auto bg-[#000000] overflow-hidden">
+    <div class="h-[330px] flex items-center justify-center">
+        <img src="/assets/images/bang_header.png" class="mx-auto"/>
+    </div>
     <div class="reload"></div>
-    <div class="w-[905px] flex items-center justify-between mx-auto reservation_header">
+    <div class="w-full flex items-center justify-around mx-auto reservation_header">
         <div class="reservation_time" data-id="1">
-            10:00~11:00
+            10:30~11:30
         </div>
         <div class="reservation_time" data-id="2">
-            11:00~12:00     
+            11:30~12:30     
         </div>
         <div class="reservation_time" data-id="3">
-            14:00~15:00        
+            13:30~14:30        
         </div>
         <div class="reservation_time" data-id="4">
-            15:00~16:00
+            14:30~15:30
         </div>
         <div class="reservation_time" data-id="5">
-            16:00~17:00
+            15:30~16:30
         </div>
     </div>
 
     <div class="reservation_body">
-        <div>
-            <button class="reservation_btn">예약하기</button>
-        </div>  
+       
         <?php 
             $part_time = "";
             $detail_time1 = "";
@@ -173,45 +190,45 @@
             $detail_time3 = "";
 
             if($part == 1){
-                $part_time = "10:00 - 11:00";
-                $detail_time1 = "10:00 - 10:20";
-                $detail_time2 = "10:20 - 10:40";
-                $detail_time3 = "10:40 - 11:00";
+                $part_time = "10:30 - 11:30";
+                $detail_time1 = "10:30 - 10:50";
+                $detail_time2 = "10:50 - 11:10";
+                $detail_time3 = "11:10 - 11:30";
             }
             else if($part == 2){
-                $part_time = "11:00 - 12:00";
-                $detail_time1 = "11:00 - 11:20";
-                $detail_time2 = "11:20 - 11:40";
-                $detail_time3 = "11:40 - 12:00";
+                $part_time = "11:30 - 12:30";
+                $detail_time1 = "11:30 - 11:50";
+                $detail_time2 = "11:50 - 12:10";
+                $detail_time3 = "12:10 - 12:30";
             }
             else if($part == 3){
-                $part_time = "14:00 - 15:00";
-                $detail_time1 = "14:00 - 14:20";
-                $detail_time2 = "14:20 - 14:40";
-                $detail_time3 = "14:40 - 15:00";
+                $part_time = "13:30 - 14:30";
+                $detail_time1 = "13:30 - 13:50";
+                $detail_time2 = "13:50 - 14:10";
+                $detail_time3 = "14:10 - 14:30";
             }
             else if($part == 4){
-                $part_time = "15:00 - 16:00";
-                $detail_time1 = "15:00 - 15:20";
-                $detail_time2 = "15:20 - 15:40";
-                $detail_time3 = "15:40 - 16:00";
+                $part_time = "14:30 - 15:30";
+                $detail_time1 = "14:30 - 14:50";
+                $detail_time2 = "14:50 - 15:10";
+                $detail_time3 = "15:10 - 15:30";
             }
             else if($part == 5){
-                $part_time = "16:00 - 17:00";
-                $detail_time1 = "16:00 - 16:20";
-                $detail_time2 = "16:20 - 16:40";
-                $detail_time3 = "16:40 - 17:00";
+                $part_time = "15:30 - 16:30";
+                $detail_time1 = "15:30 - 15:50";
+                $detail_time2 = "15:50 - 16:10";
+                $detail_time3 = "16:10 - 16:30";
             }       
             ?>
         <form class="flex flex-col items-start justify-center">
 
-            <div class="flex flex-col items-start">
-                <div class="w-full flex items-center justify-center mb-[30px]">
-                    <p class="detail_time"><?php echo $detail_time1; ?></p>
-                    <img src="/assets/images/time_dot.png"/>        
+            <div class="w-full flex flex-col items-start justify-between">
+                <div class="w-full flex items-center justify-start mb-[30px]">
+                    <p class="detail_time">▶ <?php echo $detail_time1; ?></p>
+                    <!-- <img src="/assets/images/time_dot.png"/>         -->
                 </div>
 
-                <div class="w-[920px] flex items-center justify-between *:flex *:flex-col *:items-center *:justify-between">
+                <div class="w-full flex items-center justify-between *:flex *:flex-col *:items-center *:justify-between">
                     <?php 
                     // 4개의 input을 생성
                     for ($j = 1; $j <= 4; $j++) {
@@ -235,7 +252,7 @@
                             }
                         }
                     ?>
-                    <div class="w-[213px] h-[222px] mb-[78px]">
+                    <div class="w-[22%] h-[222px] mb-[78px]">
                         <div class="person <?php echo $disabled; ?>">
                             <?php echo $j ?>
                         </div>
@@ -249,11 +266,11 @@
             </div>
 
             <div class="flex flex-col items-start">
-                <div class="w-full flex items-center justify-center mb-[30px]">
-                    <p class="detail_time"><?php echo $detail_time2; ?></p>
-                    <img src="/assets/images/time_dot.png"/>        
+                <div class="w-full flex items-center justify-start mb-[30px]">
+                    <p class="detail_time">▶ <?php echo $detail_time2; ?></p>
+                    <!-- <img src="/assets/images/time_dot.png"/>         -->
                 </div>
-                <div class="w-[920px] flex items-center justify-between *:flex *:flex-col *:items-center *:justify-between">
+                <div class="w-full flex items-center justify-between *:flex *:flex-col *:items-center *:justify-between">
                     <?php 
                     for ($j = 1; $j <= 4; $j++) {
                         $nickname = "";
@@ -276,7 +293,7 @@
                             }
                         }
                     ?>
-                      <div class="w-[213px] h-[222px] mb-[78px]">
+                      <div class="w-[22%] h-[222px] mb-[78px]">
                         <div class="person <?php echo $disabled; ?>">
                             <?php echo $j ?>
                         </div>
@@ -290,11 +307,11 @@
             </div>
 
             <div class="flex flex-col items-start mb-10">
-                <div class="w-full flex items-center justify-center mb-[30px]">
-                    <p class="detail_time"><?php echo $detail_time3; ?></p>
-                    <img src="/assets/images/time_dot.png"/>        
+                <div class="w-full flex items-center justify-start mb-[30px]">
+                    <p class="detail_time">▶ <?php echo $detail_time3; ?></p>
+                    <!-- <img src="/assets/images/time_dot.png"/>         -->
                 </div>
-                <div class="w-[920px] flex items-center justify-between *:flex *:flex-col *:items-center *:justify-between">
+                <div class="w-full flex items-center justify-between *:flex *:flex-col *:items-center *:justify-between">
                     <?php 
                     for ($j = 1; $j <= 4; $j++) {
                         $nickname = "";
@@ -318,7 +335,7 @@
                             }
                         }
                     ?>
-                     <div class="w-[213px] h-[222px] mb-[78px]">
+                     <div class="w-[22%] h-[222px] mb-[78px]">
                         <div class="person <?php echo $disabled; ?>">
                             <?php echo $j ?>
                         </div>
@@ -333,7 +350,13 @@
         </form>
       
     </div>
-
+    <div>
+        <label for="agree" class="agree">
+            <input id="agree" type="checkbox" class="check"/>
+                위 정보는 예약 및 취소 확인으로 개인정보를 수집하고 있습니다. 개인정보 수집 및 이용에 동의합니다.
+        </label>
+        <button class="reservation_btn">예약하기</button>
+    </div>  
               
 </div>
 
@@ -380,7 +403,12 @@
     })
 
     reservationBtn.addEventListener("click", (e)=>{
-        saveData(e)
+        const agreeCheckbox = document.querySelector(".check");
+        if(!agreeCheckbox.checked){
+            alert("개인정보 수집 및 이용에 동의해주세요.");
+        }else{
+            saveData(e)
+        }
     })
 
     function saveData(e){
@@ -422,6 +450,7 @@
             success: function(res) {
                 //console.log(res.status);
                 if(res.status == "success"){
+                    alert("예약이 완료됐습니다.")
                     window.location.reload();
                 }
             },
