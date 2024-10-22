@@ -55,41 +55,35 @@
             $detail_time3 = "";
 
             if($part == 1){
-                $part_time = "10:00 - 11:00";
-                $detail_time1 = "10:00 - 10:20";
-                $detail_time2 = "10:20 - 10:40";
-                $detail_time3 = "10:40 - 11:00";
+                $part_time = "10:30 - 11:30";
+                $detail_time1 = "10:30 - 10:50";
+                $detail_time2 = "10:50 - 11:10";
+                $detail_time3 = "11:10 - 11:30";
             }
             else if($part == 2){
-                $part_time = "11:00 - 12:00";
-                $detail_time1 = "11:00 - 11:20";
-                $detail_time2 = "11:20 - 11:40";
-                $detail_time3 = "11:40 - 12:00";
+                $part_time = "11:30 - 12:30";
+                $detail_time1 = "11:30 - 11:50";
+                $detail_time2 = "11:50 - 12:10";
+                $detail_time3 = "12:10 - 12:30";
             }
-            // else if($part == 3){
-            //     $part_time = "13:00 - 14:00";
-            //     $detail_time1 = "13:00 - 13:20";
-            //     $detail_time2 = "13:20 - 13:40";
-            //     $detail_time3 = "13:40 - 14:00";
-            // }
             else if($part == 3){
-                $part_time = "14:00 - 15:00";
-                $detail_time1 = "14:00 - 14:20";
-                $detail_time2 = "14:20 - 14:40";
-                $detail_time3 = "14:40 - 15:00";
+                $part_time = "13:30 - 14:30";
+                $detail_time1 = "13:30 - 13:50";
+                $detail_time2 = "13:50 - 14:10";
+                $detail_time3 = "14:10 - 14:30";
             }
             else if($part == 4){
-                $part_time = "15:00 - 16:00";
-                $detail_time1 = "15:00 - 15:20";
-                $detail_time2 = "15:20 - 15:40";
-                $detail_time3 = "15:40 - 16:00";
+                $part_time = "14:30 - 15:30";
+                $detail_time1 = "14:30 - 14:50";
+                $detail_time2 = "14:50 - 15:10";
+                $detail_time3 = "15:10 - 15:30";
             }
             else if($part == 5){
-                $part_time = "16:00 - 17:00";
-                $detail_time1 = "16:00 - 16:20";
-                $detail_time2 = "16:20 - 16:40";
-                $detail_time3 = "16:40 - 17:00";
-            }       
+                $part_time = "15:30 - 16:30";
+                $detail_time1 = "15:30 - 15:50";
+                $detail_time2 = "15:50 - 16:10";
+                $detail_time3 = "16:10 - 16:30";
+            }         
             ?>
         <form class="flex flex-col items-start justify-center mt-10">
             <div class="font-bold text-4xl underline underline-offset-4 mb-4">Day 1</div>
