@@ -151,6 +151,50 @@ class Registration extends CI_Controller
         return true;
     }
 
+    function sendEmail()
+    {
+        $mail = $this->phpmailer_lib->load();
+        $email = $_POST['email'];
+        $nickname = $_POST['nickname'];
+        $text = $_POST['text'];
+        $mail->IsSMTP();
+        try {
+            $mail->Host = "tls://smtp.gmail.com";
+            $mail->SMTPAuth = true;
+            $mail->Port = 587;
+            $mail->SMTPSecure = "tls";
+            $mail->Username   = "secretariat@icola2022.org";
+            $mail->Password   = "dwzmztaracdwxltg";
+            //          $mail->SMTPDebug = 2;
+            $mail->CharSet = "utf-8";
+            $mail->SetFrom('sujeong.shin@into-on.com', '신수정 test');
+            $mail->AddReplyTo('sujeong.shin@into-on.com', '신수정 test'); //응답 받는 이
+            $mail->AddAddress($email, $nickname); //받는 이
+            $mail->Subject = '신수정 test';
+            $mail->isHTML(true);
+            $mail->Body =
+                "<html>
+                    <body>
+                        <p> 회원님! </p>
+                         <pre>" . htmlspecialchars($text) . "</pre>
+                    </body>
+                 </html>";
+            $mail->AltBody = "mail";
+
+            //$mail->MsgHTML((string)$random);
+            $mail->Send();
+        } catch (phpmailerException $e) {
+                      echo $e->errorMessage();
+           //error_log(print_r($e->errorMessage(), TRUE), 3, '/tmp/errors.log');
+            return false;
+        } catch (Exception $e) {
+                      echo $e->getMessage();
+            //error_log(print_r($e->errorMessage(), TRUE), 3, '/tmp/errors.log');
+            return false;
+        }
+        return true;
+    }
+
     public function enroll()
     {
         $this->load->helper('form');
