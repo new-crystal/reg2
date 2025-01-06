@@ -164,6 +164,7 @@ class Admin extends CI_Controller
             $str = $value;
             $dir = "./assets/images/QR";
             $upload_dir = $dir . '/';
+            // $filename =  'qrcode_' . "onsite" . '.png';
             $filename =  'qrcode_' . $value . '.png';
 
             // echo getcwd();
@@ -180,6 +181,7 @@ class Admin extends CI_Controller
             /* QR생성 끝 */
 
             /* PNG to JPG 변환 */
+            // $image = imagecreatefrompng($upload_dir . 'qrcode_' . "onsite" . '.png');
             $image = imagecreatefrompng($upload_dir . 'qrcode_' . $value . '.png');
             $bg = imagecreatetruecolor(imagesx($image), imagesy($image));
             imagefill($bg, 0, 0, imagecolorallocate($bg, 255, 255, 255));
@@ -187,6 +189,7 @@ class Admin extends CI_Controller
             imagecopy($bg, $image, 0, 0, 0, 0, imagesx($image), imagesy($image));
             imagedestroy($image);
             $quality = 100; // 0 = worst / smaller file, 100 = better / bigger file 
+            // imagejpeg($bg, $upload_dir . 'qrcode_' . "onsite". '.jpg', $quality);
             imagejpeg($bg, $upload_dir . 'qrcode_' . $value . '.jpg', $quality);
             imagedestroy($bg);
         }
@@ -1328,6 +1331,12 @@ class Admin extends CI_Controller
             $this->load->view('admin/new_abstracts.php', $data);
         }
         $this->load->view('footer');
+    }
+
+    public function send_mail()
+    {
+        $this->load->view('admin/send_mail');
+        //redirect('admin');
     }
 
     public function new_abstract_detail()

@@ -69,6 +69,9 @@
                         <button class="btn btn-primary pull-right"><i class="icon-download4"></i> &nbspExcel
                             Download</button>
                     </form> -->
+                    <div onclick="test_email()">
+                     TEST
+                    </div>
                     <form action="/admin/all_deposit_check" method="post" id="all_depositForm">
                         <button class="btn btn-primary pull-right"><i class="icon-checkmark"></i>전부 입금확인</button>
                     </form>
@@ -181,6 +184,13 @@
     //                $('input[type=checkbox]').prop('checked',false);
     //            }
     //        })
+                    
+    // function test_email(){
+    //     const email = "hyojun.jang@into-on.com";
+    //     const name = "susu";
+
+    //     window.location.href = `/registration/sendEmail?email=${email}&name=${name}`;
+    // }
 
     function copy(text) {
         if (navigator.clipboard) {
